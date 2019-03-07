@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dockerStart": "docker-compose -f ./docker-compose.yml up -d",
-    "deploy": "prisma deploy"
+    "deploy": "prisma deploy",
+    "reset": "prisma reset --force",
+    "delete": "prisma delete --force",
+    "start": "node index.js"
   },
   "author": "Thor Anderson",
   "license": "ISC",
