@@ -14,10 +14,16 @@ export type AtLeastOne<T, U = { [K in keyof T]: Pick<T, K> }> = Partial<T> &
   U[keyof U];
 
 export interface Exists {
-  comment: (where?: CommentWhereInput) => Promise<boolean>;
+  ability: (where?: AbilityWhereInput) => Promise<boolean>;
+  form: (where?: FormWhereInput) => Promise<boolean>;
+  gameIndex: (where?: GameIndexWhereInput) => Promise<boolean>;
+  item: (where?: ItemWhereInput) => Promise<boolean>;
+  move: (where?: MoveWhereInput) => Promise<boolean>;
   pokemon: (where?: PokemonWhereInput) => Promise<boolean>;
-  post: (where?: PostWhereInput) => Promise<boolean>;
-  user: (where?: UserWhereInput) => Promise<boolean>;
+  species: (where?: SpeciesWhereInput) => Promise<boolean>;
+  sprite: (where?: SpriteWhereInput) => Promise<boolean>;
+  stat: (where?: StatWhereInput) => Promise<boolean>;
+  type: (where?: TypeWhereInput) => Promise<boolean>;
 }
 
 export interface Node {}
@@ -39,29 +45,116 @@ export interface Prisma {
    * Queries
    */
 
-  comment: (where: CommentWhereUniqueInput) => CommentPromise;
-  comments: (
+  abilities: (
     args?: {
-      where?: CommentWhereInput;
-      orderBy?: CommentOrderByInput;
+      where?: AbilityWhereInput;
+      orderBy?: AbilityOrderByInput;
       skip?: Int;
       after?: String;
       before?: String;
       first?: Int;
       last?: Int;
     }
-  ) => FragmentableArray<Comment>;
-  commentsConnection: (
+  ) => FragmentableArray<Ability>;
+  abilitiesConnection: (
     args?: {
-      where?: CommentWhereInput;
-      orderBy?: CommentOrderByInput;
+      where?: AbilityWhereInput;
+      orderBy?: AbilityOrderByInput;
       skip?: Int;
       after?: String;
       before?: String;
       first?: Int;
       last?: Int;
     }
-  ) => CommentConnectionPromise;
+  ) => AbilityConnectionPromise;
+  forms: (
+    args?: {
+      where?: FormWhereInput;
+      orderBy?: FormOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Form>;
+  formsConnection: (
+    args?: {
+      where?: FormWhereInput;
+      orderBy?: FormOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FormConnectionPromise;
+  gameIndexes: (
+    args?: {
+      where?: GameIndexWhereInput;
+      orderBy?: GameIndexOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<GameIndex>;
+  gameIndexesConnection: (
+    args?: {
+      where?: GameIndexWhereInput;
+      orderBy?: GameIndexOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => GameIndexConnectionPromise;
+  items: (
+    args?: {
+      where?: ItemWhereInput;
+      orderBy?: ItemOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Item>;
+  itemsConnection: (
+    args?: {
+      where?: ItemWhereInput;
+      orderBy?: ItemOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => ItemConnectionPromise;
+  moves: (
+    args?: {
+      where?: MoveWhereInput;
+      orderBy?: MoveOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Move>;
+  movesConnection: (
+    args?: {
+      where?: MoveWhereInput;
+      orderBy?: MoveOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => MoveConnectionPromise;
   pokemon: (where: PokemonWhereUniqueInput) => PokemonPromise;
   pokemons: (
     args?: {
@@ -85,74 +178,128 @@ export interface Prisma {
       last?: Int;
     }
   ) => PokemonConnectionPromise;
-  post: (where: PostWhereUniqueInput) => PostPromise;
-  posts: (
+  specieses: (
     args?: {
-      where?: PostWhereInput;
-      orderBy?: PostOrderByInput;
+      where?: SpeciesWhereInput;
+      orderBy?: SpeciesOrderByInput;
       skip?: Int;
       after?: String;
       before?: String;
       first?: Int;
       last?: Int;
     }
-  ) => FragmentableArray<Post>;
-  postsConnection: (
+  ) => FragmentableArray<Species>;
+  speciesesConnection: (
     args?: {
-      where?: PostWhereInput;
-      orderBy?: PostOrderByInput;
+      where?: SpeciesWhereInput;
+      orderBy?: SpeciesOrderByInput;
       skip?: Int;
       after?: String;
       before?: String;
       first?: Int;
       last?: Int;
     }
-  ) => PostConnectionPromise;
-  user: (where: UserWhereUniqueInput) => UserPromise;
-  users: (
+  ) => SpeciesConnectionPromise;
+  sprites: (
     args?: {
-      where?: UserWhereInput;
-      orderBy?: UserOrderByInput;
+      where?: SpriteWhereInput;
+      orderBy?: SpriteOrderByInput;
       skip?: Int;
       after?: String;
       before?: String;
       first?: Int;
       last?: Int;
     }
-  ) => FragmentableArray<User>;
-  usersConnection: (
+  ) => FragmentableArray<Sprite>;
+  spritesConnection: (
     args?: {
-      where?: UserWhereInput;
-      orderBy?: UserOrderByInput;
+      where?: SpriteWhereInput;
+      orderBy?: SpriteOrderByInput;
       skip?: Int;
       after?: String;
       before?: String;
       first?: Int;
       last?: Int;
     }
-  ) => UserConnectionPromise;
+  ) => SpriteConnectionPromise;
+  stats: (
+    args?: {
+      where?: StatWhereInput;
+      orderBy?: StatOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Stat>;
+  statsConnection: (
+    args?: {
+      where?: StatWhereInput;
+      orderBy?: StatOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => StatConnectionPromise;
+  types: (
+    args?: {
+      where?: TypeWhereInput;
+      orderBy?: TypeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Type>;
+  typesConnection: (
+    args?: {
+      where?: TypeWhereInput;
+      orderBy?: TypeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => TypeConnectionPromise;
   node: (args: { id: ID_Output }) => Node;
 
   /**
    * Mutations
    */
 
-  createComment: (data: CommentCreateInput) => CommentPromise;
-  updateComment: (
-    args: { data: CommentUpdateInput; where: CommentWhereUniqueInput }
-  ) => CommentPromise;
-  updateManyComments: (
-    args: { data: CommentUpdateManyMutationInput; where?: CommentWhereInput }
+  createAbility: (data: AbilityCreateInput) => AbilityPromise;
+  updateManyAbilities: (
+    args: { data: AbilityUpdateManyMutationInput; where?: AbilityWhereInput }
   ) => BatchPayloadPromise;
-  upsertComment: (
+  deleteManyAbilities: (where?: AbilityWhereInput) => BatchPayloadPromise;
+  createForm: (data: FormCreateInput) => FormPromise;
+  updateManyForms: (
+    args: { data: FormUpdateManyMutationInput; where?: FormWhereInput }
+  ) => BatchPayloadPromise;
+  deleteManyForms: (where?: FormWhereInput) => BatchPayloadPromise;
+  createGameIndex: (data: GameIndexCreateInput) => GameIndexPromise;
+  updateManyGameIndexes: (
     args: {
-      where: CommentWhereUniqueInput;
-      create: CommentCreateInput;
-      update: CommentUpdateInput;
+      data: GameIndexUpdateManyMutationInput;
+      where?: GameIndexWhereInput;
     }
-  ) => CommentPromise;
-  deleteComment: (where: CommentWhereUniqueInput) => CommentPromise;
-  deleteManyComments: (where?: CommentWhereInput) => BatchPayloadPromise;
+  ) => BatchPayloadPromise;
+  deleteManyGameIndexes: (where?: GameIndexWhereInput) => BatchPayloadPromise;
+  createItem: (data: ItemCreateInput) => ItemPromise;
+  updateManyItems: (
+    args: { data: ItemUpdateManyMutationInput; where?: ItemWhereInput }
+  ) => BatchPayloadPromise;
+  deleteManyItems: (where?: ItemWhereInput) => BatchPayloadPromise;
+  createMove: (data: MoveCreateInput) => MovePromise;
+  updateManyMoves: (
+    args: { data: MoveUpdateManyMutationInput; where?: MoveWhereInput }
+  ) => BatchPayloadPromise;
+  deleteManyMoves: (where?: MoveWhereInput) => BatchPayloadPromise;
   createPokemon: (data: PokemonCreateInput) => PokemonPromise;
   updatePokemon: (
     args: { data: PokemonUpdateInput; where: PokemonWhereUniqueInput }
@@ -169,38 +316,26 @@ export interface Prisma {
   ) => PokemonPromise;
   deletePokemon: (where: PokemonWhereUniqueInput) => PokemonPromise;
   deleteManyPokemons: (where?: PokemonWhereInput) => BatchPayloadPromise;
-  createPost: (data: PostCreateInput) => PostPromise;
-  updatePost: (
-    args: { data: PostUpdateInput; where: PostWhereUniqueInput }
-  ) => PostPromise;
-  updateManyPosts: (
-    args: { data: PostUpdateManyMutationInput; where?: PostWhereInput }
+  createSpecies: (data: SpeciesCreateInput) => SpeciesPromise;
+  updateManySpecieses: (
+    args: { data: SpeciesUpdateManyMutationInput; where?: SpeciesWhereInput }
   ) => BatchPayloadPromise;
-  upsertPost: (
-    args: {
-      where: PostWhereUniqueInput;
-      create: PostCreateInput;
-      update: PostUpdateInput;
-    }
-  ) => PostPromise;
-  deletePost: (where: PostWhereUniqueInput) => PostPromise;
-  deleteManyPosts: (where?: PostWhereInput) => BatchPayloadPromise;
-  createUser: (data: UserCreateInput) => UserPromise;
-  updateUser: (
-    args: { data: UserUpdateInput; where: UserWhereUniqueInput }
-  ) => UserPromise;
-  updateManyUsers: (
-    args: { data: UserUpdateManyMutationInput; where?: UserWhereInput }
+  deleteManySpecieses: (where?: SpeciesWhereInput) => BatchPayloadPromise;
+  createSprite: (data: SpriteCreateInput) => SpritePromise;
+  updateManySprites: (
+    args: { data: SpriteUpdateManyMutationInput; where?: SpriteWhereInput }
   ) => BatchPayloadPromise;
-  upsertUser: (
-    args: {
-      where: UserWhereUniqueInput;
-      create: UserCreateInput;
-      update: UserUpdateInput;
-    }
-  ) => UserPromise;
-  deleteUser: (where: UserWhereUniqueInput) => UserPromise;
-  deleteManyUsers: (where?: UserWhereInput) => BatchPayloadPromise;
+  deleteManySprites: (where?: SpriteWhereInput) => BatchPayloadPromise;
+  createStat: (data: StatCreateInput) => StatPromise;
+  updateManyStats: (
+    args: { data: StatUpdateManyMutationInput; where?: StatWhereInput }
+  ) => BatchPayloadPromise;
+  deleteManyStats: (where?: StatWhereInput) => BatchPayloadPromise;
+  createType: (data: TypeCreateInput) => TypePromise;
+  updateManyTypes: (
+    args: { data: TypeUpdateManyMutationInput; where?: TypeWhereInput }
+  ) => BatchPayloadPromise;
+  deleteManyTypes: (where?: TypeWhereInput) => BatchPayloadPromise;
 
   /**
    * Subscriptions
@@ -210,18 +345,36 @@ export interface Prisma {
 }
 
 export interface Subscription {
-  comment: (
-    where?: CommentSubscriptionWhereInput
-  ) => CommentSubscriptionPayloadSubscription;
+  ability: (
+    where?: AbilitySubscriptionWhereInput
+  ) => AbilitySubscriptionPayloadSubscription;
+  form: (
+    where?: FormSubscriptionWhereInput
+  ) => FormSubscriptionPayloadSubscription;
+  gameIndex: (
+    where?: GameIndexSubscriptionWhereInput
+  ) => GameIndexSubscriptionPayloadSubscription;
+  item: (
+    where?: ItemSubscriptionWhereInput
+  ) => ItemSubscriptionPayloadSubscription;
+  move: (
+    where?: MoveSubscriptionWhereInput
+  ) => MoveSubscriptionPayloadSubscription;
   pokemon: (
     where?: PokemonSubscriptionWhereInput
   ) => PokemonSubscriptionPayloadSubscription;
-  post: (
-    where?: PostSubscriptionWhereInput
-  ) => PostSubscriptionPayloadSubscription;
-  user: (
-    where?: UserSubscriptionWhereInput
-  ) => UserSubscriptionPayloadSubscription;
+  species: (
+    where?: SpeciesSubscriptionWhereInput
+  ) => SpeciesSubscriptionPayloadSubscription;
+  sprite: (
+    where?: SpriteSubscriptionWhereInput
+  ) => SpriteSubscriptionPayloadSubscription;
+  stat: (
+    where?: StatSubscriptionWhereInput
+  ) => StatSubscriptionPayloadSubscription;
+  type: (
+    where?: TypeSubscriptionWhereInput
+  ) => TypeSubscriptionPayloadSubscription;
 }
 
 export interface ClientConstructor<T> {
@@ -232,251 +385,157 @@ export interface ClientConstructor<T> {
  * Types
  */
 
-export type PostOrderByInput =
-  | "id_ASC"
-  | "id_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "title_ASC"
-  | "title_DESC"
-  | "published_ASC"
-  | "published_DESC";
-
-export type CommentOrderByInput =
-  | "id_ASC"
-  | "id_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "bodyText_ASC"
-  | "bodyText_DESC";
-
-export type PokemonOrderByInput =
-  | "id_ASC"
-  | "id_DESC"
+export type AbilityOrderByInput =
   | "name_ASC"
   | "name_DESC"
   | "url_ASC"
   | "url_DESC"
+  | "id_ASC"
+  | "id_DESC"
   | "createdAt_ASC"
   | "createdAt_DESC"
   | "updatedAt_ASC"
   | "updatedAt_DESC";
 
-export type UserOrderByInput =
+export type FormOrderByInput =
+  | "name_ASC"
+  | "name_DESC"
+  | "url_ASC"
+  | "url_DESC"
   | "id_ASC"
   | "id_DESC"
   | "createdAt_ASC"
   | "createdAt_DESC"
   | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "email_ASC"
-  | "email_DESC"
+  | "updatedAt_DESC";
+
+export type GameIndexOrderByInput =
   | "name_ASC"
-  | "name_DESC";
+  | "name_DESC"
+  | "url_ASC"
+  | "url_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type ItemOrderByInput =
+  | "name_ASC"
+  | "name_DESC"
+  | "url_ASC"
+  | "url_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type MoveOrderByInput =
+  | "name_ASC"
+  | "name_DESC"
+  | "url_ASC"
+  | "url_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type SpeciesOrderByInput =
+  | "name_ASC"
+  | "name_DESC"
+  | "url_ASC"
+  | "url_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type SpriteOrderByInput =
+  | "back_default_ASC"
+  | "back_default_DESC"
+  | "back_female_ASC"
+  | "back_female_DESC"
+  | "back_shiny_ASC"
+  | "back_shiny_DESC"
+  | "back_shiny_female_ASC"
+  | "back_shiny_female_DESC"
+  | "front_default_ASC"
+  | "front_default_DESC"
+  | "front_female_ASC"
+  | "front_female_DESC"
+  | "front_shiny_ASC"
+  | "front_shiny_DESC"
+  | "front_shiny_female_ASC"
+  | "front_shiny_female_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type StatOrderByInput =
+  | "base_stat_ASC"
+  | "base_stat_DESC"
+  | "effort_ASC"
+  | "effort_DESC"
+  | "name_ASC"
+  | "name_DESC"
+  | "url_ASC"
+  | "url_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type TypeOrderByInput =
+  | "slot_ASC"
+  | "slot_DESC"
+  | "name_ASC"
+  | "name_DESC"
+  | "url_ASC"
+  | "url_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type PokemonOrderByInput =
+  | "base_experience_ASC"
+  | "base_experience_DESC"
+  | "height_ASC"
+  | "height_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "is_default_ASC"
+  | "is_default_DESC"
+  | "location_area_encounters_ASC"
+  | "location_area_encounters_DESC"
+  | "name_ASC"
+  | "name_DESC"
+  | "order_ASC"
+  | "order_DESC"
+  | "weight_ASC"
+  | "weight_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
 
 export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
-export type CommentWhereUniqueInput = AtLeastOne<{
-  id: ID_Input;
-}>;
-
-export interface PostWhereInput {
-  id?: ID_Input;
-  id_not?: ID_Input;
-  id_in?: ID_Input[] | ID_Input;
-  id_not_in?: ID_Input[] | ID_Input;
-  id_lt?: ID_Input;
-  id_lte?: ID_Input;
-  id_gt?: ID_Input;
-  id_gte?: ID_Input;
-  id_contains?: ID_Input;
-  id_not_contains?: ID_Input;
-  id_starts_with?: ID_Input;
-  id_not_starts_with?: ID_Input;
-  id_ends_with?: ID_Input;
-  id_not_ends_with?: ID_Input;
-  createdAt?: DateTimeInput;
-  createdAt_not?: DateTimeInput;
-  createdAt_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_lt?: DateTimeInput;
-  createdAt_lte?: DateTimeInput;
-  createdAt_gt?: DateTimeInput;
-  createdAt_gte?: DateTimeInput;
-  updatedAt?: DateTimeInput;
-  updatedAt_not?: DateTimeInput;
-  updatedAt_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_not_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_lt?: DateTimeInput;
-  updatedAt_lte?: DateTimeInput;
-  updatedAt_gt?: DateTimeInput;
-  updatedAt_gte?: DateTimeInput;
-  title?: String;
-  title_not?: String;
-  title_in?: String[] | String;
-  title_not_in?: String[] | String;
-  title_lt?: String;
-  title_lte?: String;
-  title_gt?: String;
-  title_gte?: String;
-  title_contains?: String;
-  title_not_contains?: String;
-  title_starts_with?: String;
-  title_not_starts_with?: String;
-  title_ends_with?: String;
-  title_not_ends_with?: String;
-  published?: Boolean;
-  published_not?: Boolean;
-  author?: UserWhereInput;
-  comments_every?: CommentWhereInput;
-  comments_some?: CommentWhereInput;
-  comments_none?: CommentWhereInput;
-  AND?: PostWhereInput[] | PostWhereInput;
-  OR?: PostWhereInput[] | PostWhereInput;
-  NOT?: PostWhereInput[] | PostWhereInput;
-}
-
-export interface UserWhereInput {
-  id?: ID_Input;
-  id_not?: ID_Input;
-  id_in?: ID_Input[] | ID_Input;
-  id_not_in?: ID_Input[] | ID_Input;
-  id_lt?: ID_Input;
-  id_lte?: ID_Input;
-  id_gt?: ID_Input;
-  id_gte?: ID_Input;
-  id_contains?: ID_Input;
-  id_not_contains?: ID_Input;
-  id_starts_with?: ID_Input;
-  id_not_starts_with?: ID_Input;
-  id_ends_with?: ID_Input;
-  id_not_ends_with?: ID_Input;
-  createdAt?: DateTimeInput;
-  createdAt_not?: DateTimeInput;
-  createdAt_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_lt?: DateTimeInput;
-  createdAt_lte?: DateTimeInput;
-  createdAt_gt?: DateTimeInput;
-  createdAt_gte?: DateTimeInput;
-  updatedAt?: DateTimeInput;
-  updatedAt_not?: DateTimeInput;
-  updatedAt_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_not_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_lt?: DateTimeInput;
-  updatedAt_lte?: DateTimeInput;
-  updatedAt_gt?: DateTimeInput;
-  updatedAt_gte?: DateTimeInput;
-  email?: String;
-  email_not?: String;
-  email_in?: String[] | String;
-  email_not_in?: String[] | String;
-  email_lt?: String;
-  email_lte?: String;
-  email_gt?: String;
-  email_gte?: String;
-  email_contains?: String;
-  email_not_contains?: String;
-  email_starts_with?: String;
-  email_not_starts_with?: String;
-  email_ends_with?: String;
-  email_not_ends_with?: String;
-  name?: String;
-  name_not?: String;
-  name_in?: String[] | String;
-  name_not_in?: String[] | String;
-  name_lt?: String;
-  name_lte?: String;
-  name_gt?: String;
-  name_gte?: String;
-  name_contains?: String;
-  name_not_contains?: String;
-  name_starts_with?: String;
-  name_not_starts_with?: String;
-  name_ends_with?: String;
-  name_not_ends_with?: String;
-  posts_every?: PostWhereInput;
-  posts_some?: PostWhereInput;
-  posts_none?: PostWhereInput;
-  AND?: UserWhereInput[] | UserWhereInput;
-  OR?: UserWhereInput[] | UserWhereInput;
-  NOT?: UserWhereInput[] | UserWhereInput;
-}
-
-export interface CommentWhereInput {
-  id?: ID_Input;
-  id_not?: ID_Input;
-  id_in?: ID_Input[] | ID_Input;
-  id_not_in?: ID_Input[] | ID_Input;
-  id_lt?: ID_Input;
-  id_lte?: ID_Input;
-  id_gt?: ID_Input;
-  id_gte?: ID_Input;
-  id_contains?: ID_Input;
-  id_not_contains?: ID_Input;
-  id_starts_with?: ID_Input;
-  id_not_starts_with?: ID_Input;
-  id_ends_with?: ID_Input;
-  id_not_ends_with?: ID_Input;
-  createdAt?: DateTimeInput;
-  createdAt_not?: DateTimeInput;
-  createdAt_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_lt?: DateTimeInput;
-  createdAt_lte?: DateTimeInput;
-  createdAt_gt?: DateTimeInput;
-  createdAt_gte?: DateTimeInput;
-  updatedAt?: DateTimeInput;
-  updatedAt_not?: DateTimeInput;
-  updatedAt_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_not_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_lt?: DateTimeInput;
-  updatedAt_lte?: DateTimeInput;
-  updatedAt_gt?: DateTimeInput;
-  updatedAt_gte?: DateTimeInput;
-  bodyText?: String;
-  bodyText_not?: String;
-  bodyText_in?: String[] | String;
-  bodyText_not_in?: String[] | String;
-  bodyText_lt?: String;
-  bodyText_lte?: String;
-  bodyText_gt?: String;
-  bodyText_gte?: String;
-  bodyText_contains?: String;
-  bodyText_not_contains?: String;
-  bodyText_starts_with?: String;
-  bodyText_not_starts_with?: String;
-  bodyText_ends_with?: String;
-  bodyText_not_ends_with?: String;
-  createdBy?: UserWhereInput;
-  AND?: CommentWhereInput[] | CommentWhereInput;
-  OR?: CommentWhereInput[] | CommentWhereInput;
-  NOT?: CommentWhereInput[] | CommentWhereInput;
-}
-
-export type PokemonWhereUniqueInput = AtLeastOne<{
-  id: ID_Input;
-}>;
-
-export interface PokemonWhereInput {
-  id?: ID_Input;
-  id_not?: ID_Input;
-  id_in?: ID_Input[] | ID_Input;
-  id_not_in?: ID_Input[] | ID_Input;
-  id_lt?: ID_Input;
-  id_lte?: ID_Input;
-  id_gt?: ID_Input;
-  id_gte?: ID_Input;
-  id_contains?: ID_Input;
-  id_not_contains?: ID_Input;
-  id_starts_with?: ID_Input;
-  id_not_starts_with?: ID_Input;
-  id_ends_with?: ID_Input;
-  id_not_ends_with?: ID_Input;
+export interface AbilityWhereInput {
   name?: String;
   name_not?: String;
   name_in?: String[] | String;
@@ -505,354 +564,1334 @@ export interface PokemonWhereInput {
   url_not_starts_with?: String;
   url_ends_with?: String;
   url_not_ends_with?: String;
+  AND?: AbilityWhereInput[] | AbilityWhereInput;
+  OR?: AbilityWhereInput[] | AbilityWhereInput;
+  NOT?: AbilityWhereInput[] | AbilityWhereInput;
+}
+
+export interface FormWhereInput {
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: FormWhereInput[] | FormWhereInput;
+  OR?: FormWhereInput[] | FormWhereInput;
+  NOT?: FormWhereInput[] | FormWhereInput;
+}
+
+export interface GameIndexWhereInput {
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: GameIndexWhereInput[] | GameIndexWhereInput;
+  OR?: GameIndexWhereInput[] | GameIndexWhereInput;
+  NOT?: GameIndexWhereInput[] | GameIndexWhereInput;
+}
+
+export interface ItemWhereInput {
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: ItemWhereInput[] | ItemWhereInput;
+  OR?: ItemWhereInput[] | ItemWhereInput;
+  NOT?: ItemWhereInput[] | ItemWhereInput;
+}
+
+export interface MoveWhereInput {
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: MoveWhereInput[] | MoveWhereInput;
+  OR?: MoveWhereInput[] | MoveWhereInput;
+  NOT?: MoveWhereInput[] | MoveWhereInput;
+}
+
+export type PokemonWhereUniqueInput = AtLeastOne<{
+  id: ID_Input;
+}>;
+
+export interface SpeciesWhereInput {
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: SpeciesWhereInput[] | SpeciesWhereInput;
+  OR?: SpeciesWhereInput[] | SpeciesWhereInput;
+  NOT?: SpeciesWhereInput[] | SpeciesWhereInput;
+}
+
+export interface SpriteWhereInput {
+  back_default?: String;
+  back_default_not?: String;
+  back_default_in?: String[] | String;
+  back_default_not_in?: String[] | String;
+  back_default_lt?: String;
+  back_default_lte?: String;
+  back_default_gt?: String;
+  back_default_gte?: String;
+  back_default_contains?: String;
+  back_default_not_contains?: String;
+  back_default_starts_with?: String;
+  back_default_not_starts_with?: String;
+  back_default_ends_with?: String;
+  back_default_not_ends_with?: String;
+  back_female?: String;
+  back_female_not?: String;
+  back_female_in?: String[] | String;
+  back_female_not_in?: String[] | String;
+  back_female_lt?: String;
+  back_female_lte?: String;
+  back_female_gt?: String;
+  back_female_gte?: String;
+  back_female_contains?: String;
+  back_female_not_contains?: String;
+  back_female_starts_with?: String;
+  back_female_not_starts_with?: String;
+  back_female_ends_with?: String;
+  back_female_not_ends_with?: String;
+  back_shiny?: String;
+  back_shiny_not?: String;
+  back_shiny_in?: String[] | String;
+  back_shiny_not_in?: String[] | String;
+  back_shiny_lt?: String;
+  back_shiny_lte?: String;
+  back_shiny_gt?: String;
+  back_shiny_gte?: String;
+  back_shiny_contains?: String;
+  back_shiny_not_contains?: String;
+  back_shiny_starts_with?: String;
+  back_shiny_not_starts_with?: String;
+  back_shiny_ends_with?: String;
+  back_shiny_not_ends_with?: String;
+  back_shiny_female?: String;
+  back_shiny_female_not?: String;
+  back_shiny_female_in?: String[] | String;
+  back_shiny_female_not_in?: String[] | String;
+  back_shiny_female_lt?: String;
+  back_shiny_female_lte?: String;
+  back_shiny_female_gt?: String;
+  back_shiny_female_gte?: String;
+  back_shiny_female_contains?: String;
+  back_shiny_female_not_contains?: String;
+  back_shiny_female_starts_with?: String;
+  back_shiny_female_not_starts_with?: String;
+  back_shiny_female_ends_with?: String;
+  back_shiny_female_not_ends_with?: String;
+  front_default?: String;
+  front_default_not?: String;
+  front_default_in?: String[] | String;
+  front_default_not_in?: String[] | String;
+  front_default_lt?: String;
+  front_default_lte?: String;
+  front_default_gt?: String;
+  front_default_gte?: String;
+  front_default_contains?: String;
+  front_default_not_contains?: String;
+  front_default_starts_with?: String;
+  front_default_not_starts_with?: String;
+  front_default_ends_with?: String;
+  front_default_not_ends_with?: String;
+  front_female?: String;
+  front_female_not?: String;
+  front_female_in?: String[] | String;
+  front_female_not_in?: String[] | String;
+  front_female_lt?: String;
+  front_female_lte?: String;
+  front_female_gt?: String;
+  front_female_gte?: String;
+  front_female_contains?: String;
+  front_female_not_contains?: String;
+  front_female_starts_with?: String;
+  front_female_not_starts_with?: String;
+  front_female_ends_with?: String;
+  front_female_not_ends_with?: String;
+  front_shiny?: String;
+  front_shiny_not?: String;
+  front_shiny_in?: String[] | String;
+  front_shiny_not_in?: String[] | String;
+  front_shiny_lt?: String;
+  front_shiny_lte?: String;
+  front_shiny_gt?: String;
+  front_shiny_gte?: String;
+  front_shiny_contains?: String;
+  front_shiny_not_contains?: String;
+  front_shiny_starts_with?: String;
+  front_shiny_not_starts_with?: String;
+  front_shiny_ends_with?: String;
+  front_shiny_not_ends_with?: String;
+  front_shiny_female?: String;
+  front_shiny_female_not?: String;
+  front_shiny_female_in?: String[] | String;
+  front_shiny_female_not_in?: String[] | String;
+  front_shiny_female_lt?: String;
+  front_shiny_female_lte?: String;
+  front_shiny_female_gt?: String;
+  front_shiny_female_gte?: String;
+  front_shiny_female_contains?: String;
+  front_shiny_female_not_contains?: String;
+  front_shiny_female_starts_with?: String;
+  front_shiny_female_not_starts_with?: String;
+  front_shiny_female_ends_with?: String;
+  front_shiny_female_not_ends_with?: String;
+  AND?: SpriteWhereInput[] | SpriteWhereInput;
+  OR?: SpriteWhereInput[] | SpriteWhereInput;
+  NOT?: SpriteWhereInput[] | SpriteWhereInput;
+}
+
+export interface StatWhereInput {
+  base_stat?: Int;
+  base_stat_not?: Int;
+  base_stat_in?: Int[] | Int;
+  base_stat_not_in?: Int[] | Int;
+  base_stat_lt?: Int;
+  base_stat_lte?: Int;
+  base_stat_gt?: Int;
+  base_stat_gte?: Int;
+  effort?: Int;
+  effort_not?: Int;
+  effort_in?: Int[] | Int;
+  effort_not_in?: Int[] | Int;
+  effort_lt?: Int;
+  effort_lte?: Int;
+  effort_gt?: Int;
+  effort_gte?: Int;
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: StatWhereInput[] | StatWhereInput;
+  OR?: StatWhereInput[] | StatWhereInput;
+  NOT?: StatWhereInput[] | StatWhereInput;
+}
+
+export interface TypeWhereInput {
+  slot?: Int;
+  slot_not?: Int;
+  slot_in?: Int[] | Int;
+  slot_not_in?: Int[] | Int;
+  slot_lt?: Int;
+  slot_lte?: Int;
+  slot_gt?: Int;
+  slot_gte?: Int;
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: TypeWhereInput[] | TypeWhereInput;
+  OR?: TypeWhereInput[] | TypeWhereInput;
+  NOT?: TypeWhereInput[] | TypeWhereInput;
+}
+
+export interface PokemonWhereInput {
+  abilities_every?: AbilityWhereInput;
+  abilities_some?: AbilityWhereInput;
+  abilities_none?: AbilityWhereInput;
+  base_experience?: Int;
+  base_experience_not?: Int;
+  base_experience_in?: Int[] | Int;
+  base_experience_not_in?: Int[] | Int;
+  base_experience_lt?: Int;
+  base_experience_lte?: Int;
+  base_experience_gt?: Int;
+  base_experience_gte?: Int;
+  forms_every?: FormWhereInput;
+  forms_some?: FormWhereInput;
+  forms_none?: FormWhereInput;
+  game_indices_every?: GameIndexWhereInput;
+  game_indices_some?: GameIndexWhereInput;
+  game_indices_none?: GameIndexWhereInput;
+  held_items_every?: ItemWhereInput;
+  held_items_some?: ItemWhereInput;
+  held_items_none?: ItemWhereInput;
+  height?: Int;
+  height_not?: Int;
+  height_in?: Int[] | Int;
+  height_not_in?: Int[] | Int;
+  height_lt?: Int;
+  height_lte?: Int;
+  height_gt?: Int;
+  height_gte?: Int;
+  id?: ID_Input;
+  id_not?: ID_Input;
+  id_in?: ID_Input[] | ID_Input;
+  id_not_in?: ID_Input[] | ID_Input;
+  id_lt?: ID_Input;
+  id_lte?: ID_Input;
+  id_gt?: ID_Input;
+  id_gte?: ID_Input;
+  id_contains?: ID_Input;
+  id_not_contains?: ID_Input;
+  id_starts_with?: ID_Input;
+  id_not_starts_with?: ID_Input;
+  id_ends_with?: ID_Input;
+  id_not_ends_with?: ID_Input;
+  is_default?: Boolean;
+  is_default_not?: Boolean;
+  location_area_encounters?: String;
+  location_area_encounters_not?: String;
+  location_area_encounters_in?: String[] | String;
+  location_area_encounters_not_in?: String[] | String;
+  location_area_encounters_lt?: String;
+  location_area_encounters_lte?: String;
+  location_area_encounters_gt?: String;
+  location_area_encounters_gte?: String;
+  location_area_encounters_contains?: String;
+  location_area_encounters_not_contains?: String;
+  location_area_encounters_starts_with?: String;
+  location_area_encounters_not_starts_with?: String;
+  location_area_encounters_ends_with?: String;
+  location_area_encounters_not_ends_with?: String;
+  moves_every?: MoveWhereInput;
+  moves_some?: MoveWhereInput;
+  moves_none?: MoveWhereInput;
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  order?: Int;
+  order_not?: Int;
+  order_in?: Int[] | Int;
+  order_not_in?: Int[] | Int;
+  order_lt?: Int;
+  order_lte?: Int;
+  order_gt?: Int;
+  order_gte?: Int;
+  species_every?: SpeciesWhereInput;
+  species_some?: SpeciesWhereInput;
+  species_none?: SpeciesWhereInput;
+  sprites_every?: SpriteWhereInput;
+  sprites_some?: SpriteWhereInput;
+  sprites_none?: SpriteWhereInput;
+  stats_every?: StatWhereInput;
+  stats_some?: StatWhereInput;
+  stats_none?: StatWhereInput;
+  types_every?: TypeWhereInput;
+  types_some?: TypeWhereInput;
+  types_none?: TypeWhereInput;
+  weight?: Int;
+  weight_not?: Int;
+  weight_in?: Int[] | Int;
+  weight_not_in?: Int[] | Int;
+  weight_lt?: Int;
+  weight_lte?: Int;
+  weight_gt?: Int;
+  weight_gte?: Int;
   AND?: PokemonWhereInput[] | PokemonWhereInput;
   OR?: PokemonWhereInput[] | PokemonWhereInput;
   NOT?: PokemonWhereInput[] | PokemonWhereInput;
 }
 
-export type PostWhereUniqueInput = AtLeastOne<{
-  id: ID_Input;
-}>;
-
-export type UserWhereUniqueInput = AtLeastOne<{
-  id: ID_Input;
-  email?: String;
-}>;
-
-export interface CommentCreateInput {
-  bodyText: String;
-  createdBy?: UserCreateOneInput;
-}
-
-export interface UserCreateOneInput {
-  create?: UserCreateInput;
-  connect?: UserWhereUniqueInput;
-}
-
-export interface UserCreateInput {
-  email?: String;
-  name: String;
-  posts?: PostCreateManyWithoutAuthorInput;
-}
-
-export interface PostCreateManyWithoutAuthorInput {
-  create?: PostCreateWithoutAuthorInput[] | PostCreateWithoutAuthorInput;
-  connect?: PostWhereUniqueInput[] | PostWhereUniqueInput;
-}
-
-export interface PostCreateWithoutAuthorInput {
-  title: String;
-  published?: Boolean;
-  comments?: CommentCreateManyInput;
-}
-
-export interface CommentCreateManyInput {
-  create?: CommentCreateInput[] | CommentCreateInput;
-  connect?: CommentWhereUniqueInput[] | CommentWhereUniqueInput;
-}
-
-export interface CommentUpdateInput {
-  bodyText?: String;
-  createdBy?: UserUpdateOneInput;
-}
-
-export interface UserUpdateOneInput {
-  create?: UserCreateInput;
-  update?: UserUpdateDataInput;
-  upsert?: UserUpsertNestedInput;
-  delete?: Boolean;
-  disconnect?: Boolean;
-  connect?: UserWhereUniqueInput;
-}
-
-export interface UserUpdateDataInput {
-  email?: String;
+export interface AbilityCreateInput {
   name?: String;
-  posts?: PostUpdateManyWithoutAuthorInput;
+  url?: String;
 }
 
-export interface PostUpdateManyWithoutAuthorInput {
-  create?: PostCreateWithoutAuthorInput[] | PostCreateWithoutAuthorInput;
-  delete?: PostWhereUniqueInput[] | PostWhereUniqueInput;
-  connect?: PostWhereUniqueInput[] | PostWhereUniqueInput;
-  set?: PostWhereUniqueInput[] | PostWhereUniqueInput;
-  disconnect?: PostWhereUniqueInput[] | PostWhereUniqueInput;
-  update?:
-    | PostUpdateWithWhereUniqueWithoutAuthorInput[]
-    | PostUpdateWithWhereUniqueWithoutAuthorInput;
-  upsert?:
-    | PostUpsertWithWhereUniqueWithoutAuthorInput[]
-    | PostUpsertWithWhereUniqueWithoutAuthorInput;
-  deleteMany?: PostScalarWhereInput[] | PostScalarWhereInput;
-  updateMany?:
-    | PostUpdateManyWithWhereNestedInput[]
-    | PostUpdateManyWithWhereNestedInput;
+export interface AbilityUpdateManyMutationInput {
+  name?: String;
+  url?: String;
 }
 
-export interface PostUpdateWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput;
-  data: PostUpdateWithoutAuthorDataInput;
+export interface FormCreateInput {
+  name?: String;
+  url?: String;
 }
 
-export interface PostUpdateWithoutAuthorDataInput {
-  title?: String;
-  published?: Boolean;
-  comments?: CommentUpdateManyInput;
+export interface FormUpdateManyMutationInput {
+  name?: String;
+  url?: String;
 }
 
-export interface CommentUpdateManyInput {
-  create?: CommentCreateInput[] | CommentCreateInput;
-  update?:
-    | CommentUpdateWithWhereUniqueNestedInput[]
-    | CommentUpdateWithWhereUniqueNestedInput;
-  upsert?:
-    | CommentUpsertWithWhereUniqueNestedInput[]
-    | CommentUpsertWithWhereUniqueNestedInput;
-  delete?: CommentWhereUniqueInput[] | CommentWhereUniqueInput;
-  connect?: CommentWhereUniqueInput[] | CommentWhereUniqueInput;
-  set?: CommentWhereUniqueInput[] | CommentWhereUniqueInput;
-  disconnect?: CommentWhereUniqueInput[] | CommentWhereUniqueInput;
-  deleteMany?: CommentScalarWhereInput[] | CommentScalarWhereInput;
-  updateMany?:
-    | CommentUpdateManyWithWhereNestedInput[]
-    | CommentUpdateManyWithWhereNestedInput;
+export interface GameIndexCreateInput {
+  name?: String;
+  url?: String;
 }
 
-export interface CommentUpdateWithWhereUniqueNestedInput {
-  where: CommentWhereUniqueInput;
-  data: CommentUpdateDataInput;
+export interface GameIndexUpdateManyMutationInput {
+  name?: String;
+  url?: String;
 }
 
-export interface CommentUpdateDataInput {
-  bodyText?: String;
-  createdBy?: UserUpdateOneInput;
+export interface ItemCreateInput {
+  name?: String;
+  url?: String;
 }
 
-export interface CommentUpsertWithWhereUniqueNestedInput {
-  where: CommentWhereUniqueInput;
-  update: CommentUpdateDataInput;
-  create: CommentCreateInput;
+export interface ItemUpdateManyMutationInput {
+  name?: String;
+  url?: String;
 }
 
-export interface CommentScalarWhereInput {
-  id?: ID_Input;
-  id_not?: ID_Input;
-  id_in?: ID_Input[] | ID_Input;
-  id_not_in?: ID_Input[] | ID_Input;
-  id_lt?: ID_Input;
-  id_lte?: ID_Input;
-  id_gt?: ID_Input;
-  id_gte?: ID_Input;
-  id_contains?: ID_Input;
-  id_not_contains?: ID_Input;
-  id_starts_with?: ID_Input;
-  id_not_starts_with?: ID_Input;
-  id_ends_with?: ID_Input;
-  id_not_ends_with?: ID_Input;
-  createdAt?: DateTimeInput;
-  createdAt_not?: DateTimeInput;
-  createdAt_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_lt?: DateTimeInput;
-  createdAt_lte?: DateTimeInput;
-  createdAt_gt?: DateTimeInput;
-  createdAt_gte?: DateTimeInput;
-  updatedAt?: DateTimeInput;
-  updatedAt_not?: DateTimeInput;
-  updatedAt_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_not_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_lt?: DateTimeInput;
-  updatedAt_lte?: DateTimeInput;
-  updatedAt_gt?: DateTimeInput;
-  updatedAt_gte?: DateTimeInput;
-  bodyText?: String;
-  bodyText_not?: String;
-  bodyText_in?: String[] | String;
-  bodyText_not_in?: String[] | String;
-  bodyText_lt?: String;
-  bodyText_lte?: String;
-  bodyText_gt?: String;
-  bodyText_gte?: String;
-  bodyText_contains?: String;
-  bodyText_not_contains?: String;
-  bodyText_starts_with?: String;
-  bodyText_not_starts_with?: String;
-  bodyText_ends_with?: String;
-  bodyText_not_ends_with?: String;
-  AND?: CommentScalarWhereInput[] | CommentScalarWhereInput;
-  OR?: CommentScalarWhereInput[] | CommentScalarWhereInput;
-  NOT?: CommentScalarWhereInput[] | CommentScalarWhereInput;
+export interface MoveCreateInput {
+  name?: String;
+  url?: String;
 }
 
-export interface CommentUpdateManyWithWhereNestedInput {
-  where: CommentScalarWhereInput;
-  data: CommentUpdateManyDataInput;
-}
-
-export interface CommentUpdateManyDataInput {
-  bodyText?: String;
-}
-
-export interface PostUpsertWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput;
-  update: PostUpdateWithoutAuthorDataInput;
-  create: PostCreateWithoutAuthorInput;
-}
-
-export interface PostScalarWhereInput {
-  id?: ID_Input;
-  id_not?: ID_Input;
-  id_in?: ID_Input[] | ID_Input;
-  id_not_in?: ID_Input[] | ID_Input;
-  id_lt?: ID_Input;
-  id_lte?: ID_Input;
-  id_gt?: ID_Input;
-  id_gte?: ID_Input;
-  id_contains?: ID_Input;
-  id_not_contains?: ID_Input;
-  id_starts_with?: ID_Input;
-  id_not_starts_with?: ID_Input;
-  id_ends_with?: ID_Input;
-  id_not_ends_with?: ID_Input;
-  createdAt?: DateTimeInput;
-  createdAt_not?: DateTimeInput;
-  createdAt_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_lt?: DateTimeInput;
-  createdAt_lte?: DateTimeInput;
-  createdAt_gt?: DateTimeInput;
-  createdAt_gte?: DateTimeInput;
-  updatedAt?: DateTimeInput;
-  updatedAt_not?: DateTimeInput;
-  updatedAt_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_not_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_lt?: DateTimeInput;
-  updatedAt_lte?: DateTimeInput;
-  updatedAt_gt?: DateTimeInput;
-  updatedAt_gte?: DateTimeInput;
-  title?: String;
-  title_not?: String;
-  title_in?: String[] | String;
-  title_not_in?: String[] | String;
-  title_lt?: String;
-  title_lte?: String;
-  title_gt?: String;
-  title_gte?: String;
-  title_contains?: String;
-  title_not_contains?: String;
-  title_starts_with?: String;
-  title_not_starts_with?: String;
-  title_ends_with?: String;
-  title_not_ends_with?: String;
-  published?: Boolean;
-  published_not?: Boolean;
-  AND?: PostScalarWhereInput[] | PostScalarWhereInput;
-  OR?: PostScalarWhereInput[] | PostScalarWhereInput;
-  NOT?: PostScalarWhereInput[] | PostScalarWhereInput;
-}
-
-export interface PostUpdateManyWithWhereNestedInput {
-  where: PostScalarWhereInput;
-  data: PostUpdateManyDataInput;
-}
-
-export interface PostUpdateManyDataInput {
-  title?: String;
-  published?: Boolean;
-}
-
-export interface UserUpsertNestedInput {
-  update: UserUpdateDataInput;
-  create: UserCreateInput;
-}
-
-export interface CommentUpdateManyMutationInput {
-  bodyText?: String;
+export interface MoveUpdateManyMutationInput {
+  name?: String;
+  url?: String;
 }
 
 export interface PokemonCreateInput {
+  abilities?: AbilityCreateManyInput;
+  base_experience?: Int;
+  forms?: FormCreateManyInput;
+  game_indices?: GameIndexCreateManyInput;
+  held_items?: ItemCreateManyInput;
+  height?: Int;
+  is_default?: Boolean;
+  location_area_encounters?: String;
+  moves?: MoveCreateManyInput;
+  name?: String;
+  order?: Int;
+  species?: SpeciesCreateManyInput;
+  sprites?: SpriteCreateManyInput;
+  stats?: StatCreateManyInput;
+  types?: TypeCreateManyInput;
+  weight?: Int;
+}
+
+export interface AbilityCreateManyInput {
+  create?: AbilityCreateInput[] | AbilityCreateInput;
+}
+
+export interface FormCreateManyInput {
+  create?: FormCreateInput[] | FormCreateInput;
+}
+
+export interface GameIndexCreateManyInput {
+  create?: GameIndexCreateInput[] | GameIndexCreateInput;
+}
+
+export interface ItemCreateManyInput {
+  create?: ItemCreateInput[] | ItemCreateInput;
+}
+
+export interface MoveCreateManyInput {
+  create?: MoveCreateInput[] | MoveCreateInput;
+}
+
+export interface SpeciesCreateManyInput {
+  create?: SpeciesCreateInput[] | SpeciesCreateInput;
+}
+
+export interface SpeciesCreateInput {
+  name?: String;
+  url?: String;
+}
+
+export interface SpriteCreateManyInput {
+  create?: SpriteCreateInput[] | SpriteCreateInput;
+}
+
+export interface SpriteCreateInput {
+  back_default?: String;
+  back_female?: String;
+  back_shiny?: String;
+  back_shiny_female?: String;
+  front_default?: String;
+  front_female?: String;
+  front_shiny?: String;
+  front_shiny_female?: String;
+}
+
+export interface StatCreateManyInput {
+  create?: StatCreateInput[] | StatCreateInput;
+}
+
+export interface StatCreateInput {
+  base_stat?: Int;
+  effort?: Int;
+  name?: String;
+  url?: String;
+}
+
+export interface TypeCreateManyInput {
+  create?: TypeCreateInput[] | TypeCreateInput;
+}
+
+export interface TypeCreateInput {
+  slot?: Int;
   name?: String;
   url?: String;
 }
 
 export interface PokemonUpdateInput {
+  abilities?: AbilityUpdateManyInput;
+  base_experience?: Int;
+  forms?: FormUpdateManyInput;
+  game_indices?: GameIndexUpdateManyInput;
+  held_items?: ItemUpdateManyInput;
+  height?: Int;
+  is_default?: Boolean;
+  location_area_encounters?: String;
+  moves?: MoveUpdateManyInput;
+  name?: String;
+  order?: Int;
+  species?: SpeciesUpdateManyInput;
+  sprites?: SpriteUpdateManyInput;
+  stats?: StatUpdateManyInput;
+  types?: TypeUpdateManyInput;
+  weight?: Int;
+}
+
+export interface AbilityUpdateManyInput {
+  create?: AbilityCreateInput[] | AbilityCreateInput;
+  deleteMany?: AbilityScalarWhereInput[] | AbilityScalarWhereInput;
+  updateMany?:
+    | AbilityUpdateManyWithWhereNestedInput[]
+    | AbilityUpdateManyWithWhereNestedInput;
+}
+
+export interface AbilityScalarWhereInput {
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: AbilityScalarWhereInput[] | AbilityScalarWhereInput;
+  OR?: AbilityScalarWhereInput[] | AbilityScalarWhereInput;
+  NOT?: AbilityScalarWhereInput[] | AbilityScalarWhereInput;
+}
+
+export interface AbilityUpdateManyWithWhereNestedInput {
+  where: AbilityScalarWhereInput;
+  data: AbilityUpdateManyDataInput;
+}
+
+export interface AbilityUpdateManyDataInput {
+  name?: String;
+  url?: String;
+}
+
+export interface FormUpdateManyInput {
+  create?: FormCreateInput[] | FormCreateInput;
+  deleteMany?: FormScalarWhereInput[] | FormScalarWhereInput;
+  updateMany?:
+    | FormUpdateManyWithWhereNestedInput[]
+    | FormUpdateManyWithWhereNestedInput;
+}
+
+export interface FormScalarWhereInput {
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: FormScalarWhereInput[] | FormScalarWhereInput;
+  OR?: FormScalarWhereInput[] | FormScalarWhereInput;
+  NOT?: FormScalarWhereInput[] | FormScalarWhereInput;
+}
+
+export interface FormUpdateManyWithWhereNestedInput {
+  where: FormScalarWhereInput;
+  data: FormUpdateManyDataInput;
+}
+
+export interface FormUpdateManyDataInput {
+  name?: String;
+  url?: String;
+}
+
+export interface GameIndexUpdateManyInput {
+  create?: GameIndexCreateInput[] | GameIndexCreateInput;
+  deleteMany?: GameIndexScalarWhereInput[] | GameIndexScalarWhereInput;
+  updateMany?:
+    | GameIndexUpdateManyWithWhereNestedInput[]
+    | GameIndexUpdateManyWithWhereNestedInput;
+}
+
+export interface GameIndexScalarWhereInput {
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: GameIndexScalarWhereInput[] | GameIndexScalarWhereInput;
+  OR?: GameIndexScalarWhereInput[] | GameIndexScalarWhereInput;
+  NOT?: GameIndexScalarWhereInput[] | GameIndexScalarWhereInput;
+}
+
+export interface GameIndexUpdateManyWithWhereNestedInput {
+  where: GameIndexScalarWhereInput;
+  data: GameIndexUpdateManyDataInput;
+}
+
+export interface GameIndexUpdateManyDataInput {
+  name?: String;
+  url?: String;
+}
+
+export interface ItemUpdateManyInput {
+  create?: ItemCreateInput[] | ItemCreateInput;
+  deleteMany?: ItemScalarWhereInput[] | ItemScalarWhereInput;
+  updateMany?:
+    | ItemUpdateManyWithWhereNestedInput[]
+    | ItemUpdateManyWithWhereNestedInput;
+}
+
+export interface ItemScalarWhereInput {
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: ItemScalarWhereInput[] | ItemScalarWhereInput;
+  OR?: ItemScalarWhereInput[] | ItemScalarWhereInput;
+  NOT?: ItemScalarWhereInput[] | ItemScalarWhereInput;
+}
+
+export interface ItemUpdateManyWithWhereNestedInput {
+  where: ItemScalarWhereInput;
+  data: ItemUpdateManyDataInput;
+}
+
+export interface ItemUpdateManyDataInput {
+  name?: String;
+  url?: String;
+}
+
+export interface MoveUpdateManyInput {
+  create?: MoveCreateInput[] | MoveCreateInput;
+  deleteMany?: MoveScalarWhereInput[] | MoveScalarWhereInput;
+  updateMany?:
+    | MoveUpdateManyWithWhereNestedInput[]
+    | MoveUpdateManyWithWhereNestedInput;
+}
+
+export interface MoveScalarWhereInput {
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: MoveScalarWhereInput[] | MoveScalarWhereInput;
+  OR?: MoveScalarWhereInput[] | MoveScalarWhereInput;
+  NOT?: MoveScalarWhereInput[] | MoveScalarWhereInput;
+}
+
+export interface MoveUpdateManyWithWhereNestedInput {
+  where: MoveScalarWhereInput;
+  data: MoveUpdateManyDataInput;
+}
+
+export interface MoveUpdateManyDataInput {
+  name?: String;
+  url?: String;
+}
+
+export interface SpeciesUpdateManyInput {
+  create?: SpeciesCreateInput[] | SpeciesCreateInput;
+  deleteMany?: SpeciesScalarWhereInput[] | SpeciesScalarWhereInput;
+  updateMany?:
+    | SpeciesUpdateManyWithWhereNestedInput[]
+    | SpeciesUpdateManyWithWhereNestedInput;
+}
+
+export interface SpeciesScalarWhereInput {
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: SpeciesScalarWhereInput[] | SpeciesScalarWhereInput;
+  OR?: SpeciesScalarWhereInput[] | SpeciesScalarWhereInput;
+  NOT?: SpeciesScalarWhereInput[] | SpeciesScalarWhereInput;
+}
+
+export interface SpeciesUpdateManyWithWhereNestedInput {
+  where: SpeciesScalarWhereInput;
+  data: SpeciesUpdateManyDataInput;
+}
+
+export interface SpeciesUpdateManyDataInput {
+  name?: String;
+  url?: String;
+}
+
+export interface SpriteUpdateManyInput {
+  create?: SpriteCreateInput[] | SpriteCreateInput;
+  deleteMany?: SpriteScalarWhereInput[] | SpriteScalarWhereInput;
+  updateMany?:
+    | SpriteUpdateManyWithWhereNestedInput[]
+    | SpriteUpdateManyWithWhereNestedInput;
+}
+
+export interface SpriteScalarWhereInput {
+  back_default?: String;
+  back_default_not?: String;
+  back_default_in?: String[] | String;
+  back_default_not_in?: String[] | String;
+  back_default_lt?: String;
+  back_default_lte?: String;
+  back_default_gt?: String;
+  back_default_gte?: String;
+  back_default_contains?: String;
+  back_default_not_contains?: String;
+  back_default_starts_with?: String;
+  back_default_not_starts_with?: String;
+  back_default_ends_with?: String;
+  back_default_not_ends_with?: String;
+  back_female?: String;
+  back_female_not?: String;
+  back_female_in?: String[] | String;
+  back_female_not_in?: String[] | String;
+  back_female_lt?: String;
+  back_female_lte?: String;
+  back_female_gt?: String;
+  back_female_gte?: String;
+  back_female_contains?: String;
+  back_female_not_contains?: String;
+  back_female_starts_with?: String;
+  back_female_not_starts_with?: String;
+  back_female_ends_with?: String;
+  back_female_not_ends_with?: String;
+  back_shiny?: String;
+  back_shiny_not?: String;
+  back_shiny_in?: String[] | String;
+  back_shiny_not_in?: String[] | String;
+  back_shiny_lt?: String;
+  back_shiny_lte?: String;
+  back_shiny_gt?: String;
+  back_shiny_gte?: String;
+  back_shiny_contains?: String;
+  back_shiny_not_contains?: String;
+  back_shiny_starts_with?: String;
+  back_shiny_not_starts_with?: String;
+  back_shiny_ends_with?: String;
+  back_shiny_not_ends_with?: String;
+  back_shiny_female?: String;
+  back_shiny_female_not?: String;
+  back_shiny_female_in?: String[] | String;
+  back_shiny_female_not_in?: String[] | String;
+  back_shiny_female_lt?: String;
+  back_shiny_female_lte?: String;
+  back_shiny_female_gt?: String;
+  back_shiny_female_gte?: String;
+  back_shiny_female_contains?: String;
+  back_shiny_female_not_contains?: String;
+  back_shiny_female_starts_with?: String;
+  back_shiny_female_not_starts_with?: String;
+  back_shiny_female_ends_with?: String;
+  back_shiny_female_not_ends_with?: String;
+  front_default?: String;
+  front_default_not?: String;
+  front_default_in?: String[] | String;
+  front_default_not_in?: String[] | String;
+  front_default_lt?: String;
+  front_default_lte?: String;
+  front_default_gt?: String;
+  front_default_gte?: String;
+  front_default_contains?: String;
+  front_default_not_contains?: String;
+  front_default_starts_with?: String;
+  front_default_not_starts_with?: String;
+  front_default_ends_with?: String;
+  front_default_not_ends_with?: String;
+  front_female?: String;
+  front_female_not?: String;
+  front_female_in?: String[] | String;
+  front_female_not_in?: String[] | String;
+  front_female_lt?: String;
+  front_female_lte?: String;
+  front_female_gt?: String;
+  front_female_gte?: String;
+  front_female_contains?: String;
+  front_female_not_contains?: String;
+  front_female_starts_with?: String;
+  front_female_not_starts_with?: String;
+  front_female_ends_with?: String;
+  front_female_not_ends_with?: String;
+  front_shiny?: String;
+  front_shiny_not?: String;
+  front_shiny_in?: String[] | String;
+  front_shiny_not_in?: String[] | String;
+  front_shiny_lt?: String;
+  front_shiny_lte?: String;
+  front_shiny_gt?: String;
+  front_shiny_gte?: String;
+  front_shiny_contains?: String;
+  front_shiny_not_contains?: String;
+  front_shiny_starts_with?: String;
+  front_shiny_not_starts_with?: String;
+  front_shiny_ends_with?: String;
+  front_shiny_not_ends_with?: String;
+  front_shiny_female?: String;
+  front_shiny_female_not?: String;
+  front_shiny_female_in?: String[] | String;
+  front_shiny_female_not_in?: String[] | String;
+  front_shiny_female_lt?: String;
+  front_shiny_female_lte?: String;
+  front_shiny_female_gt?: String;
+  front_shiny_female_gte?: String;
+  front_shiny_female_contains?: String;
+  front_shiny_female_not_contains?: String;
+  front_shiny_female_starts_with?: String;
+  front_shiny_female_not_starts_with?: String;
+  front_shiny_female_ends_with?: String;
+  front_shiny_female_not_ends_with?: String;
+  AND?: SpriteScalarWhereInput[] | SpriteScalarWhereInput;
+  OR?: SpriteScalarWhereInput[] | SpriteScalarWhereInput;
+  NOT?: SpriteScalarWhereInput[] | SpriteScalarWhereInput;
+}
+
+export interface SpriteUpdateManyWithWhereNestedInput {
+  where: SpriteScalarWhereInput;
+  data: SpriteUpdateManyDataInput;
+}
+
+export interface SpriteUpdateManyDataInput {
+  back_default?: String;
+  back_female?: String;
+  back_shiny?: String;
+  back_shiny_female?: String;
+  front_default?: String;
+  front_female?: String;
+  front_shiny?: String;
+  front_shiny_female?: String;
+}
+
+export interface StatUpdateManyInput {
+  create?: StatCreateInput[] | StatCreateInput;
+  deleteMany?: StatScalarWhereInput[] | StatScalarWhereInput;
+  updateMany?:
+    | StatUpdateManyWithWhereNestedInput[]
+    | StatUpdateManyWithWhereNestedInput;
+}
+
+export interface StatScalarWhereInput {
+  base_stat?: Int;
+  base_stat_not?: Int;
+  base_stat_in?: Int[] | Int;
+  base_stat_not_in?: Int[] | Int;
+  base_stat_lt?: Int;
+  base_stat_lte?: Int;
+  base_stat_gt?: Int;
+  base_stat_gte?: Int;
+  effort?: Int;
+  effort_not?: Int;
+  effort_in?: Int[] | Int;
+  effort_not_in?: Int[] | Int;
+  effort_lt?: Int;
+  effort_lte?: Int;
+  effort_gt?: Int;
+  effort_gte?: Int;
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: StatScalarWhereInput[] | StatScalarWhereInput;
+  OR?: StatScalarWhereInput[] | StatScalarWhereInput;
+  NOT?: StatScalarWhereInput[] | StatScalarWhereInput;
+}
+
+export interface StatUpdateManyWithWhereNestedInput {
+  where: StatScalarWhereInput;
+  data: StatUpdateManyDataInput;
+}
+
+export interface StatUpdateManyDataInput {
+  base_stat?: Int;
+  effort?: Int;
+  name?: String;
+  url?: String;
+}
+
+export interface TypeUpdateManyInput {
+  create?: TypeCreateInput[] | TypeCreateInput;
+  deleteMany?: TypeScalarWhereInput[] | TypeScalarWhereInput;
+  updateMany?:
+    | TypeUpdateManyWithWhereNestedInput[]
+    | TypeUpdateManyWithWhereNestedInput;
+}
+
+export interface TypeScalarWhereInput {
+  slot?: Int;
+  slot_not?: Int;
+  slot_in?: Int[] | Int;
+  slot_not_in?: Int[] | Int;
+  slot_lt?: Int;
+  slot_lte?: Int;
+  slot_gt?: Int;
+  slot_gte?: Int;
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  url?: String;
+  url_not?: String;
+  url_in?: String[] | String;
+  url_not_in?: String[] | String;
+  url_lt?: String;
+  url_lte?: String;
+  url_gt?: String;
+  url_gte?: String;
+  url_contains?: String;
+  url_not_contains?: String;
+  url_starts_with?: String;
+  url_not_starts_with?: String;
+  url_ends_with?: String;
+  url_not_ends_with?: String;
+  AND?: TypeScalarWhereInput[] | TypeScalarWhereInput;
+  OR?: TypeScalarWhereInput[] | TypeScalarWhereInput;
+  NOT?: TypeScalarWhereInput[] | TypeScalarWhereInput;
+}
+
+export interface TypeUpdateManyWithWhereNestedInput {
+  where: TypeScalarWhereInput;
+  data: TypeUpdateManyDataInput;
+}
+
+export interface TypeUpdateManyDataInput {
+  slot?: Int;
   name?: String;
   url?: String;
 }
 
 export interface PokemonUpdateManyMutationInput {
+  base_experience?: Int;
+  height?: Int;
+  is_default?: Boolean;
+  location_area_encounters?: String;
+  name?: String;
+  order?: Int;
+  weight?: Int;
+}
+
+export interface SpeciesUpdateManyMutationInput {
   name?: String;
   url?: String;
 }
 
-export interface PostCreateInput {
-  title: String;
-  published?: Boolean;
-  author?: UserCreateOneWithoutPostsInput;
-  comments?: CommentCreateManyInput;
+export interface SpriteUpdateManyMutationInput {
+  back_default?: String;
+  back_female?: String;
+  back_shiny?: String;
+  back_shiny_female?: String;
+  front_default?: String;
+  front_female?: String;
+  front_shiny?: String;
+  front_shiny_female?: String;
 }
 
-export interface UserCreateOneWithoutPostsInput {
-  create?: UserCreateWithoutPostsInput;
-  connect?: UserWhereUniqueInput;
-}
-
-export interface UserCreateWithoutPostsInput {
-  email?: String;
-  name: String;
-}
-
-export interface PostUpdateInput {
-  title?: String;
-  published?: Boolean;
-  author?: UserUpdateOneWithoutPostsInput;
-  comments?: CommentUpdateManyInput;
-}
-
-export interface UserUpdateOneWithoutPostsInput {
-  create?: UserCreateWithoutPostsInput;
-  update?: UserUpdateWithoutPostsDataInput;
-  upsert?: UserUpsertWithoutPostsInput;
-  delete?: Boolean;
-  disconnect?: Boolean;
-  connect?: UserWhereUniqueInput;
-}
-
-export interface UserUpdateWithoutPostsDataInput {
-  email?: String;
+export interface StatUpdateManyMutationInput {
+  base_stat?: Int;
+  effort?: Int;
   name?: String;
+  url?: String;
 }
 
-export interface UserUpsertWithoutPostsInput {
-  update: UserUpdateWithoutPostsDataInput;
-  create: UserCreateWithoutPostsInput;
-}
-
-export interface PostUpdateManyMutationInput {
-  title?: String;
-  published?: Boolean;
-}
-
-export interface UserUpdateInput {
-  email?: String;
+export interface TypeUpdateManyMutationInput {
+  slot?: Int;
   name?: String;
-  posts?: PostUpdateManyWithoutAuthorInput;
+  url?: String;
 }
 
-export interface UserUpdateManyMutationInput {
-  email?: String;
-  name?: String;
-}
-
-export interface CommentSubscriptionWhereInput {
+export interface AbilitySubscriptionWhereInput {
   mutation_in?: MutationType[] | MutationType;
   updatedFields_contains?: String;
   updatedFields_contains_every?: String[] | String;
   updatedFields_contains_some?: String[] | String;
-  node?: CommentWhereInput;
-  AND?: CommentSubscriptionWhereInput[] | CommentSubscriptionWhereInput;
-  OR?: CommentSubscriptionWhereInput[] | CommentSubscriptionWhereInput;
-  NOT?: CommentSubscriptionWhereInput[] | CommentSubscriptionWhereInput;
+  node?: AbilityWhereInput;
+  AND?: AbilitySubscriptionWhereInput[] | AbilitySubscriptionWhereInput;
+  OR?: AbilitySubscriptionWhereInput[] | AbilitySubscriptionWhereInput;
+  NOT?: AbilitySubscriptionWhereInput[] | AbilitySubscriptionWhereInput;
+}
+
+export interface FormSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: FormWhereInput;
+  AND?: FormSubscriptionWhereInput[] | FormSubscriptionWhereInput;
+  OR?: FormSubscriptionWhereInput[] | FormSubscriptionWhereInput;
+  NOT?: FormSubscriptionWhereInput[] | FormSubscriptionWhereInput;
+}
+
+export interface GameIndexSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: GameIndexWhereInput;
+  AND?: GameIndexSubscriptionWhereInput[] | GameIndexSubscriptionWhereInput;
+  OR?: GameIndexSubscriptionWhereInput[] | GameIndexSubscriptionWhereInput;
+  NOT?: GameIndexSubscriptionWhereInput[] | GameIndexSubscriptionWhereInput;
+}
+
+export interface ItemSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: ItemWhereInput;
+  AND?: ItemSubscriptionWhereInput[] | ItemSubscriptionWhereInput;
+  OR?: ItemSubscriptionWhereInput[] | ItemSubscriptionWhereInput;
+  NOT?: ItemSubscriptionWhereInput[] | ItemSubscriptionWhereInput;
+}
+
+export interface MoveSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: MoveWhereInput;
+  AND?: MoveSubscriptionWhereInput[] | MoveSubscriptionWhereInput;
+  OR?: MoveSubscriptionWhereInput[] | MoveSubscriptionWhereInput;
+  NOT?: MoveSubscriptionWhereInput[] | MoveSubscriptionWhereInput;
 }
 
 export interface PokemonSubscriptionWhereInput {
@@ -866,174 +1905,90 @@ export interface PokemonSubscriptionWhereInput {
   NOT?: PokemonSubscriptionWhereInput[] | PokemonSubscriptionWhereInput;
 }
 
-export interface PostSubscriptionWhereInput {
+export interface SpeciesSubscriptionWhereInput {
   mutation_in?: MutationType[] | MutationType;
   updatedFields_contains?: String;
   updatedFields_contains_every?: String[] | String;
   updatedFields_contains_some?: String[] | String;
-  node?: PostWhereInput;
-  AND?: PostSubscriptionWhereInput[] | PostSubscriptionWhereInput;
-  OR?: PostSubscriptionWhereInput[] | PostSubscriptionWhereInput;
-  NOT?: PostSubscriptionWhereInput[] | PostSubscriptionWhereInput;
+  node?: SpeciesWhereInput;
+  AND?: SpeciesSubscriptionWhereInput[] | SpeciesSubscriptionWhereInput;
+  OR?: SpeciesSubscriptionWhereInput[] | SpeciesSubscriptionWhereInput;
+  NOT?: SpeciesSubscriptionWhereInput[] | SpeciesSubscriptionWhereInput;
 }
 
-export interface UserSubscriptionWhereInput {
+export interface SpriteSubscriptionWhereInput {
   mutation_in?: MutationType[] | MutationType;
   updatedFields_contains?: String;
   updatedFields_contains_every?: String[] | String;
   updatedFields_contains_some?: String[] | String;
-  node?: UserWhereInput;
-  AND?: UserSubscriptionWhereInput[] | UserSubscriptionWhereInput;
-  OR?: UserSubscriptionWhereInput[] | UserSubscriptionWhereInput;
-  NOT?: UserSubscriptionWhereInput[] | UserSubscriptionWhereInput;
+  node?: SpriteWhereInput;
+  AND?: SpriteSubscriptionWhereInput[] | SpriteSubscriptionWhereInput;
+  OR?: SpriteSubscriptionWhereInput[] | SpriteSubscriptionWhereInput;
+  NOT?: SpriteSubscriptionWhereInput[] | SpriteSubscriptionWhereInput;
+}
+
+export interface StatSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: StatWhereInput;
+  AND?: StatSubscriptionWhereInput[] | StatSubscriptionWhereInput;
+  OR?: StatSubscriptionWhereInput[] | StatSubscriptionWhereInput;
+  NOT?: StatSubscriptionWhereInput[] | StatSubscriptionWhereInput;
+}
+
+export interface TypeSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: TypeWhereInput;
+  AND?: TypeSubscriptionWhereInput[] | TypeSubscriptionWhereInput;
+  OR?: TypeSubscriptionWhereInput[] | TypeSubscriptionWhereInput;
+  NOT?: TypeSubscriptionWhereInput[] | TypeSubscriptionWhereInput;
 }
 
 export interface NodeNode {
   id: ID_Output;
 }
 
-export interface Comment {
-  id: ID_Output;
-  createdAt: DateTimeOutput;
-  updatedAt: DateTimeOutput;
-  bodyText: String;
+export interface Ability {
+  name?: String;
+  url?: String;
 }
 
-export interface CommentPromise extends Promise<Comment>, Fragmentable {
-  id: () => Promise<ID_Output>;
-  createdAt: () => Promise<DateTimeOutput>;
-  updatedAt: () => Promise<DateTimeOutput>;
-  bodyText: () => Promise<String>;
-  createdBy: <T = UserPromise>() => T;
-}
-
-export interface CommentSubscription
-  extends Promise<AsyncIterator<Comment>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  bodyText: () => Promise<AsyncIterator<String>>;
-  createdBy: <T = UserSubscription>() => T;
-}
-
-export interface User {
-  id: ID_Output;
-  createdAt: DateTimeOutput;
-  updatedAt: DateTimeOutput;
-  email?: String;
-  name: String;
-}
-
-export interface UserPromise extends Promise<User>, Fragmentable {
-  id: () => Promise<ID_Output>;
-  createdAt: () => Promise<DateTimeOutput>;
-  updatedAt: () => Promise<DateTimeOutput>;
-  email: () => Promise<String>;
+export interface AbilityPromise extends Promise<Ability>, Fragmentable {
   name: () => Promise<String>;
-  posts: <T = FragmentableArray<Post>>(
-    args?: {
-      where?: PostWhereInput;
-      orderBy?: PostOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
-    }
-  ) => T;
+  url: () => Promise<String>;
 }
 
-export interface UserSubscription
-  extends Promise<AsyncIterator<User>>,
+export interface AbilitySubscription
+  extends Promise<AsyncIterator<Ability>>,
     Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  email: () => Promise<AsyncIterator<String>>;
   name: () => Promise<AsyncIterator<String>>;
-  posts: <T = Promise<AsyncIterator<PostSubscription>>>(
-    args?: {
-      where?: PostWhereInput;
-      orderBy?: PostOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
-    }
-  ) => T;
+  url: () => Promise<AsyncIterator<String>>;
 }
 
-export interface Post {
-  id: ID_Output;
-  createdAt: DateTimeOutput;
-  updatedAt: DateTimeOutput;
-  title: String;
-  published: Boolean;
-}
-
-export interface PostPromise extends Promise<Post>, Fragmentable {
-  id: () => Promise<ID_Output>;
-  createdAt: () => Promise<DateTimeOutput>;
-  updatedAt: () => Promise<DateTimeOutput>;
-  title: () => Promise<String>;
-  published: () => Promise<Boolean>;
-  author: <T = UserPromise>() => T;
-  comments: <T = FragmentableArray<Comment>>(
-    args?: {
-      where?: CommentWhereInput;
-      orderBy?: CommentOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
-    }
-  ) => T;
-}
-
-export interface PostSubscription
-  extends Promise<AsyncIterator<Post>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  title: () => Promise<AsyncIterator<String>>;
-  published: () => Promise<AsyncIterator<Boolean>>;
-  author: <T = UserSubscription>() => T;
-  comments: <T = Promise<AsyncIterator<CommentSubscription>>>(
-    args?: {
-      where?: CommentWhereInput;
-      orderBy?: CommentOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
-    }
-  ) => T;
-}
-
-export interface CommentConnection {
+export interface AbilityConnection {
   pageInfo: PageInfo;
-  edges: CommentEdge[];
+  edges: AbilityEdge[];
 }
 
-export interface CommentConnectionPromise
-  extends Promise<CommentConnection>,
+export interface AbilityConnectionPromise
+  extends Promise<AbilityConnection>,
     Fragmentable {
   pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<CommentEdge>>() => T;
-  aggregate: <T = AggregateCommentPromise>() => T;
+  edges: <T = FragmentableArray<AbilityEdge>>() => T;
+  aggregate: <T = AggregateAbilityPromise>() => T;
 }
 
-export interface CommentConnectionSubscription
-  extends Promise<AsyncIterator<CommentConnection>>,
+export interface AbilityConnectionSubscription
+  extends Promise<AsyncIterator<AbilityConnection>>,
     Fragmentable {
   pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<CommentEdgeSubscription>>>() => T;
-  aggregate: <T = AggregateCommentSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<AbilityEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateAbilitySubscription>() => T;
 }
 
 export interface PageInfo {
@@ -1059,55 +2014,649 @@ export interface PageInfoSubscription
   endCursor: () => Promise<AsyncIterator<String>>;
 }
 
-export interface CommentEdge {
-  node: Comment;
+export interface AbilityEdge {
+  node: Ability;
   cursor: String;
 }
 
-export interface CommentEdgePromise extends Promise<CommentEdge>, Fragmentable {
-  node: <T = CommentPromise>() => T;
+export interface AbilityEdgePromise extends Promise<AbilityEdge>, Fragmentable {
+  node: <T = AbilityPromise>() => T;
   cursor: () => Promise<String>;
 }
 
-export interface CommentEdgeSubscription
-  extends Promise<AsyncIterator<CommentEdge>>,
+export interface AbilityEdgeSubscription
+  extends Promise<AsyncIterator<AbilityEdge>>,
     Fragmentable {
-  node: <T = CommentSubscription>() => T;
+  node: <T = AbilitySubscription>() => T;
   cursor: () => Promise<AsyncIterator<String>>;
 }
 
-export interface AggregateComment {
+export interface AggregateAbility {
   count: Int;
 }
 
-export interface AggregateCommentPromise
-  extends Promise<AggregateComment>,
+export interface AggregateAbilityPromise
+  extends Promise<AggregateAbility>,
     Fragmentable {
   count: () => Promise<Int>;
 }
 
-export interface AggregateCommentSubscription
-  extends Promise<AsyncIterator<AggregateComment>>,
+export interface AggregateAbilitySubscription
+  extends Promise<AsyncIterator<AggregateAbility>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Form {
+  name?: String;
+  url?: String;
+}
+
+export interface FormPromise extends Promise<Form>, Fragmentable {
+  name: () => Promise<String>;
+  url: () => Promise<String>;
+}
+
+export interface FormSubscription
+  extends Promise<AsyncIterator<Form>>,
+    Fragmentable {
+  name: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
+}
+
+export interface FormConnection {
+  pageInfo: PageInfo;
+  edges: FormEdge[];
+}
+
+export interface FormConnectionPromise
+  extends Promise<FormConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<FormEdge>>() => T;
+  aggregate: <T = AggregateFormPromise>() => T;
+}
+
+export interface FormConnectionSubscription
+  extends Promise<AsyncIterator<FormConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<FormEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateFormSubscription>() => T;
+}
+
+export interface FormEdge {
+  node: Form;
+  cursor: String;
+}
+
+export interface FormEdgePromise extends Promise<FormEdge>, Fragmentable {
+  node: <T = FormPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface FormEdgeSubscription
+  extends Promise<AsyncIterator<FormEdge>>,
+    Fragmentable {
+  node: <T = FormSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateForm {
+  count: Int;
+}
+
+export interface AggregateFormPromise
+  extends Promise<AggregateForm>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateFormSubscription
+  extends Promise<AsyncIterator<AggregateForm>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface GameIndex {
+  name?: String;
+  url?: String;
+}
+
+export interface GameIndexPromise extends Promise<GameIndex>, Fragmentable {
+  name: () => Promise<String>;
+  url: () => Promise<String>;
+}
+
+export interface GameIndexSubscription
+  extends Promise<AsyncIterator<GameIndex>>,
+    Fragmentable {
+  name: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
+}
+
+export interface GameIndexConnection {
+  pageInfo: PageInfo;
+  edges: GameIndexEdge[];
+}
+
+export interface GameIndexConnectionPromise
+  extends Promise<GameIndexConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<GameIndexEdge>>() => T;
+  aggregate: <T = AggregateGameIndexPromise>() => T;
+}
+
+export interface GameIndexConnectionSubscription
+  extends Promise<AsyncIterator<GameIndexConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<GameIndexEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateGameIndexSubscription>() => T;
+}
+
+export interface GameIndexEdge {
+  node: GameIndex;
+  cursor: String;
+}
+
+export interface GameIndexEdgePromise
+  extends Promise<GameIndexEdge>,
+    Fragmentable {
+  node: <T = GameIndexPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface GameIndexEdgeSubscription
+  extends Promise<AsyncIterator<GameIndexEdge>>,
+    Fragmentable {
+  node: <T = GameIndexSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateGameIndex {
+  count: Int;
+}
+
+export interface AggregateGameIndexPromise
+  extends Promise<AggregateGameIndex>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateGameIndexSubscription
+  extends Promise<AsyncIterator<AggregateGameIndex>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Item {
+  name?: String;
+  url?: String;
+}
+
+export interface ItemPromise extends Promise<Item>, Fragmentable {
+  name: () => Promise<String>;
+  url: () => Promise<String>;
+}
+
+export interface ItemSubscription
+  extends Promise<AsyncIterator<Item>>,
+    Fragmentable {
+  name: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
+}
+
+export interface ItemConnection {
+  pageInfo: PageInfo;
+  edges: ItemEdge[];
+}
+
+export interface ItemConnectionPromise
+  extends Promise<ItemConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<ItemEdge>>() => T;
+  aggregate: <T = AggregateItemPromise>() => T;
+}
+
+export interface ItemConnectionSubscription
+  extends Promise<AsyncIterator<ItemConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<ItemEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateItemSubscription>() => T;
+}
+
+export interface ItemEdge {
+  node: Item;
+  cursor: String;
+}
+
+export interface ItemEdgePromise extends Promise<ItemEdge>, Fragmentable {
+  node: <T = ItemPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface ItemEdgeSubscription
+  extends Promise<AsyncIterator<ItemEdge>>,
+    Fragmentable {
+  node: <T = ItemSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateItem {
+  count: Int;
+}
+
+export interface AggregateItemPromise
+  extends Promise<AggregateItem>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateItemSubscription
+  extends Promise<AsyncIterator<AggregateItem>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Move {
+  name?: String;
+  url?: String;
+}
+
+export interface MovePromise extends Promise<Move>, Fragmentable {
+  name: () => Promise<String>;
+  url: () => Promise<String>;
+}
+
+export interface MoveSubscription
+  extends Promise<AsyncIterator<Move>>,
+    Fragmentable {
+  name: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
+}
+
+export interface MoveConnection {
+  pageInfo: PageInfo;
+  edges: MoveEdge[];
+}
+
+export interface MoveConnectionPromise
+  extends Promise<MoveConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<MoveEdge>>() => T;
+  aggregate: <T = AggregateMovePromise>() => T;
+}
+
+export interface MoveConnectionSubscription
+  extends Promise<AsyncIterator<MoveConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<MoveEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateMoveSubscription>() => T;
+}
+
+export interface MoveEdge {
+  node: Move;
+  cursor: String;
+}
+
+export interface MoveEdgePromise extends Promise<MoveEdge>, Fragmentable {
+  node: <T = MovePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface MoveEdgeSubscription
+  extends Promise<AsyncIterator<MoveEdge>>,
+    Fragmentable {
+  node: <T = MoveSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateMove {
+  count: Int;
+}
+
+export interface AggregateMovePromise
+  extends Promise<AggregateMove>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateMoveSubscription
+  extends Promise<AsyncIterator<AggregateMove>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
 }
 
 export interface Pokemon {
+  base_experience?: Int;
+  height?: Int;
   id: ID_Output;
+  is_default?: Boolean;
+  location_area_encounters?: String;
   name?: String;
-  url?: String;
+  order?: Int;
+  weight?: Int;
 }
 
 export interface PokemonPromise extends Promise<Pokemon>, Fragmentable {
+  abilities: <T = FragmentableArray<Ability>>(
+    args?: {
+      where?: AbilityWhereInput;
+      orderBy?: AbilityOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  base_experience: () => Promise<Int>;
+  forms: <T = FragmentableArray<Form>>(
+    args?: {
+      where?: FormWhereInput;
+      orderBy?: FormOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  game_indices: <T = FragmentableArray<GameIndex>>(
+    args?: {
+      where?: GameIndexWhereInput;
+      orderBy?: GameIndexOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  held_items: <T = FragmentableArray<Item>>(
+    args?: {
+      where?: ItemWhereInput;
+      orderBy?: ItemOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  height: () => Promise<Int>;
   id: () => Promise<ID_Output>;
+  is_default: () => Promise<Boolean>;
+  location_area_encounters: () => Promise<String>;
+  moves: <T = FragmentableArray<Move>>(
+    args?: {
+      where?: MoveWhereInput;
+      orderBy?: MoveOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
   name: () => Promise<String>;
-  url: () => Promise<String>;
+  order: () => Promise<Int>;
+  species: <T = FragmentableArray<Species>>(
+    args?: {
+      where?: SpeciesWhereInput;
+      orderBy?: SpeciesOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  sprites: <T = FragmentableArray<Sprite>>(
+    args?: {
+      where?: SpriteWhereInput;
+      orderBy?: SpriteOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  stats: <T = FragmentableArray<Stat>>(
+    args?: {
+      where?: StatWhereInput;
+      orderBy?: StatOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  types: <T = FragmentableArray<Type>>(
+    args?: {
+      where?: TypeWhereInput;
+      orderBy?: TypeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  weight: () => Promise<Int>;
 }
 
 export interface PokemonSubscription
   extends Promise<AsyncIterator<Pokemon>>,
     Fragmentable {
+  abilities: <T = Promise<AsyncIterator<AbilitySubscription>>>(
+    args?: {
+      where?: AbilityWhereInput;
+      orderBy?: AbilityOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  base_experience: () => Promise<AsyncIterator<Int>>;
+  forms: <T = Promise<AsyncIterator<FormSubscription>>>(
+    args?: {
+      where?: FormWhereInput;
+      orderBy?: FormOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  game_indices: <T = Promise<AsyncIterator<GameIndexSubscription>>>(
+    args?: {
+      where?: GameIndexWhereInput;
+      orderBy?: GameIndexOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  held_items: <T = Promise<AsyncIterator<ItemSubscription>>>(
+    args?: {
+      where?: ItemWhereInput;
+      orderBy?: ItemOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  height: () => Promise<AsyncIterator<Int>>;
   id: () => Promise<AsyncIterator<ID_Output>>;
+  is_default: () => Promise<AsyncIterator<Boolean>>;
+  location_area_encounters: () => Promise<AsyncIterator<String>>;
+  moves: <T = Promise<AsyncIterator<MoveSubscription>>>(
+    args?: {
+      where?: MoveWhereInput;
+      orderBy?: MoveOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  name: () => Promise<AsyncIterator<String>>;
+  order: () => Promise<AsyncIterator<Int>>;
+  species: <T = Promise<AsyncIterator<SpeciesSubscription>>>(
+    args?: {
+      where?: SpeciesWhereInput;
+      orderBy?: SpeciesOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  sprites: <T = Promise<AsyncIterator<SpriteSubscription>>>(
+    args?: {
+      where?: SpriteWhereInput;
+      orderBy?: SpriteOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  stats: <T = Promise<AsyncIterator<StatSubscription>>>(
+    args?: {
+      where?: StatWhereInput;
+      orderBy?: StatOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  types: <T = Promise<AsyncIterator<TypeSubscription>>>(
+    args?: {
+      where?: TypeWhereInput;
+      orderBy?: TypeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  weight: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Species {
+  name?: String;
+  url?: String;
+}
+
+export interface SpeciesPromise extends Promise<Species>, Fragmentable {
+  name: () => Promise<String>;
+  url: () => Promise<String>;
+}
+
+export interface SpeciesSubscription
+  extends Promise<AsyncIterator<Species>>,
+    Fragmentable {
+  name: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
+}
+
+export interface Sprite {
+  back_default?: String;
+  back_female?: String;
+  back_shiny?: String;
+  back_shiny_female?: String;
+  front_default?: String;
+  front_female?: String;
+  front_shiny?: String;
+  front_shiny_female?: String;
+}
+
+export interface SpritePromise extends Promise<Sprite>, Fragmentable {
+  back_default: () => Promise<String>;
+  back_female: () => Promise<String>;
+  back_shiny: () => Promise<String>;
+  back_shiny_female: () => Promise<String>;
+  front_default: () => Promise<String>;
+  front_female: () => Promise<String>;
+  front_shiny: () => Promise<String>;
+  front_shiny_female: () => Promise<String>;
+}
+
+export interface SpriteSubscription
+  extends Promise<AsyncIterator<Sprite>>,
+    Fragmentable {
+  back_default: () => Promise<AsyncIterator<String>>;
+  back_female: () => Promise<AsyncIterator<String>>;
+  back_shiny: () => Promise<AsyncIterator<String>>;
+  back_shiny_female: () => Promise<AsyncIterator<String>>;
+  front_default: () => Promise<AsyncIterator<String>>;
+  front_female: () => Promise<AsyncIterator<String>>;
+  front_shiny: () => Promise<AsyncIterator<String>>;
+  front_shiny_female: () => Promise<AsyncIterator<String>>;
+}
+
+export interface Stat {
+  base_stat?: Int;
+  effort?: Int;
+  name?: String;
+  url?: String;
+}
+
+export interface StatPromise extends Promise<Stat>, Fragmentable {
+  base_stat: () => Promise<Int>;
+  effort: () => Promise<Int>;
+  name: () => Promise<String>;
+  url: () => Promise<String>;
+}
+
+export interface StatSubscription
+  extends Promise<AsyncIterator<Stat>>,
+    Fragmentable {
+  base_stat: () => Promise<AsyncIterator<Int>>;
+  effort: () => Promise<AsyncIterator<Int>>;
+  name: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
+}
+
+export interface Type {
+  slot?: Int;
+  name?: String;
+  url?: String;
+}
+
+export interface TypePromise extends Promise<Type>, Fragmentable {
+  slot: () => Promise<Int>;
+  name: () => Promise<String>;
+  url: () => Promise<String>;
+}
+
+export interface TypeSubscription
+  extends Promise<AsyncIterator<Type>>,
+    Fragmentable {
+  slot: () => Promise<AsyncIterator<Int>>;
   name: () => Promise<AsyncIterator<String>>;
   url: () => Promise<AsyncIterator<String>>;
 }
@@ -1166,110 +2715,218 @@ export interface AggregatePokemonSubscription
   count: () => Promise<AsyncIterator<Int>>;
 }
 
-export interface PostConnection {
+export interface SpeciesConnection {
   pageInfo: PageInfo;
-  edges: PostEdge[];
+  edges: SpeciesEdge[];
 }
 
-export interface PostConnectionPromise
-  extends Promise<PostConnection>,
+export interface SpeciesConnectionPromise
+  extends Promise<SpeciesConnection>,
     Fragmentable {
   pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PostEdge>>() => T;
-  aggregate: <T = AggregatePostPromise>() => T;
+  edges: <T = FragmentableArray<SpeciesEdge>>() => T;
+  aggregate: <T = AggregateSpeciesPromise>() => T;
 }
 
-export interface PostConnectionSubscription
-  extends Promise<AsyncIterator<PostConnection>>,
+export interface SpeciesConnectionSubscription
+  extends Promise<AsyncIterator<SpeciesConnection>>,
     Fragmentable {
   pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PostEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePostSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<SpeciesEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateSpeciesSubscription>() => T;
 }
 
-export interface PostEdge {
-  node: Post;
+export interface SpeciesEdge {
+  node: Species;
   cursor: String;
 }
 
-export interface PostEdgePromise extends Promise<PostEdge>, Fragmentable {
-  node: <T = PostPromise>() => T;
+export interface SpeciesEdgePromise extends Promise<SpeciesEdge>, Fragmentable {
+  node: <T = SpeciesPromise>() => T;
   cursor: () => Promise<String>;
 }
 
-export interface PostEdgeSubscription
-  extends Promise<AsyncIterator<PostEdge>>,
+export interface SpeciesEdgeSubscription
+  extends Promise<AsyncIterator<SpeciesEdge>>,
     Fragmentable {
-  node: <T = PostSubscription>() => T;
+  node: <T = SpeciesSubscription>() => T;
   cursor: () => Promise<AsyncIterator<String>>;
 }
 
-export interface AggregatePost {
+export interface AggregateSpecies {
   count: Int;
 }
 
-export interface AggregatePostPromise
-  extends Promise<AggregatePost>,
+export interface AggregateSpeciesPromise
+  extends Promise<AggregateSpecies>,
     Fragmentable {
   count: () => Promise<Int>;
 }
 
-export interface AggregatePostSubscription
-  extends Promise<AsyncIterator<AggregatePost>>,
+export interface AggregateSpeciesSubscription
+  extends Promise<AsyncIterator<AggregateSpecies>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
 }
 
-export interface UserConnection {
+export interface SpriteConnection {
   pageInfo: PageInfo;
-  edges: UserEdge[];
+  edges: SpriteEdge[];
 }
 
-export interface UserConnectionPromise
-  extends Promise<UserConnection>,
+export interface SpriteConnectionPromise
+  extends Promise<SpriteConnection>,
     Fragmentable {
   pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<UserEdge>>() => T;
-  aggregate: <T = AggregateUserPromise>() => T;
+  edges: <T = FragmentableArray<SpriteEdge>>() => T;
+  aggregate: <T = AggregateSpritePromise>() => T;
 }
 
-export interface UserConnectionSubscription
-  extends Promise<AsyncIterator<UserConnection>>,
+export interface SpriteConnectionSubscription
+  extends Promise<AsyncIterator<SpriteConnection>>,
     Fragmentable {
   pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<UserEdgeSubscription>>>() => T;
-  aggregate: <T = AggregateUserSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<SpriteEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateSpriteSubscription>() => T;
 }
 
-export interface UserEdge {
-  node: User;
+export interface SpriteEdge {
+  node: Sprite;
   cursor: String;
 }
 
-export interface UserEdgePromise extends Promise<UserEdge>, Fragmentable {
-  node: <T = UserPromise>() => T;
+export interface SpriteEdgePromise extends Promise<SpriteEdge>, Fragmentable {
+  node: <T = SpritePromise>() => T;
   cursor: () => Promise<String>;
 }
 
-export interface UserEdgeSubscription
-  extends Promise<AsyncIterator<UserEdge>>,
+export interface SpriteEdgeSubscription
+  extends Promise<AsyncIterator<SpriteEdge>>,
     Fragmentable {
-  node: <T = UserSubscription>() => T;
+  node: <T = SpriteSubscription>() => T;
   cursor: () => Promise<AsyncIterator<String>>;
 }
 
-export interface AggregateUser {
+export interface AggregateSprite {
   count: Int;
 }
 
-export interface AggregateUserPromise
-  extends Promise<AggregateUser>,
+export interface AggregateSpritePromise
+  extends Promise<AggregateSprite>,
     Fragmentable {
   count: () => Promise<Int>;
 }
 
-export interface AggregateUserSubscription
-  extends Promise<AsyncIterator<AggregateUser>>,
+export interface AggregateSpriteSubscription
+  extends Promise<AsyncIterator<AggregateSprite>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface StatConnection {
+  pageInfo: PageInfo;
+  edges: StatEdge[];
+}
+
+export interface StatConnectionPromise
+  extends Promise<StatConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<StatEdge>>() => T;
+  aggregate: <T = AggregateStatPromise>() => T;
+}
+
+export interface StatConnectionSubscription
+  extends Promise<AsyncIterator<StatConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<StatEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateStatSubscription>() => T;
+}
+
+export interface StatEdge {
+  node: Stat;
+  cursor: String;
+}
+
+export interface StatEdgePromise extends Promise<StatEdge>, Fragmentable {
+  node: <T = StatPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface StatEdgeSubscription
+  extends Promise<AsyncIterator<StatEdge>>,
+    Fragmentable {
+  node: <T = StatSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateStat {
+  count: Int;
+}
+
+export interface AggregateStatPromise
+  extends Promise<AggregateStat>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateStatSubscription
+  extends Promise<AsyncIterator<AggregateStat>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface TypeConnection {
+  pageInfo: PageInfo;
+  edges: TypeEdge[];
+}
+
+export interface TypeConnectionPromise
+  extends Promise<TypeConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<TypeEdge>>() => T;
+  aggregate: <T = AggregateTypePromise>() => T;
+}
+
+export interface TypeConnectionSubscription
+  extends Promise<AsyncIterator<TypeConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<TypeEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateTypeSubscription>() => T;
+}
+
+export interface TypeEdge {
+  node: Type;
+  cursor: String;
+}
+
+export interface TypeEdgePromise extends Promise<TypeEdge>, Fragmentable {
+  node: <T = TypePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface TypeEdgeSubscription
+  extends Promise<AsyncIterator<TypeEdge>>,
+    Fragmentable {
+  node: <T = TypeSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateType {
+  count: Int;
+}
+
+export interface AggregateTypePromise
+  extends Promise<AggregateType>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateTypeSubscription
+  extends Promise<AsyncIterator<AggregateType>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
 }
@@ -1290,54 +2947,224 @@ export interface BatchPayloadSubscription
   count: () => Promise<AsyncIterator<Long>>;
 }
 
-export interface CommentSubscriptionPayload {
+export interface AbilitySubscriptionPayload {
   mutation: MutationType;
-  node: Comment;
+  node: Ability;
   updatedFields: String[];
-  previousValues: CommentPreviousValues;
+  previousValues: AbilityPreviousValues;
 }
 
-export interface CommentSubscriptionPayloadPromise
-  extends Promise<CommentSubscriptionPayload>,
+export interface AbilitySubscriptionPayloadPromise
+  extends Promise<AbilitySubscriptionPayload>,
     Fragmentable {
   mutation: () => Promise<MutationType>;
-  node: <T = CommentPromise>() => T;
+  node: <T = AbilityPromise>() => T;
   updatedFields: () => Promise<String[]>;
-  previousValues: <T = CommentPreviousValuesPromise>() => T;
+  previousValues: <T = AbilityPreviousValuesPromise>() => T;
 }
 
-export interface CommentSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<CommentSubscriptionPayload>>,
+export interface AbilitySubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<AbilitySubscriptionPayload>>,
     Fragmentable {
   mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = CommentSubscription>() => T;
+  node: <T = AbilitySubscription>() => T;
   updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = CommentPreviousValuesSubscription>() => T;
+  previousValues: <T = AbilityPreviousValuesSubscription>() => T;
 }
 
-export interface CommentPreviousValues {
-  id: ID_Output;
-  createdAt: DateTimeOutput;
-  updatedAt: DateTimeOutput;
-  bodyText: String;
+export interface AbilityPreviousValues {
+  name?: String;
+  url?: String;
 }
 
-export interface CommentPreviousValuesPromise
-  extends Promise<CommentPreviousValues>,
+export interface AbilityPreviousValuesPromise
+  extends Promise<AbilityPreviousValues>,
     Fragmentable {
-  id: () => Promise<ID_Output>;
-  createdAt: () => Promise<DateTimeOutput>;
-  updatedAt: () => Promise<DateTimeOutput>;
-  bodyText: () => Promise<String>;
+  name: () => Promise<String>;
+  url: () => Promise<String>;
 }
 
-export interface CommentPreviousValuesSubscription
-  extends Promise<AsyncIterator<CommentPreviousValues>>,
+export interface AbilityPreviousValuesSubscription
+  extends Promise<AsyncIterator<AbilityPreviousValues>>,
     Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  bodyText: () => Promise<AsyncIterator<String>>;
+  name: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
+}
+
+export interface FormSubscriptionPayload {
+  mutation: MutationType;
+  node: Form;
+  updatedFields: String[];
+  previousValues: FormPreviousValues;
+}
+
+export interface FormSubscriptionPayloadPromise
+  extends Promise<FormSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = FormPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = FormPreviousValuesPromise>() => T;
+}
+
+export interface FormSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<FormSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = FormSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = FormPreviousValuesSubscription>() => T;
+}
+
+export interface FormPreviousValues {
+  name?: String;
+  url?: String;
+}
+
+export interface FormPreviousValuesPromise
+  extends Promise<FormPreviousValues>,
+    Fragmentable {
+  name: () => Promise<String>;
+  url: () => Promise<String>;
+}
+
+export interface FormPreviousValuesSubscription
+  extends Promise<AsyncIterator<FormPreviousValues>>,
+    Fragmentable {
+  name: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
+}
+
+export interface GameIndexSubscriptionPayload {
+  mutation: MutationType;
+  node: GameIndex;
+  updatedFields: String[];
+  previousValues: GameIndexPreviousValues;
+}
+
+export interface GameIndexSubscriptionPayloadPromise
+  extends Promise<GameIndexSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = GameIndexPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = GameIndexPreviousValuesPromise>() => T;
+}
+
+export interface GameIndexSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<GameIndexSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = GameIndexSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = GameIndexPreviousValuesSubscription>() => T;
+}
+
+export interface GameIndexPreviousValues {
+  name?: String;
+  url?: String;
+}
+
+export interface GameIndexPreviousValuesPromise
+  extends Promise<GameIndexPreviousValues>,
+    Fragmentable {
+  name: () => Promise<String>;
+  url: () => Promise<String>;
+}
+
+export interface GameIndexPreviousValuesSubscription
+  extends Promise<AsyncIterator<GameIndexPreviousValues>>,
+    Fragmentable {
+  name: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
+}
+
+export interface ItemSubscriptionPayload {
+  mutation: MutationType;
+  node: Item;
+  updatedFields: String[];
+  previousValues: ItemPreviousValues;
+}
+
+export interface ItemSubscriptionPayloadPromise
+  extends Promise<ItemSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = ItemPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = ItemPreviousValuesPromise>() => T;
+}
+
+export interface ItemSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<ItemSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = ItemSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = ItemPreviousValuesSubscription>() => T;
+}
+
+export interface ItemPreviousValues {
+  name?: String;
+  url?: String;
+}
+
+export interface ItemPreviousValuesPromise
+  extends Promise<ItemPreviousValues>,
+    Fragmentable {
+  name: () => Promise<String>;
+  url: () => Promise<String>;
+}
+
+export interface ItemPreviousValuesSubscription
+  extends Promise<AsyncIterator<ItemPreviousValues>>,
+    Fragmentable {
+  name: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
+}
+
+export interface MoveSubscriptionPayload {
+  mutation: MutationType;
+  node: Move;
+  updatedFields: String[];
+  previousValues: MovePreviousValues;
+}
+
+export interface MoveSubscriptionPayloadPromise
+  extends Promise<MoveSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = MovePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = MovePreviousValuesPromise>() => T;
+}
+
+export interface MoveSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<MoveSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = MoveSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = MovePreviousValuesSubscription>() => T;
+}
+
+export interface MovePreviousValues {
+  name?: String;
+  url?: String;
+}
+
+export interface MovePreviousValuesPromise
+  extends Promise<MovePreviousValues>,
+    Fragmentable {
+  name: () => Promise<String>;
+  url: () => Promise<String>;
+}
+
+export interface MovePreviousValuesSubscription
+  extends Promise<AsyncIterator<MovePreviousValues>>,
+    Fragmentable {
+  name: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
 }
 
 export interface PokemonSubscriptionPayload {
@@ -1366,148 +3193,244 @@ export interface PokemonSubscriptionPayloadSubscription
 }
 
 export interface PokemonPreviousValues {
+  base_experience?: Int;
+  height?: Int;
   id: ID_Output;
+  is_default?: Boolean;
+  location_area_encounters?: String;
   name?: String;
-  url?: String;
+  order?: Int;
+  weight?: Int;
 }
 
 export interface PokemonPreviousValuesPromise
   extends Promise<PokemonPreviousValues>,
     Fragmentable {
+  base_experience: () => Promise<Int>;
+  height: () => Promise<Int>;
   id: () => Promise<ID_Output>;
+  is_default: () => Promise<Boolean>;
+  location_area_encounters: () => Promise<String>;
   name: () => Promise<String>;
-  url: () => Promise<String>;
+  order: () => Promise<Int>;
+  weight: () => Promise<Int>;
 }
 
 export interface PokemonPreviousValuesSubscription
   extends Promise<AsyncIterator<PokemonPreviousValues>>,
     Fragmentable {
+  base_experience: () => Promise<AsyncIterator<Int>>;
+  height: () => Promise<AsyncIterator<Int>>;
   id: () => Promise<AsyncIterator<ID_Output>>;
+  is_default: () => Promise<AsyncIterator<Boolean>>;
+  location_area_encounters: () => Promise<AsyncIterator<String>>;
+  name: () => Promise<AsyncIterator<String>>;
+  order: () => Promise<AsyncIterator<Int>>;
+  weight: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface SpeciesSubscriptionPayload {
+  mutation: MutationType;
+  node: Species;
+  updatedFields: String[];
+  previousValues: SpeciesPreviousValues;
+}
+
+export interface SpeciesSubscriptionPayloadPromise
+  extends Promise<SpeciesSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = SpeciesPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = SpeciesPreviousValuesPromise>() => T;
+}
+
+export interface SpeciesSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<SpeciesSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = SpeciesSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = SpeciesPreviousValuesSubscription>() => T;
+}
+
+export interface SpeciesPreviousValues {
+  name?: String;
+  url?: String;
+}
+
+export interface SpeciesPreviousValuesPromise
+  extends Promise<SpeciesPreviousValues>,
+    Fragmentable {
+  name: () => Promise<String>;
+  url: () => Promise<String>;
+}
+
+export interface SpeciesPreviousValuesSubscription
+  extends Promise<AsyncIterator<SpeciesPreviousValues>>,
+    Fragmentable {
   name: () => Promise<AsyncIterator<String>>;
   url: () => Promise<AsyncIterator<String>>;
 }
 
-export interface PostSubscriptionPayload {
+export interface SpriteSubscriptionPayload {
   mutation: MutationType;
-  node: Post;
+  node: Sprite;
   updatedFields: String[];
-  previousValues: PostPreviousValues;
+  previousValues: SpritePreviousValues;
 }
 
-export interface PostSubscriptionPayloadPromise
-  extends Promise<PostSubscriptionPayload>,
+export interface SpriteSubscriptionPayloadPromise
+  extends Promise<SpriteSubscriptionPayload>,
     Fragmentable {
   mutation: () => Promise<MutationType>;
-  node: <T = PostPromise>() => T;
+  node: <T = SpritePromise>() => T;
   updatedFields: () => Promise<String[]>;
-  previousValues: <T = PostPreviousValuesPromise>() => T;
+  previousValues: <T = SpritePreviousValuesPromise>() => T;
 }
 
-export interface PostSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PostSubscriptionPayload>>,
+export interface SpriteSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<SpriteSubscriptionPayload>>,
     Fragmentable {
   mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PostSubscription>() => T;
+  node: <T = SpriteSubscription>() => T;
   updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PostPreviousValuesSubscription>() => T;
+  previousValues: <T = SpritePreviousValuesSubscription>() => T;
 }
 
-export interface PostPreviousValues {
-  id: ID_Output;
-  createdAt: DateTimeOutput;
-  updatedAt: DateTimeOutput;
-  title: String;
-  published: Boolean;
+export interface SpritePreviousValues {
+  back_default?: String;
+  back_female?: String;
+  back_shiny?: String;
+  back_shiny_female?: String;
+  front_default?: String;
+  front_female?: String;
+  front_shiny?: String;
+  front_shiny_female?: String;
 }
 
-export interface PostPreviousValuesPromise
-  extends Promise<PostPreviousValues>,
+export interface SpritePreviousValuesPromise
+  extends Promise<SpritePreviousValues>,
     Fragmentable {
-  id: () => Promise<ID_Output>;
-  createdAt: () => Promise<DateTimeOutput>;
-  updatedAt: () => Promise<DateTimeOutput>;
-  title: () => Promise<String>;
-  published: () => Promise<Boolean>;
+  back_default: () => Promise<String>;
+  back_female: () => Promise<String>;
+  back_shiny: () => Promise<String>;
+  back_shiny_female: () => Promise<String>;
+  front_default: () => Promise<String>;
+  front_female: () => Promise<String>;
+  front_shiny: () => Promise<String>;
+  front_shiny_female: () => Promise<String>;
 }
 
-export interface PostPreviousValuesSubscription
-  extends Promise<AsyncIterator<PostPreviousValues>>,
+export interface SpritePreviousValuesSubscription
+  extends Promise<AsyncIterator<SpritePreviousValues>>,
     Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  title: () => Promise<AsyncIterator<String>>;
-  published: () => Promise<AsyncIterator<Boolean>>;
+  back_default: () => Promise<AsyncIterator<String>>;
+  back_female: () => Promise<AsyncIterator<String>>;
+  back_shiny: () => Promise<AsyncIterator<String>>;
+  back_shiny_female: () => Promise<AsyncIterator<String>>;
+  front_default: () => Promise<AsyncIterator<String>>;
+  front_female: () => Promise<AsyncIterator<String>>;
+  front_shiny: () => Promise<AsyncIterator<String>>;
+  front_shiny_female: () => Promise<AsyncIterator<String>>;
 }
 
-export interface UserSubscriptionPayload {
+export interface StatSubscriptionPayload {
   mutation: MutationType;
-  node: User;
+  node: Stat;
   updatedFields: String[];
-  previousValues: UserPreviousValues;
+  previousValues: StatPreviousValues;
 }
 
-export interface UserSubscriptionPayloadPromise
-  extends Promise<UserSubscriptionPayload>,
+export interface StatSubscriptionPayloadPromise
+  extends Promise<StatSubscriptionPayload>,
     Fragmentable {
   mutation: () => Promise<MutationType>;
-  node: <T = UserPromise>() => T;
+  node: <T = StatPromise>() => T;
   updatedFields: () => Promise<String[]>;
-  previousValues: <T = UserPreviousValuesPromise>() => T;
+  previousValues: <T = StatPreviousValuesPromise>() => T;
 }
 
-export interface UserSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<UserSubscriptionPayload>>,
+export interface StatSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<StatSubscriptionPayload>>,
     Fragmentable {
   mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = UserSubscription>() => T;
+  node: <T = StatSubscription>() => T;
   updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = UserPreviousValuesSubscription>() => T;
+  previousValues: <T = StatPreviousValuesSubscription>() => T;
 }
 
-export interface UserPreviousValues {
-  id: ID_Output;
-  createdAt: DateTimeOutput;
-  updatedAt: DateTimeOutput;
-  email?: String;
-  name: String;
+export interface StatPreviousValues {
+  base_stat?: Int;
+  effort?: Int;
+  name?: String;
+  url?: String;
 }
 
-export interface UserPreviousValuesPromise
-  extends Promise<UserPreviousValues>,
+export interface StatPreviousValuesPromise
+  extends Promise<StatPreviousValues>,
     Fragmentable {
-  id: () => Promise<ID_Output>;
-  createdAt: () => Promise<DateTimeOutput>;
-  updatedAt: () => Promise<DateTimeOutput>;
-  email: () => Promise<String>;
+  base_stat: () => Promise<Int>;
+  effort: () => Promise<Int>;
   name: () => Promise<String>;
+  url: () => Promise<String>;
 }
 
-export interface UserPreviousValuesSubscription
-  extends Promise<AsyncIterator<UserPreviousValues>>,
+export interface StatPreviousValuesSubscription
+  extends Promise<AsyncIterator<StatPreviousValues>>,
     Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  email: () => Promise<AsyncIterator<String>>;
+  base_stat: () => Promise<AsyncIterator<Int>>;
+  effort: () => Promise<AsyncIterator<Int>>;
   name: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
 }
 
-/*
-The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
-*/
-export type ID_Input = string | number;
-export type ID_Output = string;
+export interface TypeSubscriptionPayload {
+  mutation: MutationType;
+  node: Type;
+  updatedFields: String[];
+  previousValues: TypePreviousValues;
+}
 
-/*
-DateTime scalar input type, allowing Date
-*/
-export type DateTimeInput = Date | string;
+export interface TypeSubscriptionPayloadPromise
+  extends Promise<TypeSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = TypePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = TypePreviousValuesPromise>() => T;
+}
 
-/*
-DateTime scalar output type, which is always a string
-*/
-export type DateTimeOutput = string;
+export interface TypeSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<TypeSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = TypeSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = TypePreviousValuesSubscription>() => T;
+}
+
+export interface TypePreviousValues {
+  slot?: Int;
+  name?: String;
+  url?: String;
+}
+
+export interface TypePreviousValuesPromise
+  extends Promise<TypePreviousValues>,
+    Fragmentable {
+  slot: () => Promise<Int>;
+  name: () => Promise<String>;
+  url: () => Promise<String>;
+}
+
+export interface TypePreviousValuesSubscription
+  extends Promise<AsyncIterator<TypePreviousValues>>,
+    Fragmentable {
+  slot: () => Promise<AsyncIterator<Int>>;
+  name: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
+}
 
 /*
 The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
@@ -1515,14 +3438,20 @@ The `String` scalar type represents textual data, represented as UTF-8 character
 export type String = string;
 
 /*
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. 
+*/
+export type Int = number;
+
+/*
 The `Boolean` scalar type represents `true` or `false`.
 */
 export type Boolean = boolean;
 
 /*
-The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. 
+The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
 */
-export type Int = number;
+export type ID_Input = string | number;
+export type ID_Output = string;
 
 export type Long = string;
 
@@ -1532,19 +3461,43 @@ export type Long = string;
 
 export const models: Model[] = [
   {
-    name: "User",
-    embedded: false
-  },
-  {
-    name: "Post",
-    embedded: false
-  },
-  {
-    name: "Comment",
-    embedded: false
-  },
-  {
     name: "Pokemon",
+    embedded: false
+  },
+  {
+    name: "Ability",
+    embedded: false
+  },
+  {
+    name: "Form",
+    embedded: false
+  },
+  {
+    name: "GameIndex",
+    embedded: false
+  },
+  {
+    name: "Item",
+    embedded: false
+  },
+  {
+    name: "Move",
+    embedded: false
+  },
+  {
+    name: "Species",
+    embedded: false
+  },
+  {
+    name: "Sprite",
+    embedded: false
+  },
+  {
+    name: "Stat",
+    embedded: false
+  },
+  {
+    name: "Type",
     embedded: false
   }
 ];

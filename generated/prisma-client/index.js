@@ -5,19 +5,43 @@ var typeDefs = require("./prisma-schema").typeDefs;
 
 var models = [
   {
-    name: "User",
-    embedded: false
-  },
-  {
-    name: "Post",
-    embedded: false
-  },
-  {
-    name: "Comment",
-    embedded: false
-  },
-  {
     name: "Pokemon",
+    embedded: false
+  },
+  {
+    name: "Ability",
+    embedded: false
+  },
+  {
+    name: "Form",
+    embedded: false
+  },
+  {
+    name: "GameIndex",
+    embedded: false
+  },
+  {
+    name: "Item",
+    embedded: false
+  },
+  {
+    name: "Move",
+    embedded: false
+  },
+  {
+    name: "Species",
+    embedded: false
+  },
+  {
+    name: "Sprite",
+    embedded: false
+  },
+  {
+    name: "Stat",
+    embedded: false
+  },
+  {
+    name: "Type",
     embedded: false
   }
 ];
