@@ -227,6 +227,7 @@ export interface NexusGenInputs {
     sprites?: NexusGenInputs['SpriteCreateManyInput'] | null; // SpriteCreateManyInput
     stats?: NexusGenInputs['StatCreateManyInput'] | null; // StatCreateManyInput
     types?: NexusGenInputs['TypeCreateManyInput'] | null; // TypeCreateManyInput
+    url?: string | null; // String
     weight?: number | null; // Int
   }
   PokemonWhereInput: { // input type
@@ -328,6 +329,20 @@ export interface NexusGenInputs {
     types_every?: NexusGenInputs['TypeWhereInput'] | null; // TypeWhereInput
     types_none?: NexusGenInputs['TypeWhereInput'] | null; // TypeWhereInput
     types_some?: NexusGenInputs['TypeWhereInput'] | null; // TypeWhereInput
+    url?: string | null; // String
+    url_contains?: string | null; // String
+    url_ends_with?: string | null; // String
+    url_gt?: string | null; // String
+    url_gte?: string | null; // String
+    url_in?: string[] | null; // [String!]
+    url_lt?: string | null; // String
+    url_lte?: string | null; // String
+    url_not?: string | null; // String
+    url_not_contains?: string | null; // String
+    url_not_ends_with?: string | null; // String
+    url_not_in?: string[] | null; // [String!]
+    url_not_starts_with?: string | null; // String
+    url_starts_with?: string | null; // String
     weight?: number | null; // Int
     weight_gt?: number | null; // Int
     weight_gte?: number | null; // Int
@@ -622,7 +637,7 @@ export interface NexusGenEnums {
   GameIndexOrderByInput: "createdAt_ASC" | "createdAt_DESC" | "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC" | "updatedAt_ASC" | "updatedAt_DESC" | "url_ASC" | "url_DESC"
   ItemOrderByInput: "createdAt_ASC" | "createdAt_DESC" | "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC" | "updatedAt_ASC" | "updatedAt_DESC" | "url_ASC" | "url_DESC"
   MoveOrderByInput: "createdAt_ASC" | "createdAt_DESC" | "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC" | "updatedAt_ASC" | "updatedAt_DESC" | "url_ASC" | "url_DESC"
-  PokemonOrderByInput: "base_experience_ASC" | "base_experience_DESC" | "createdAt_ASC" | "createdAt_DESC" | "height_ASC" | "height_DESC" | "id_ASC" | "id_DESC" | "is_default_ASC" | "is_default_DESC" | "location_area_encounters_ASC" | "location_area_encounters_DESC" | "name_ASC" | "name_DESC" | "order_ASC" | "order_DESC" | "updatedAt_ASC" | "updatedAt_DESC" | "weight_ASC" | "weight_DESC"
+  PokemonOrderByInput: "base_experience_ASC" | "base_experience_DESC" | "createdAt_ASC" | "createdAt_DESC" | "height_ASC" | "height_DESC" | "id_ASC" | "id_DESC" | "is_default_ASC" | "is_default_DESC" | "location_area_encounters_ASC" | "location_area_encounters_DESC" | "name_ASC" | "name_DESC" | "order_ASC" | "order_DESC" | "updatedAt_ASC" | "updatedAt_DESC" | "url_ASC" | "url_DESC" | "weight_ASC" | "weight_DESC"
   SpeciesOrderByInput: "createdAt_ASC" | "createdAt_DESC" | "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC" | "updatedAt_ASC" | "updatedAt_DESC" | "url_ASC" | "url_DESC"
   SpriteOrderByInput: "back_default_ASC" | "back_default_DESC" | "back_female_ASC" | "back_female_DESC" | "back_shiny_ASC" | "back_shiny_DESC" | "back_shiny_female_ASC" | "back_shiny_female_DESC" | "createdAt_ASC" | "createdAt_DESC" | "front_default_ASC" | "front_default_DESC" | "front_female_ASC" | "front_female_DESC" | "front_shiny_ASC" | "front_shiny_DESC" | "front_shiny_female_ASC" | "front_shiny_female_DESC" | "id_ASC" | "id_DESC" | "updatedAt_ASC" | "updatedAt_DESC"
   StatOrderByInput: "base_stat_ASC" | "base_stat_DESC" | "createdAt_ASC" | "createdAt_DESC" | "effort_ASC" | "effort_DESC" | "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC" | "updatedAt_ASC" | "updatedAt_DESC" | "url_ASC" | "url_DESC"
@@ -659,6 +674,7 @@ export interface NexusGenRootTypes {
     location_area_encounters?: string | null; // String
     name?: string | null; // String
     order?: number | null; // Int
+    url?: string | null; // String
     weight?: number | null; // Int
   }
   Query: {};
@@ -778,6 +794,7 @@ export interface NexusGenFieldTypes {
     sprites: NexusGenRootTypes['Sprite'][] | null; // [Sprite!]
     stats: NexusGenRootTypes['Stat'][] | null; // [Stat!]
     types: NexusGenRootTypes['Type'][] | null; // [Type!]
+    url: string | null; // String
     weight: number | null; // Int
   }
   Query: { // field return type

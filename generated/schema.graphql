@@ -329,6 +329,7 @@ type Pokemon {
   sprites(after: String, before: String, first: Int, last: Int, orderBy: SpriteOrderByInput, skip: Int, where: SpriteWhereInput): [Sprite!]
   stats(after: String, before: String, first: Int, last: Int, orderBy: StatOrderByInput, skip: Int, where: StatWhereInput): [Stat!]
   types(after: String, before: String, first: Int, last: Int, orderBy: TypeOrderByInput, skip: Int, where: TypeWhereInput): [Type!]
+  url: String
   weight: Int
 }
 
@@ -348,6 +349,7 @@ input PokemonCreateInput {
   sprites: SpriteCreateManyInput
   stats: StatCreateManyInput
   types: TypeCreateManyInput
+  url: String
   weight: Int
 }
 
@@ -370,6 +372,8 @@ enum PokemonOrderByInput {
   order_DESC
   updatedAt_ASC
   updatedAt_DESC
+  url_ASC
+  url_DESC
   weight_ASC
   weight_DESC
 }
@@ -473,6 +477,20 @@ input PokemonWhereInput {
   types_every: TypeWhereInput
   types_none: TypeWhereInput
   types_some: TypeWhereInput
+  url: String
+  url_contains: String
+  url_ends_with: String
+  url_gt: String
+  url_gte: String
+  url_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_not: String
+  url_not_contains: String
+  url_not_ends_with: String
+  url_not_in: [String!]
+  url_not_starts_with: String
+  url_starts_with: String
   weight: Int
   weight_gt: Int
   weight_gte: Int

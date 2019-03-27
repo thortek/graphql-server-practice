@@ -870,6 +870,7 @@ type Pokemon {
   stats(where: StatWhereInput, orderBy: StatOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Stat!]
   types(where: TypeWhereInput, orderBy: TypeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Type!]
   weight: Int
+  url: String
 }
 
 type PokemonConnection {
@@ -895,6 +896,7 @@ input PokemonCreateInput {
   stats: StatCreateManyInput
   types: TypeCreateManyInput
   weight: Int
+  url: String
 }
 
 type PokemonEdge {
@@ -919,6 +921,8 @@ enum PokemonOrderByInput {
   order_DESC
   weight_ASC
   weight_DESC
+  url_ASC
+  url_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
@@ -934,6 +938,7 @@ type PokemonPreviousValues {
   name: String
   order: Int
   weight: Int
+  url: String
 }
 
 type PokemonSubscriptionPayload {
@@ -971,6 +976,7 @@ input PokemonUpdateInput {
   stats: StatUpdateManyInput
   types: TypeUpdateManyInput
   weight: Int
+  url: String
 }
 
 input PokemonUpdateManyMutationInput {
@@ -981,6 +987,7 @@ input PokemonUpdateManyMutationInput {
   name: String
   order: Int
   weight: Int
+  url: String
 }
 
 input PokemonWhereInput {
@@ -1087,6 +1094,20 @@ input PokemonWhereInput {
   weight_lte: Int
   weight_gt: Int
   weight_gte: Int
+  url: String
+  url_not: String
+  url_in: [String!]
+  url_not_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_gt: String
+  url_gte: String
+  url_contains: String
+  url_not_contains: String
+  url_starts_with: String
+  url_not_starts_with: String
+  url_ends_with: String
+  url_not_ends_with: String
   AND: [PokemonWhereInput!]
   OR: [PokemonWhereInput!]
   NOT: [PokemonWhereInput!]
