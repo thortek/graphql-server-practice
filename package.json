@@ -8,12 +8,14 @@
     "deploy": "prisma deploy",
     "reset": "prisma reset --force",
     "delete": "prisma delete --force",
+    "load": "node ./seed/seedDatabase.js",
     "start": "ts-node-dev --no-notify --respawn --transpileOnly ./"
   },
   "author": "Thor Anderson",
   "license": "ISC",
   "dependencies": {
     "graphql": "^14.1.1",
+    "graphql-request": "^1.8.2",
     "graphql-yoga": "^1.17.4",
     "nexus": "^0.11.2",
     "nexus-prisma": "^0.3.5",
