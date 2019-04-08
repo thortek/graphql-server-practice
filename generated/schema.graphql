@@ -7,6 +7,12 @@ type Ability {
   url: String
 }
 
+type AbilityConnection {
+  aggregate: AggregateAbility!
+  edges: [AbilityEdge!]!
+  pageInfo: PageInfo!
+}
+
 input AbilityCreateInput {
   name: String
   url: String
@@ -14,6 +20,11 @@ input AbilityCreateInput {
 
 input AbilityCreateManyInput {
   create: [AbilityCreateInput!]
+}
+
+type AbilityEdge {
+  cursor: String!
+  node: Ability!
 }
 
 enum AbilityOrderByInput {
@@ -27,6 +38,61 @@ enum AbilityOrderByInput {
   updatedAt_DESC
   url_ASC
   url_DESC
+}
+
+input AbilityScalarWhereInput {
+  AND: [AbilityScalarWhereInput!]
+  name: String
+  name_contains: String
+  name_ends_with: String
+  name_gt: String
+  name_gte: String
+  name_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_not: String
+  name_not_contains: String
+  name_not_ends_with: String
+  name_not_in: [String!]
+  name_not_starts_with: String
+  name_starts_with: String
+  NOT: [AbilityScalarWhereInput!]
+  OR: [AbilityScalarWhereInput!]
+  url: String
+  url_contains: String
+  url_ends_with: String
+  url_gt: String
+  url_gte: String
+  url_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_not: String
+  url_not_contains: String
+  url_not_ends_with: String
+  url_not_in: [String!]
+  url_not_starts_with: String
+  url_starts_with: String
+}
+
+input AbilityUpdateManyDataInput {
+  name: String
+  url: String
+}
+
+input AbilityUpdateManyInput {
+  create: [AbilityCreateInput!]
+  deleteMany: [AbilityScalarWhereInput!]
+  updateMany: [AbilityUpdateManyWithWhereNestedInput!]
+}
+
+input AbilityUpdateManyMutationInput {
+  name: String
+  url: String
+}
+
+input AbilityUpdateManyWithWhereNestedInput {
+  data: AbilityUpdateManyDataInput!
+  where: AbilityScalarWhereInput!
 }
 
 input AbilityWhereInput {
@@ -63,9 +129,59 @@ input AbilityWhereInput {
   url_starts_with: String
 }
 
+type AggregateAbility {
+  count: Int!
+}
+
+type AggregateForm {
+  count: Int!
+}
+
+type AggregateGameIndex {
+  count: Int!
+}
+
+type AggregateItem {
+  count: Int!
+}
+
+type AggregateMove {
+  count: Int!
+}
+
+type AggregatePokemon {
+  count: Int!
+}
+
+type AggregateSpecies {
+  count: Int!
+}
+
+type AggregateSprite {
+  count: Int!
+}
+
+type AggregateStat {
+  count: Int!
+}
+
+type AggregateType {
+  count: Int!
+}
+
+type BatchPayload {
+  count: Long!
+}
+
 type Form {
   name: String
   url: String
+}
+
+type FormConnection {
+  aggregate: AggregateForm!
+  edges: [FormEdge!]!
+  pageInfo: PageInfo!
 }
 
 input FormCreateInput {
@@ -75,6 +191,11 @@ input FormCreateInput {
 
 input FormCreateManyInput {
   create: [FormCreateInput!]
+}
+
+type FormEdge {
+  cursor: String!
+  node: Form!
 }
 
 enum FormOrderByInput {
@@ -88,6 +209,61 @@ enum FormOrderByInput {
   updatedAt_DESC
   url_ASC
   url_DESC
+}
+
+input FormScalarWhereInput {
+  AND: [FormScalarWhereInput!]
+  name: String
+  name_contains: String
+  name_ends_with: String
+  name_gt: String
+  name_gte: String
+  name_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_not: String
+  name_not_contains: String
+  name_not_ends_with: String
+  name_not_in: [String!]
+  name_not_starts_with: String
+  name_starts_with: String
+  NOT: [FormScalarWhereInput!]
+  OR: [FormScalarWhereInput!]
+  url: String
+  url_contains: String
+  url_ends_with: String
+  url_gt: String
+  url_gte: String
+  url_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_not: String
+  url_not_contains: String
+  url_not_ends_with: String
+  url_not_in: [String!]
+  url_not_starts_with: String
+  url_starts_with: String
+}
+
+input FormUpdateManyDataInput {
+  name: String
+  url: String
+}
+
+input FormUpdateManyInput {
+  create: [FormCreateInput!]
+  deleteMany: [FormScalarWhereInput!]
+  updateMany: [FormUpdateManyWithWhereNestedInput!]
+}
+
+input FormUpdateManyMutationInput {
+  name: String
+  url: String
+}
+
+input FormUpdateManyWithWhereNestedInput {
+  data: FormUpdateManyDataInput!
+  where: FormScalarWhereInput!
 }
 
 input FormWhereInput {
@@ -129,6 +305,12 @@ type GameIndex {
   url: String
 }
 
+type GameIndexConnection {
+  aggregate: AggregateGameIndex!
+  edges: [GameIndexEdge!]!
+  pageInfo: PageInfo!
+}
+
 input GameIndexCreateInput {
   name: String
   url: String
@@ -136,6 +318,11 @@ input GameIndexCreateInput {
 
 input GameIndexCreateManyInput {
   create: [GameIndexCreateInput!]
+}
+
+type GameIndexEdge {
+  cursor: String!
+  node: GameIndex!
 }
 
 enum GameIndexOrderByInput {
@@ -149,6 +336,61 @@ enum GameIndexOrderByInput {
   updatedAt_DESC
   url_ASC
   url_DESC
+}
+
+input GameIndexScalarWhereInput {
+  AND: [GameIndexScalarWhereInput!]
+  name: String
+  name_contains: String
+  name_ends_with: String
+  name_gt: String
+  name_gte: String
+  name_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_not: String
+  name_not_contains: String
+  name_not_ends_with: String
+  name_not_in: [String!]
+  name_not_starts_with: String
+  name_starts_with: String
+  NOT: [GameIndexScalarWhereInput!]
+  OR: [GameIndexScalarWhereInput!]
+  url: String
+  url_contains: String
+  url_ends_with: String
+  url_gt: String
+  url_gte: String
+  url_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_not: String
+  url_not_contains: String
+  url_not_ends_with: String
+  url_not_in: [String!]
+  url_not_starts_with: String
+  url_starts_with: String
+}
+
+input GameIndexUpdateManyDataInput {
+  name: String
+  url: String
+}
+
+input GameIndexUpdateManyInput {
+  create: [GameIndexCreateInput!]
+  deleteMany: [GameIndexScalarWhereInput!]
+  updateMany: [GameIndexUpdateManyWithWhereNestedInput!]
+}
+
+input GameIndexUpdateManyMutationInput {
+  name: String
+  url: String
+}
+
+input GameIndexUpdateManyWithWhereNestedInput {
+  data: GameIndexUpdateManyDataInput!
+  where: GameIndexScalarWhereInput!
 }
 
 input GameIndexWhereInput {
@@ -190,6 +432,12 @@ type Item {
   url: String
 }
 
+type ItemConnection {
+  aggregate: AggregateItem!
+  edges: [ItemEdge!]!
+  pageInfo: PageInfo!
+}
+
 input ItemCreateInput {
   name: String
   url: String
@@ -197,6 +445,11 @@ input ItemCreateInput {
 
 input ItemCreateManyInput {
   create: [ItemCreateInput!]
+}
+
+type ItemEdge {
+  cursor: String!
+  node: Item!
 }
 
 enum ItemOrderByInput {
@@ -210,6 +463,61 @@ enum ItemOrderByInput {
   updatedAt_DESC
   url_ASC
   url_DESC
+}
+
+input ItemScalarWhereInput {
+  AND: [ItemScalarWhereInput!]
+  name: String
+  name_contains: String
+  name_ends_with: String
+  name_gt: String
+  name_gte: String
+  name_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_not: String
+  name_not_contains: String
+  name_not_ends_with: String
+  name_not_in: [String!]
+  name_not_starts_with: String
+  name_starts_with: String
+  NOT: [ItemScalarWhereInput!]
+  OR: [ItemScalarWhereInput!]
+  url: String
+  url_contains: String
+  url_ends_with: String
+  url_gt: String
+  url_gte: String
+  url_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_not: String
+  url_not_contains: String
+  url_not_ends_with: String
+  url_not_in: [String!]
+  url_not_starts_with: String
+  url_starts_with: String
+}
+
+input ItemUpdateManyDataInput {
+  name: String
+  url: String
+}
+
+input ItemUpdateManyInput {
+  create: [ItemCreateInput!]
+  deleteMany: [ItemScalarWhereInput!]
+  updateMany: [ItemUpdateManyWithWhereNestedInput!]
+}
+
+input ItemUpdateManyMutationInput {
+  name: String
+  url: String
+}
+
+input ItemUpdateManyWithWhereNestedInput {
+  data: ItemUpdateManyDataInput!
+  where: ItemScalarWhereInput!
 }
 
 input ItemWhereInput {
@@ -246,9 +554,17 @@ input ItemWhereInput {
   url_starts_with: String
 }
 
+scalar Long
+
 type Move {
   name: String
   url: String
+}
+
+type MoveConnection {
+  aggregate: AggregateMove!
+  edges: [MoveEdge!]!
+  pageInfo: PageInfo!
 }
 
 input MoveCreateInput {
@@ -258,6 +574,11 @@ input MoveCreateInput {
 
 input MoveCreateManyInput {
   create: [MoveCreateInput!]
+}
+
+type MoveEdge {
+  cursor: String!
+  node: Move!
 }
 
 enum MoveOrderByInput {
@@ -271,6 +592,61 @@ enum MoveOrderByInput {
   updatedAt_DESC
   url_ASC
   url_DESC
+}
+
+input MoveScalarWhereInput {
+  AND: [MoveScalarWhereInput!]
+  name: String
+  name_contains: String
+  name_ends_with: String
+  name_gt: String
+  name_gte: String
+  name_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_not: String
+  name_not_contains: String
+  name_not_ends_with: String
+  name_not_in: [String!]
+  name_not_starts_with: String
+  name_starts_with: String
+  NOT: [MoveScalarWhereInput!]
+  OR: [MoveScalarWhereInput!]
+  url: String
+  url_contains: String
+  url_ends_with: String
+  url_gt: String
+  url_gte: String
+  url_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_not: String
+  url_not_contains: String
+  url_not_ends_with: String
+  url_not_in: [String!]
+  url_not_starts_with: String
+  url_starts_with: String
+}
+
+input MoveUpdateManyDataInput {
+  name: String
+  url: String
+}
+
+input MoveUpdateManyInput {
+  create: [MoveCreateInput!]
+  deleteMany: [MoveScalarWhereInput!]
+  updateMany: [MoveUpdateManyWithWhereNestedInput!]
+}
+
+input MoveUpdateManyMutationInput {
+  name: String
+  url: String
+}
+
+input MoveUpdateManyWithWhereNestedInput {
+  data: MoveUpdateManyDataInput!
+  where: MoveScalarWhereInput!
 }
 
 input MoveWhereInput {
@@ -308,8 +684,46 @@ input MoveWhereInput {
 }
 
 type Mutation {
+  createAbility(data: AbilityCreateInput!): Ability!
+  createForm(data: FormCreateInput!): Form!
+  createGameIndex(data: GameIndexCreateInput!): GameIndex!
+  createItem(data: ItemCreateInput!): Item!
+  createMove(data: MoveCreateInput!): Move!
   createPokemon(data: PokemonCreateInput!): Pokemon!
+  createSpecies(data: SpeciesCreateInput!): Species!
+  createSprite(data: SpriteCreateInput!): Sprite!
   createStat(data: StatCreateInput!): Stat!
+  createType(data: TypeCreateInput!): Type!
+  deleteManyAbilities(where: AbilityWhereInput): BatchPayload!
+  deleteManyForms(where: FormWhereInput): BatchPayload!
+  deleteManyGameIndexes(where: GameIndexWhereInput): BatchPayload!
+  deleteManyItems(where: ItemWhereInput): BatchPayload!
+  deleteManyMoves(where: MoveWhereInput): BatchPayload!
+  deleteManyPokemons(where: PokemonWhereInput): BatchPayload!
+  deleteManySpecieses(where: SpeciesWhereInput): BatchPayload!
+  deleteManySprites(where: SpriteWhereInput): BatchPayload!
+  deleteManyStats(where: StatWhereInput): BatchPayload!
+  deleteManyTypes(where: TypeWhereInput): BatchPayload!
+  deletePokemon(where: PokemonWhereUniqueInput!): Pokemon
+  updateManyAbilities(data: AbilityUpdateManyMutationInput!, where: AbilityWhereInput): BatchPayload!
+  updateManyForms(data: FormUpdateManyMutationInput!, where: FormWhereInput): BatchPayload!
+  updateManyGameIndexes(data: GameIndexUpdateManyMutationInput!, where: GameIndexWhereInput): BatchPayload!
+  updateManyItems(data: ItemUpdateManyMutationInput!, where: ItemWhereInput): BatchPayload!
+  updateManyMoves(data: MoveUpdateManyMutationInput!, where: MoveWhereInput): BatchPayload!
+  updateManyPokemons(data: PokemonUpdateManyMutationInput!, where: PokemonWhereInput): BatchPayload!
+  updateManySpecieses(data: SpeciesUpdateManyMutationInput!, where: SpeciesWhereInput): BatchPayload!
+  updateManySprites(data: SpriteUpdateManyMutationInput!, where: SpriteWhereInput): BatchPayload!
+  updateManyStats(data: StatUpdateManyMutationInput!, where: StatWhereInput): BatchPayload!
+  updateManyTypes(data: TypeUpdateManyMutationInput!, where: TypeWhereInput): BatchPayload!
+  updatePokemon(data: PokemonUpdateInput!, where: PokemonWhereUniqueInput!): Pokemon
+  upsertPokemon(create: PokemonCreateInput!, update: PokemonUpdateInput!, where: PokemonWhereUniqueInput!): Pokemon!
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
 }
 
 type Pokemon {
@@ -332,6 +746,12 @@ type Pokemon {
   weight: Int
 }
 
+type PokemonConnection {
+  aggregate: AggregatePokemon!
+  edges: [PokemonEdge!]!
+  pageInfo: PageInfo!
+}
+
 input PokemonCreateInput {
   abilities: AbilityCreateManyInput
   base_experience: Int
@@ -349,6 +769,11 @@ input PokemonCreateInput {
   stats: StatCreateManyInput
   types: TypeCreateManyInput
   weight: Int
+}
+
+type PokemonEdge {
+  cursor: String!
+  node: Pokemon!
 }
 
 enum PokemonOrderByInput {
@@ -372,6 +797,35 @@ enum PokemonOrderByInput {
   updatedAt_DESC
   weight_ASC
   weight_DESC
+}
+
+input PokemonUpdateInput {
+  abilities: AbilityUpdateManyInput
+  base_experience: Int
+  forms: FormUpdateManyInput
+  game_indices: GameIndexUpdateManyInput
+  height: Int
+  held_items: ItemUpdateManyInput
+  is_default: Boolean
+  location_area_encounters: String
+  moves: MoveUpdateManyInput
+  name: String
+  order: Int
+  species: SpeciesUpdateManyInput
+  sprites: SpriteUpdateManyInput
+  stats: StatUpdateManyInput
+  types: TypeUpdateManyInput
+  weight: Int
+}
+
+input PokemonUpdateManyMutationInput {
+  base_experience: Int
+  height: Int
+  is_default: Boolean
+  location_area_encounters: String
+  name: String
+  order: Int
+  weight: Int
 }
 
 input PokemonWhereInput {
@@ -483,14 +937,43 @@ input PokemonWhereInput {
   weight_not_in: [Int!]
 }
 
+input PokemonWhereUniqueInput {
+  id: ID
+}
+
 type Query {
+  abilities(after: String, before: String, first: Int, last: Int, orderBy: AbilityOrderByInput, skip: Int, where: AbilityWhereInput): [Ability!]!
+  abilitiesConnection(after: String, before: String, first: Int, last: Int, orderBy: AbilityOrderByInput, skip: Int, where: AbilityWhereInput): AbilityConnection!
+  forms(after: String, before: String, first: Int, last: Int, orderBy: FormOrderByInput, skip: Int, where: FormWhereInput): [Form!]!
+  formsConnection(after: String, before: String, first: Int, last: Int, orderBy: FormOrderByInput, skip: Int, where: FormWhereInput): FormConnection!
+  gameIndexes(after: String, before: String, first: Int, last: Int, orderBy: GameIndexOrderByInput, skip: Int, where: GameIndexWhereInput): [GameIndex!]!
+  gameIndexesConnection(after: String, before: String, first: Int, last: Int, orderBy: GameIndexOrderByInput, skip: Int, where: GameIndexWhereInput): GameIndexConnection!
+  items(after: String, before: String, first: Int, last: Int, orderBy: ItemOrderByInput, skip: Int, where: ItemWhereInput): [Item!]!
+  itemsConnection(after: String, before: String, first: Int, last: Int, orderBy: ItemOrderByInput, skip: Int, where: ItemWhereInput): ItemConnection!
+  moves(after: String, before: String, first: Int, last: Int, orderBy: MoveOrderByInput, skip: Int, where: MoveWhereInput): [Move!]!
+  movesConnection(after: String, before: String, first: Int, last: Int, orderBy: MoveOrderByInput, skip: Int, where: MoveWhereInput): MoveConnection!
+  pokemon(where: PokemonWhereUniqueInput!): Pokemon
   pokemons(after: String, before: String, first: Int, last: Int, orderBy: PokemonOrderByInput, skip: Int, where: PokemonWhereInput): [Pokemon!]!
+  pokemonsConnection(after: String, before: String, first: Int, last: Int, orderBy: PokemonOrderByInput, skip: Int, where: PokemonWhereInput): PokemonConnection!
+  specieses(after: String, before: String, first: Int, last: Int, orderBy: SpeciesOrderByInput, skip: Int, where: SpeciesWhereInput): [Species!]!
+  speciesesConnection(after: String, before: String, first: Int, last: Int, orderBy: SpeciesOrderByInput, skip: Int, where: SpeciesWhereInput): SpeciesConnection!
+  sprites(after: String, before: String, first: Int, last: Int, orderBy: SpriteOrderByInput, skip: Int, where: SpriteWhereInput): [Sprite!]!
+  spritesConnection(after: String, before: String, first: Int, last: Int, orderBy: SpriteOrderByInput, skip: Int, where: SpriteWhereInput): SpriteConnection!
   stats(after: String, before: String, first: Int, last: Int, orderBy: StatOrderByInput, skip: Int, where: StatWhereInput): [Stat!]!
+  statsConnection(after: String, before: String, first: Int, last: Int, orderBy: StatOrderByInput, skip: Int, where: StatWhereInput): StatConnection!
+  types(after: String, before: String, first: Int, last: Int, orderBy: TypeOrderByInput, skip: Int, where: TypeWhereInput): [Type!]!
+  typesConnection(after: String, before: String, first: Int, last: Int, orderBy: TypeOrderByInput, skip: Int, where: TypeWhereInput): TypeConnection!
 }
 
 type Species {
   name: String
   url: String
+}
+
+type SpeciesConnection {
+  aggregate: AggregateSpecies!
+  edges: [SpeciesEdge!]!
+  pageInfo: PageInfo!
 }
 
 input SpeciesCreateInput {
@@ -500,6 +983,11 @@ input SpeciesCreateInput {
 
 input SpeciesCreateManyInput {
   create: [SpeciesCreateInput!]
+}
+
+type SpeciesEdge {
+  cursor: String!
+  node: Species!
 }
 
 enum SpeciesOrderByInput {
@@ -513,6 +1001,61 @@ enum SpeciesOrderByInput {
   updatedAt_DESC
   url_ASC
   url_DESC
+}
+
+input SpeciesScalarWhereInput {
+  AND: [SpeciesScalarWhereInput!]
+  name: String
+  name_contains: String
+  name_ends_with: String
+  name_gt: String
+  name_gte: String
+  name_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_not: String
+  name_not_contains: String
+  name_not_ends_with: String
+  name_not_in: [String!]
+  name_not_starts_with: String
+  name_starts_with: String
+  NOT: [SpeciesScalarWhereInput!]
+  OR: [SpeciesScalarWhereInput!]
+  url: String
+  url_contains: String
+  url_ends_with: String
+  url_gt: String
+  url_gte: String
+  url_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_not: String
+  url_not_contains: String
+  url_not_ends_with: String
+  url_not_in: [String!]
+  url_not_starts_with: String
+  url_starts_with: String
+}
+
+input SpeciesUpdateManyDataInput {
+  name: String
+  url: String
+}
+
+input SpeciesUpdateManyInput {
+  create: [SpeciesCreateInput!]
+  deleteMany: [SpeciesScalarWhereInput!]
+  updateMany: [SpeciesUpdateManyWithWhereNestedInput!]
+}
+
+input SpeciesUpdateManyMutationInput {
+  name: String
+  url: String
+}
+
+input SpeciesUpdateManyWithWhereNestedInput {
+  data: SpeciesUpdateManyDataInput!
+  where: SpeciesScalarWhereInput!
 }
 
 input SpeciesWhereInput {
@@ -560,6 +1103,12 @@ type Sprite {
   front_shiny_female: String
 }
 
+type SpriteConnection {
+  aggregate: AggregateSprite!
+  edges: [SpriteEdge!]!
+  pageInfo: PageInfo!
+}
+
 input SpriteCreateInput {
   back_default: String
   back_female: String
@@ -573,6 +1122,11 @@ input SpriteCreateInput {
 
 input SpriteCreateManyInput {
   create: [SpriteCreateInput!]
+}
+
+type SpriteEdge {
+  cursor: String!
+  node: Sprite!
 }
 
 enum SpriteOrderByInput {
@@ -598,6 +1152,157 @@ enum SpriteOrderByInput {
   id_DESC
   updatedAt_ASC
   updatedAt_DESC
+}
+
+input SpriteScalarWhereInput {
+  AND: [SpriteScalarWhereInput!]
+  back_default: String
+  back_default_contains: String
+  back_default_ends_with: String
+  back_default_gt: String
+  back_default_gte: String
+  back_default_in: [String!]
+  back_default_lt: String
+  back_default_lte: String
+  back_default_not: String
+  back_default_not_contains: String
+  back_default_not_ends_with: String
+  back_default_not_in: [String!]
+  back_default_not_starts_with: String
+  back_default_starts_with: String
+  back_female: String
+  back_female_contains: String
+  back_female_ends_with: String
+  back_female_gt: String
+  back_female_gte: String
+  back_female_in: [String!]
+  back_female_lt: String
+  back_female_lte: String
+  back_female_not: String
+  back_female_not_contains: String
+  back_female_not_ends_with: String
+  back_female_not_in: [String!]
+  back_female_not_starts_with: String
+  back_female_starts_with: String
+  back_shiny: String
+  back_shiny_contains: String
+  back_shiny_ends_with: String
+  back_shiny_female: String
+  back_shiny_female_contains: String
+  back_shiny_female_ends_with: String
+  back_shiny_female_gt: String
+  back_shiny_female_gte: String
+  back_shiny_female_in: [String!]
+  back_shiny_female_lt: String
+  back_shiny_female_lte: String
+  back_shiny_female_not: String
+  back_shiny_female_not_contains: String
+  back_shiny_female_not_ends_with: String
+  back_shiny_female_not_in: [String!]
+  back_shiny_female_not_starts_with: String
+  back_shiny_female_starts_with: String
+  back_shiny_gt: String
+  back_shiny_gte: String
+  back_shiny_in: [String!]
+  back_shiny_lt: String
+  back_shiny_lte: String
+  back_shiny_not: String
+  back_shiny_not_contains: String
+  back_shiny_not_ends_with: String
+  back_shiny_not_in: [String!]
+  back_shiny_not_starts_with: String
+  back_shiny_starts_with: String
+  front_default: String
+  front_default_contains: String
+  front_default_ends_with: String
+  front_default_gt: String
+  front_default_gte: String
+  front_default_in: [String!]
+  front_default_lt: String
+  front_default_lte: String
+  front_default_not: String
+  front_default_not_contains: String
+  front_default_not_ends_with: String
+  front_default_not_in: [String!]
+  front_default_not_starts_with: String
+  front_default_starts_with: String
+  front_female: String
+  front_female_contains: String
+  front_female_ends_with: String
+  front_female_gt: String
+  front_female_gte: String
+  front_female_in: [String!]
+  front_female_lt: String
+  front_female_lte: String
+  front_female_not: String
+  front_female_not_contains: String
+  front_female_not_ends_with: String
+  front_female_not_in: [String!]
+  front_female_not_starts_with: String
+  front_female_starts_with: String
+  front_shiny: String
+  front_shiny_contains: String
+  front_shiny_ends_with: String
+  front_shiny_female: String
+  front_shiny_female_contains: String
+  front_shiny_female_ends_with: String
+  front_shiny_female_gt: String
+  front_shiny_female_gte: String
+  front_shiny_female_in: [String!]
+  front_shiny_female_lt: String
+  front_shiny_female_lte: String
+  front_shiny_female_not: String
+  front_shiny_female_not_contains: String
+  front_shiny_female_not_ends_with: String
+  front_shiny_female_not_in: [String!]
+  front_shiny_female_not_starts_with: String
+  front_shiny_female_starts_with: String
+  front_shiny_gt: String
+  front_shiny_gte: String
+  front_shiny_in: [String!]
+  front_shiny_lt: String
+  front_shiny_lte: String
+  front_shiny_not: String
+  front_shiny_not_contains: String
+  front_shiny_not_ends_with: String
+  front_shiny_not_in: [String!]
+  front_shiny_not_starts_with: String
+  front_shiny_starts_with: String
+  NOT: [SpriteScalarWhereInput!]
+  OR: [SpriteScalarWhereInput!]
+}
+
+input SpriteUpdateManyDataInput {
+  back_default: String
+  back_female: String
+  back_shiny: String
+  back_shiny_female: String
+  front_default: String
+  front_female: String
+  front_shiny: String
+  front_shiny_female: String
+}
+
+input SpriteUpdateManyInput {
+  create: [SpriteCreateInput!]
+  deleteMany: [SpriteScalarWhereInput!]
+  updateMany: [SpriteUpdateManyWithWhereNestedInput!]
+}
+
+input SpriteUpdateManyMutationInput {
+  back_default: String
+  back_female: String
+  back_shiny: String
+  back_shiny_female: String
+  front_default: String
+  front_female: String
+  front_shiny: String
+  front_shiny_female: String
+}
+
+input SpriteUpdateManyWithWhereNestedInput {
+  data: SpriteUpdateManyDataInput!
+  where: SpriteScalarWhereInput!
 }
 
 input SpriteWhereInput {
@@ -725,6 +1430,12 @@ type Stat {
   url: String
 }
 
+type StatConnection {
+  aggregate: AggregateStat!
+  edges: [StatEdge!]!
+  pageInfo: PageInfo!
+}
+
 input StatCreateInput {
   base_stat: Int
   effort: Int
@@ -734,6 +1445,11 @@ input StatCreateInput {
 
 input StatCreateManyInput {
   create: [StatCreateInput!]
+}
+
+type StatEdge {
+  cursor: String!
+  node: Stat!
 }
 
 enum StatOrderByInput {
@@ -751,6 +1467,81 @@ enum StatOrderByInput {
   updatedAt_DESC
   url_ASC
   url_DESC
+}
+
+input StatScalarWhereInput {
+  AND: [StatScalarWhereInput!]
+  base_stat: Int
+  base_stat_gt: Int
+  base_stat_gte: Int
+  base_stat_in: [Int!]
+  base_stat_lt: Int
+  base_stat_lte: Int
+  base_stat_not: Int
+  base_stat_not_in: [Int!]
+  effort: Int
+  effort_gt: Int
+  effort_gte: Int
+  effort_in: [Int!]
+  effort_lt: Int
+  effort_lte: Int
+  effort_not: Int
+  effort_not_in: [Int!]
+  name: String
+  name_contains: String
+  name_ends_with: String
+  name_gt: String
+  name_gte: String
+  name_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_not: String
+  name_not_contains: String
+  name_not_ends_with: String
+  name_not_in: [String!]
+  name_not_starts_with: String
+  name_starts_with: String
+  NOT: [StatScalarWhereInput!]
+  OR: [StatScalarWhereInput!]
+  url: String
+  url_contains: String
+  url_ends_with: String
+  url_gt: String
+  url_gte: String
+  url_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_not: String
+  url_not_contains: String
+  url_not_ends_with: String
+  url_not_in: [String!]
+  url_not_starts_with: String
+  url_starts_with: String
+}
+
+input StatUpdateManyDataInput {
+  base_stat: Int
+  effort: Int
+  name: String
+  url: String
+}
+
+input StatUpdateManyInput {
+  create: [StatCreateInput!]
+  deleteMany: [StatScalarWhereInput!]
+  updateMany: [StatUpdateManyWithWhereNestedInput!]
+}
+
+input StatUpdateManyMutationInput {
+  base_stat: Int
+  effort: Int
+  name: String
+  url: String
+}
+
+input StatUpdateManyWithWhereNestedInput {
+  data: StatUpdateManyDataInput!
+  where: StatScalarWhereInput!
 }
 
 input StatWhereInput {
@@ -809,6 +1600,12 @@ type Type {
   url: String
 }
 
+type TypeConnection {
+  aggregate: AggregateType!
+  edges: [TypeEdge!]!
+  pageInfo: PageInfo!
+}
+
 input TypeCreateInput {
   name: String
   slot: Int
@@ -817,6 +1614,11 @@ input TypeCreateInput {
 
 input TypeCreateManyInput {
   create: [TypeCreateInput!]
+}
+
+type TypeEdge {
+  cursor: String!
+  node: Type!
 }
 
 enum TypeOrderByInput {
@@ -832,6 +1634,71 @@ enum TypeOrderByInput {
   updatedAt_DESC
   url_ASC
   url_DESC
+}
+
+input TypeScalarWhereInput {
+  AND: [TypeScalarWhereInput!]
+  name: String
+  name_contains: String
+  name_ends_with: String
+  name_gt: String
+  name_gte: String
+  name_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_not: String
+  name_not_contains: String
+  name_not_ends_with: String
+  name_not_in: [String!]
+  name_not_starts_with: String
+  name_starts_with: String
+  NOT: [TypeScalarWhereInput!]
+  OR: [TypeScalarWhereInput!]
+  slot: Int
+  slot_gt: Int
+  slot_gte: Int
+  slot_in: [Int!]
+  slot_lt: Int
+  slot_lte: Int
+  slot_not: Int
+  slot_not_in: [Int!]
+  url: String
+  url_contains: String
+  url_ends_with: String
+  url_gt: String
+  url_gte: String
+  url_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_not: String
+  url_not_contains: String
+  url_not_ends_with: String
+  url_not_in: [String!]
+  url_not_starts_with: String
+  url_starts_with: String
+}
+
+input TypeUpdateManyDataInput {
+  name: String
+  slot: Int
+  url: String
+}
+
+input TypeUpdateManyInput {
+  create: [TypeCreateInput!]
+  deleteMany: [TypeScalarWhereInput!]
+  updateMany: [TypeUpdateManyWithWhereNestedInput!]
+}
+
+input TypeUpdateManyMutationInput {
+  name: String
+  slot: Int
+  url: String
+}
+
+input TypeUpdateManyWithWhereNestedInput {
+  data: TypeUpdateManyDataInput!
+  where: TypeScalarWhereInput!
 }
 
 input TypeWhereInput {

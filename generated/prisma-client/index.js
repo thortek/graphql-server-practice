@@ -5,10 +5,6 @@ var typeDefs = require("./prisma-schema").typeDefs;
 
 var models = [
   {
-    name: "Pokemon",
-    embedded: false
-  },
-  {
     name: "Ability",
     embedded: false
   },
@@ -26,6 +22,10 @@ var models = [
   },
   {
     name: "Move",
+    embedded: false
+  },
+  {
+    name: "Pokemon",
     embedded: false
   },
   {

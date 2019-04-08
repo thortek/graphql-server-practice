@@ -18,6 +18,56 @@ export interface NexusGenInputs {
   AbilityCreateManyInput: { // input type
     create?: NexusGenInputs['AbilityCreateInput'][] | null; // [AbilityCreateInput!]
   }
+  AbilityScalarWhereInput: { // input type
+    AND?: NexusGenInputs['AbilityScalarWhereInput'][] | null; // [AbilityScalarWhereInput!]
+    name?: string | null; // String
+    name_contains?: string | null; // String
+    name_ends_with?: string | null; // String
+    name_gt?: string | null; // String
+    name_gte?: string | null; // String
+    name_in?: string[] | null; // [String!]
+    name_lt?: string | null; // String
+    name_lte?: string | null; // String
+    name_not?: string | null; // String
+    name_not_contains?: string | null; // String
+    name_not_ends_with?: string | null; // String
+    name_not_in?: string[] | null; // [String!]
+    name_not_starts_with?: string | null; // String
+    name_starts_with?: string | null; // String
+    NOT?: NexusGenInputs['AbilityScalarWhereInput'][] | null; // [AbilityScalarWhereInput!]
+    OR?: NexusGenInputs['AbilityScalarWhereInput'][] | null; // [AbilityScalarWhereInput!]
+    url?: string | null; // String
+    url_contains?: string | null; // String
+    url_ends_with?: string | null; // String
+    url_gt?: string | null; // String
+    url_gte?: string | null; // String
+    url_in?: string[] | null; // [String!]
+    url_lt?: string | null; // String
+    url_lte?: string | null; // String
+    url_not?: string | null; // String
+    url_not_contains?: string | null; // String
+    url_not_ends_with?: string | null; // String
+    url_not_in?: string[] | null; // [String!]
+    url_not_starts_with?: string | null; // String
+    url_starts_with?: string | null; // String
+  }
+  AbilityUpdateManyDataInput: { // input type
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  AbilityUpdateManyInput: { // input type
+    create?: NexusGenInputs['AbilityCreateInput'][] | null; // [AbilityCreateInput!]
+    deleteMany?: NexusGenInputs['AbilityScalarWhereInput'][] | null; // [AbilityScalarWhereInput!]
+    updateMany?: NexusGenInputs['AbilityUpdateManyWithWhereNestedInput'][] | null; // [AbilityUpdateManyWithWhereNestedInput!]
+  }
+  AbilityUpdateManyMutationInput: { // input type
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  AbilityUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['AbilityUpdateManyDataInput']; // AbilityUpdateManyDataInput!
+    where: NexusGenInputs['AbilityScalarWhereInput']; // AbilityScalarWhereInput!
+  }
   AbilityWhereInput: { // input type
     AND?: NexusGenInputs['AbilityWhereInput'][] | null; // [AbilityWhereInput!]
     name?: string | null; // String
@@ -57,6 +107,56 @@ export interface NexusGenInputs {
   }
   FormCreateManyInput: { // input type
     create?: NexusGenInputs['FormCreateInput'][] | null; // [FormCreateInput!]
+  }
+  FormScalarWhereInput: { // input type
+    AND?: NexusGenInputs['FormScalarWhereInput'][] | null; // [FormScalarWhereInput!]
+    name?: string | null; // String
+    name_contains?: string | null; // String
+    name_ends_with?: string | null; // String
+    name_gt?: string | null; // String
+    name_gte?: string | null; // String
+    name_in?: string[] | null; // [String!]
+    name_lt?: string | null; // String
+    name_lte?: string | null; // String
+    name_not?: string | null; // String
+    name_not_contains?: string | null; // String
+    name_not_ends_with?: string | null; // String
+    name_not_in?: string[] | null; // [String!]
+    name_not_starts_with?: string | null; // String
+    name_starts_with?: string | null; // String
+    NOT?: NexusGenInputs['FormScalarWhereInput'][] | null; // [FormScalarWhereInput!]
+    OR?: NexusGenInputs['FormScalarWhereInput'][] | null; // [FormScalarWhereInput!]
+    url?: string | null; // String
+    url_contains?: string | null; // String
+    url_ends_with?: string | null; // String
+    url_gt?: string | null; // String
+    url_gte?: string | null; // String
+    url_in?: string[] | null; // [String!]
+    url_lt?: string | null; // String
+    url_lte?: string | null; // String
+    url_not?: string | null; // String
+    url_not_contains?: string | null; // String
+    url_not_ends_with?: string | null; // String
+    url_not_in?: string[] | null; // [String!]
+    url_not_starts_with?: string | null; // String
+    url_starts_with?: string | null; // String
+  }
+  FormUpdateManyDataInput: { // input type
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  FormUpdateManyInput: { // input type
+    create?: NexusGenInputs['FormCreateInput'][] | null; // [FormCreateInput!]
+    deleteMany?: NexusGenInputs['FormScalarWhereInput'][] | null; // [FormScalarWhereInput!]
+    updateMany?: NexusGenInputs['FormUpdateManyWithWhereNestedInput'][] | null; // [FormUpdateManyWithWhereNestedInput!]
+  }
+  FormUpdateManyMutationInput: { // input type
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  FormUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['FormUpdateManyDataInput']; // FormUpdateManyDataInput!
+    where: NexusGenInputs['FormScalarWhereInput']; // FormScalarWhereInput!
   }
   FormWhereInput: { // input type
     AND?: NexusGenInputs['FormWhereInput'][] | null; // [FormWhereInput!]
@@ -98,6 +198,56 @@ export interface NexusGenInputs {
   GameIndexCreateManyInput: { // input type
     create?: NexusGenInputs['GameIndexCreateInput'][] | null; // [GameIndexCreateInput!]
   }
+  GameIndexScalarWhereInput: { // input type
+    AND?: NexusGenInputs['GameIndexScalarWhereInput'][] | null; // [GameIndexScalarWhereInput!]
+    name?: string | null; // String
+    name_contains?: string | null; // String
+    name_ends_with?: string | null; // String
+    name_gt?: string | null; // String
+    name_gte?: string | null; // String
+    name_in?: string[] | null; // [String!]
+    name_lt?: string | null; // String
+    name_lte?: string | null; // String
+    name_not?: string | null; // String
+    name_not_contains?: string | null; // String
+    name_not_ends_with?: string | null; // String
+    name_not_in?: string[] | null; // [String!]
+    name_not_starts_with?: string | null; // String
+    name_starts_with?: string | null; // String
+    NOT?: NexusGenInputs['GameIndexScalarWhereInput'][] | null; // [GameIndexScalarWhereInput!]
+    OR?: NexusGenInputs['GameIndexScalarWhereInput'][] | null; // [GameIndexScalarWhereInput!]
+    url?: string | null; // String
+    url_contains?: string | null; // String
+    url_ends_with?: string | null; // String
+    url_gt?: string | null; // String
+    url_gte?: string | null; // String
+    url_in?: string[] | null; // [String!]
+    url_lt?: string | null; // String
+    url_lte?: string | null; // String
+    url_not?: string | null; // String
+    url_not_contains?: string | null; // String
+    url_not_ends_with?: string | null; // String
+    url_not_in?: string[] | null; // [String!]
+    url_not_starts_with?: string | null; // String
+    url_starts_with?: string | null; // String
+  }
+  GameIndexUpdateManyDataInput: { // input type
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  GameIndexUpdateManyInput: { // input type
+    create?: NexusGenInputs['GameIndexCreateInput'][] | null; // [GameIndexCreateInput!]
+    deleteMany?: NexusGenInputs['GameIndexScalarWhereInput'][] | null; // [GameIndexScalarWhereInput!]
+    updateMany?: NexusGenInputs['GameIndexUpdateManyWithWhereNestedInput'][] | null; // [GameIndexUpdateManyWithWhereNestedInput!]
+  }
+  GameIndexUpdateManyMutationInput: { // input type
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  GameIndexUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['GameIndexUpdateManyDataInput']; // GameIndexUpdateManyDataInput!
+    where: NexusGenInputs['GameIndexScalarWhereInput']; // GameIndexScalarWhereInput!
+  }
   GameIndexWhereInput: { // input type
     AND?: NexusGenInputs['GameIndexWhereInput'][] | null; // [GameIndexWhereInput!]
     name?: string | null; // String
@@ -138,6 +288,56 @@ export interface NexusGenInputs {
   ItemCreateManyInput: { // input type
     create?: NexusGenInputs['ItemCreateInput'][] | null; // [ItemCreateInput!]
   }
+  ItemScalarWhereInput: { // input type
+    AND?: NexusGenInputs['ItemScalarWhereInput'][] | null; // [ItemScalarWhereInput!]
+    name?: string | null; // String
+    name_contains?: string | null; // String
+    name_ends_with?: string | null; // String
+    name_gt?: string | null; // String
+    name_gte?: string | null; // String
+    name_in?: string[] | null; // [String!]
+    name_lt?: string | null; // String
+    name_lte?: string | null; // String
+    name_not?: string | null; // String
+    name_not_contains?: string | null; // String
+    name_not_ends_with?: string | null; // String
+    name_not_in?: string[] | null; // [String!]
+    name_not_starts_with?: string | null; // String
+    name_starts_with?: string | null; // String
+    NOT?: NexusGenInputs['ItemScalarWhereInput'][] | null; // [ItemScalarWhereInput!]
+    OR?: NexusGenInputs['ItemScalarWhereInput'][] | null; // [ItemScalarWhereInput!]
+    url?: string | null; // String
+    url_contains?: string | null; // String
+    url_ends_with?: string | null; // String
+    url_gt?: string | null; // String
+    url_gte?: string | null; // String
+    url_in?: string[] | null; // [String!]
+    url_lt?: string | null; // String
+    url_lte?: string | null; // String
+    url_not?: string | null; // String
+    url_not_contains?: string | null; // String
+    url_not_ends_with?: string | null; // String
+    url_not_in?: string[] | null; // [String!]
+    url_not_starts_with?: string | null; // String
+    url_starts_with?: string | null; // String
+  }
+  ItemUpdateManyDataInput: { // input type
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  ItemUpdateManyInput: { // input type
+    create?: NexusGenInputs['ItemCreateInput'][] | null; // [ItemCreateInput!]
+    deleteMany?: NexusGenInputs['ItemScalarWhereInput'][] | null; // [ItemScalarWhereInput!]
+    updateMany?: NexusGenInputs['ItemUpdateManyWithWhereNestedInput'][] | null; // [ItemUpdateManyWithWhereNestedInput!]
+  }
+  ItemUpdateManyMutationInput: { // input type
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  ItemUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['ItemUpdateManyDataInput']; // ItemUpdateManyDataInput!
+    where: NexusGenInputs['ItemScalarWhereInput']; // ItemScalarWhereInput!
+  }
   ItemWhereInput: { // input type
     AND?: NexusGenInputs['ItemWhereInput'][] | null; // [ItemWhereInput!]
     name?: string | null; // String
@@ -177,6 +377,56 @@ export interface NexusGenInputs {
   }
   MoveCreateManyInput: { // input type
     create?: NexusGenInputs['MoveCreateInput'][] | null; // [MoveCreateInput!]
+  }
+  MoveScalarWhereInput: { // input type
+    AND?: NexusGenInputs['MoveScalarWhereInput'][] | null; // [MoveScalarWhereInput!]
+    name?: string | null; // String
+    name_contains?: string | null; // String
+    name_ends_with?: string | null; // String
+    name_gt?: string | null; // String
+    name_gte?: string | null; // String
+    name_in?: string[] | null; // [String!]
+    name_lt?: string | null; // String
+    name_lte?: string | null; // String
+    name_not?: string | null; // String
+    name_not_contains?: string | null; // String
+    name_not_ends_with?: string | null; // String
+    name_not_in?: string[] | null; // [String!]
+    name_not_starts_with?: string | null; // String
+    name_starts_with?: string | null; // String
+    NOT?: NexusGenInputs['MoveScalarWhereInput'][] | null; // [MoveScalarWhereInput!]
+    OR?: NexusGenInputs['MoveScalarWhereInput'][] | null; // [MoveScalarWhereInput!]
+    url?: string | null; // String
+    url_contains?: string | null; // String
+    url_ends_with?: string | null; // String
+    url_gt?: string | null; // String
+    url_gte?: string | null; // String
+    url_in?: string[] | null; // [String!]
+    url_lt?: string | null; // String
+    url_lte?: string | null; // String
+    url_not?: string | null; // String
+    url_not_contains?: string | null; // String
+    url_not_ends_with?: string | null; // String
+    url_not_in?: string[] | null; // [String!]
+    url_not_starts_with?: string | null; // String
+    url_starts_with?: string | null; // String
+  }
+  MoveUpdateManyDataInput: { // input type
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  MoveUpdateManyInput: { // input type
+    create?: NexusGenInputs['MoveCreateInput'][] | null; // [MoveCreateInput!]
+    deleteMany?: NexusGenInputs['MoveScalarWhereInput'][] | null; // [MoveScalarWhereInput!]
+    updateMany?: NexusGenInputs['MoveUpdateManyWithWhereNestedInput'][] | null; // [MoveUpdateManyWithWhereNestedInput!]
+  }
+  MoveUpdateManyMutationInput: { // input type
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  MoveUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['MoveUpdateManyDataInput']; // MoveUpdateManyDataInput!
+    where: NexusGenInputs['MoveScalarWhereInput']; // MoveScalarWhereInput!
   }
   MoveWhereInput: { // input type
     AND?: NexusGenInputs['MoveWhereInput'][] | null; // [MoveWhereInput!]
@@ -227,6 +477,33 @@ export interface NexusGenInputs {
     sprites?: NexusGenInputs['SpriteCreateManyInput'] | null; // SpriteCreateManyInput
     stats?: NexusGenInputs['StatCreateManyInput'] | null; // StatCreateManyInput
     types?: NexusGenInputs['TypeCreateManyInput'] | null; // TypeCreateManyInput
+    weight?: number | null; // Int
+  }
+  PokemonUpdateInput: { // input type
+    abilities?: NexusGenInputs['AbilityUpdateManyInput'] | null; // AbilityUpdateManyInput
+    base_experience?: number | null; // Int
+    forms?: NexusGenInputs['FormUpdateManyInput'] | null; // FormUpdateManyInput
+    game_indices?: NexusGenInputs['GameIndexUpdateManyInput'] | null; // GameIndexUpdateManyInput
+    height?: number | null; // Int
+    held_items?: NexusGenInputs['ItemUpdateManyInput'] | null; // ItemUpdateManyInput
+    is_default?: boolean | null; // Boolean
+    location_area_encounters?: string | null; // String
+    moves?: NexusGenInputs['MoveUpdateManyInput'] | null; // MoveUpdateManyInput
+    name?: string | null; // String
+    order?: number | null; // Int
+    species?: NexusGenInputs['SpeciesUpdateManyInput'] | null; // SpeciesUpdateManyInput
+    sprites?: NexusGenInputs['SpriteUpdateManyInput'] | null; // SpriteUpdateManyInput
+    stats?: NexusGenInputs['StatUpdateManyInput'] | null; // StatUpdateManyInput
+    types?: NexusGenInputs['TypeUpdateManyInput'] | null; // TypeUpdateManyInput
+    weight?: number | null; // Int
+  }
+  PokemonUpdateManyMutationInput: { // input type
+    base_experience?: number | null; // Int
+    height?: number | null; // Int
+    is_default?: boolean | null; // Boolean
+    location_area_encounters?: string | null; // String
+    name?: string | null; // String
+    order?: number | null; // Int
     weight?: number | null; // Int
   }
   PokemonWhereInput: { // input type
@@ -337,12 +614,65 @@ export interface NexusGenInputs {
     weight_not?: number | null; // Int
     weight_not_in?: number[] | null; // [Int!]
   }
+  PokemonWhereUniqueInput: { // input type
+    id?: string | null; // ID
+  }
   SpeciesCreateInput: { // input type
     name?: string | null; // String
     url?: string | null; // String
   }
   SpeciesCreateManyInput: { // input type
     create?: NexusGenInputs['SpeciesCreateInput'][] | null; // [SpeciesCreateInput!]
+  }
+  SpeciesScalarWhereInput: { // input type
+    AND?: NexusGenInputs['SpeciesScalarWhereInput'][] | null; // [SpeciesScalarWhereInput!]
+    name?: string | null; // String
+    name_contains?: string | null; // String
+    name_ends_with?: string | null; // String
+    name_gt?: string | null; // String
+    name_gte?: string | null; // String
+    name_in?: string[] | null; // [String!]
+    name_lt?: string | null; // String
+    name_lte?: string | null; // String
+    name_not?: string | null; // String
+    name_not_contains?: string | null; // String
+    name_not_ends_with?: string | null; // String
+    name_not_in?: string[] | null; // [String!]
+    name_not_starts_with?: string | null; // String
+    name_starts_with?: string | null; // String
+    NOT?: NexusGenInputs['SpeciesScalarWhereInput'][] | null; // [SpeciesScalarWhereInput!]
+    OR?: NexusGenInputs['SpeciesScalarWhereInput'][] | null; // [SpeciesScalarWhereInput!]
+    url?: string | null; // String
+    url_contains?: string | null; // String
+    url_ends_with?: string | null; // String
+    url_gt?: string | null; // String
+    url_gte?: string | null; // String
+    url_in?: string[] | null; // [String!]
+    url_lt?: string | null; // String
+    url_lte?: string | null; // String
+    url_not?: string | null; // String
+    url_not_contains?: string | null; // String
+    url_not_ends_with?: string | null; // String
+    url_not_in?: string[] | null; // [String!]
+    url_not_starts_with?: string | null; // String
+    url_starts_with?: string | null; // String
+  }
+  SpeciesUpdateManyDataInput: { // input type
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  SpeciesUpdateManyInput: { // input type
+    create?: NexusGenInputs['SpeciesCreateInput'][] | null; // [SpeciesCreateInput!]
+    deleteMany?: NexusGenInputs['SpeciesScalarWhereInput'][] | null; // [SpeciesScalarWhereInput!]
+    updateMany?: NexusGenInputs['SpeciesUpdateManyWithWhereNestedInput'][] | null; // [SpeciesUpdateManyWithWhereNestedInput!]
+  }
+  SpeciesUpdateManyMutationInput: { // input type
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  SpeciesUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['SpeciesUpdateManyDataInput']; // SpeciesUpdateManyDataInput!
+    where: NexusGenInputs['SpeciesScalarWhereInput']; // SpeciesScalarWhereInput!
   }
   SpeciesWhereInput: { // input type
     AND?: NexusGenInputs['SpeciesWhereInput'][] | null; // [SpeciesWhereInput!]
@@ -389,6 +719,152 @@ export interface NexusGenInputs {
   }
   SpriteCreateManyInput: { // input type
     create?: NexusGenInputs['SpriteCreateInput'][] | null; // [SpriteCreateInput!]
+  }
+  SpriteScalarWhereInput: { // input type
+    AND?: NexusGenInputs['SpriteScalarWhereInput'][] | null; // [SpriteScalarWhereInput!]
+    back_default?: string | null; // String
+    back_default_contains?: string | null; // String
+    back_default_ends_with?: string | null; // String
+    back_default_gt?: string | null; // String
+    back_default_gte?: string | null; // String
+    back_default_in?: string[] | null; // [String!]
+    back_default_lt?: string | null; // String
+    back_default_lte?: string | null; // String
+    back_default_not?: string | null; // String
+    back_default_not_contains?: string | null; // String
+    back_default_not_ends_with?: string | null; // String
+    back_default_not_in?: string[] | null; // [String!]
+    back_default_not_starts_with?: string | null; // String
+    back_default_starts_with?: string | null; // String
+    back_female?: string | null; // String
+    back_female_contains?: string | null; // String
+    back_female_ends_with?: string | null; // String
+    back_female_gt?: string | null; // String
+    back_female_gte?: string | null; // String
+    back_female_in?: string[] | null; // [String!]
+    back_female_lt?: string | null; // String
+    back_female_lte?: string | null; // String
+    back_female_not?: string | null; // String
+    back_female_not_contains?: string | null; // String
+    back_female_not_ends_with?: string | null; // String
+    back_female_not_in?: string[] | null; // [String!]
+    back_female_not_starts_with?: string | null; // String
+    back_female_starts_with?: string | null; // String
+    back_shiny?: string | null; // String
+    back_shiny_contains?: string | null; // String
+    back_shiny_ends_with?: string | null; // String
+    back_shiny_female?: string | null; // String
+    back_shiny_female_contains?: string | null; // String
+    back_shiny_female_ends_with?: string | null; // String
+    back_shiny_female_gt?: string | null; // String
+    back_shiny_female_gte?: string | null; // String
+    back_shiny_female_in?: string[] | null; // [String!]
+    back_shiny_female_lt?: string | null; // String
+    back_shiny_female_lte?: string | null; // String
+    back_shiny_female_not?: string | null; // String
+    back_shiny_female_not_contains?: string | null; // String
+    back_shiny_female_not_ends_with?: string | null; // String
+    back_shiny_female_not_in?: string[] | null; // [String!]
+    back_shiny_female_not_starts_with?: string | null; // String
+    back_shiny_female_starts_with?: string | null; // String
+    back_shiny_gt?: string | null; // String
+    back_shiny_gte?: string | null; // String
+    back_shiny_in?: string[] | null; // [String!]
+    back_shiny_lt?: string | null; // String
+    back_shiny_lte?: string | null; // String
+    back_shiny_not?: string | null; // String
+    back_shiny_not_contains?: string | null; // String
+    back_shiny_not_ends_with?: string | null; // String
+    back_shiny_not_in?: string[] | null; // [String!]
+    back_shiny_not_starts_with?: string | null; // String
+    back_shiny_starts_with?: string | null; // String
+    front_default?: string | null; // String
+    front_default_contains?: string | null; // String
+    front_default_ends_with?: string | null; // String
+    front_default_gt?: string | null; // String
+    front_default_gte?: string | null; // String
+    front_default_in?: string[] | null; // [String!]
+    front_default_lt?: string | null; // String
+    front_default_lte?: string | null; // String
+    front_default_not?: string | null; // String
+    front_default_not_contains?: string | null; // String
+    front_default_not_ends_with?: string | null; // String
+    front_default_not_in?: string[] | null; // [String!]
+    front_default_not_starts_with?: string | null; // String
+    front_default_starts_with?: string | null; // String
+    front_female?: string | null; // String
+    front_female_contains?: string | null; // String
+    front_female_ends_with?: string | null; // String
+    front_female_gt?: string | null; // String
+    front_female_gte?: string | null; // String
+    front_female_in?: string[] | null; // [String!]
+    front_female_lt?: string | null; // String
+    front_female_lte?: string | null; // String
+    front_female_not?: string | null; // String
+    front_female_not_contains?: string | null; // String
+    front_female_not_ends_with?: string | null; // String
+    front_female_not_in?: string[] | null; // [String!]
+    front_female_not_starts_with?: string | null; // String
+    front_female_starts_with?: string | null; // String
+    front_shiny?: string | null; // String
+    front_shiny_contains?: string | null; // String
+    front_shiny_ends_with?: string | null; // String
+    front_shiny_female?: string | null; // String
+    front_shiny_female_contains?: string | null; // String
+    front_shiny_female_ends_with?: string | null; // String
+    front_shiny_female_gt?: string | null; // String
+    front_shiny_female_gte?: string | null; // String
+    front_shiny_female_in?: string[] | null; // [String!]
+    front_shiny_female_lt?: string | null; // String
+    front_shiny_female_lte?: string | null; // String
+    front_shiny_female_not?: string | null; // String
+    front_shiny_female_not_contains?: string | null; // String
+    front_shiny_female_not_ends_with?: string | null; // String
+    front_shiny_female_not_in?: string[] | null; // [String!]
+    front_shiny_female_not_starts_with?: string | null; // String
+    front_shiny_female_starts_with?: string | null; // String
+    front_shiny_gt?: string | null; // String
+    front_shiny_gte?: string | null; // String
+    front_shiny_in?: string[] | null; // [String!]
+    front_shiny_lt?: string | null; // String
+    front_shiny_lte?: string | null; // String
+    front_shiny_not?: string | null; // String
+    front_shiny_not_contains?: string | null; // String
+    front_shiny_not_ends_with?: string | null; // String
+    front_shiny_not_in?: string[] | null; // [String!]
+    front_shiny_not_starts_with?: string | null; // String
+    front_shiny_starts_with?: string | null; // String
+    NOT?: NexusGenInputs['SpriteScalarWhereInput'][] | null; // [SpriteScalarWhereInput!]
+    OR?: NexusGenInputs['SpriteScalarWhereInput'][] | null; // [SpriteScalarWhereInput!]
+  }
+  SpriteUpdateManyDataInput: { // input type
+    back_default?: string | null; // String
+    back_female?: string | null; // String
+    back_shiny?: string | null; // String
+    back_shiny_female?: string | null; // String
+    front_default?: string | null; // String
+    front_female?: string | null; // String
+    front_shiny?: string | null; // String
+    front_shiny_female?: string | null; // String
+  }
+  SpriteUpdateManyInput: { // input type
+    create?: NexusGenInputs['SpriteCreateInput'][] | null; // [SpriteCreateInput!]
+    deleteMany?: NexusGenInputs['SpriteScalarWhereInput'][] | null; // [SpriteScalarWhereInput!]
+    updateMany?: NexusGenInputs['SpriteUpdateManyWithWhereNestedInput'][] | null; // [SpriteUpdateManyWithWhereNestedInput!]
+  }
+  SpriteUpdateManyMutationInput: { // input type
+    back_default?: string | null; // String
+    back_female?: string | null; // String
+    back_shiny?: string | null; // String
+    back_shiny_female?: string | null; // String
+    front_default?: string | null; // String
+    front_female?: string | null; // String
+    front_shiny?: string | null; // String
+    front_shiny_female?: string | null; // String
+  }
+  SpriteUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['SpriteUpdateManyDataInput']; // SpriteUpdateManyDataInput!
+    where: NexusGenInputs['SpriteScalarWhereInput']; // SpriteScalarWhereInput!
   }
   SpriteWhereInput: { // input type
     AND?: NexusGenInputs['SpriteWhereInput'][] | null; // [SpriteWhereInput!]
@@ -516,6 +992,76 @@ export interface NexusGenInputs {
   StatCreateManyInput: { // input type
     create?: NexusGenInputs['StatCreateInput'][] | null; // [StatCreateInput!]
   }
+  StatScalarWhereInput: { // input type
+    AND?: NexusGenInputs['StatScalarWhereInput'][] | null; // [StatScalarWhereInput!]
+    base_stat?: number | null; // Int
+    base_stat_gt?: number | null; // Int
+    base_stat_gte?: number | null; // Int
+    base_stat_in?: number[] | null; // [Int!]
+    base_stat_lt?: number | null; // Int
+    base_stat_lte?: number | null; // Int
+    base_stat_not?: number | null; // Int
+    base_stat_not_in?: number[] | null; // [Int!]
+    effort?: number | null; // Int
+    effort_gt?: number | null; // Int
+    effort_gte?: number | null; // Int
+    effort_in?: number[] | null; // [Int!]
+    effort_lt?: number | null; // Int
+    effort_lte?: number | null; // Int
+    effort_not?: number | null; // Int
+    effort_not_in?: number[] | null; // [Int!]
+    name?: string | null; // String
+    name_contains?: string | null; // String
+    name_ends_with?: string | null; // String
+    name_gt?: string | null; // String
+    name_gte?: string | null; // String
+    name_in?: string[] | null; // [String!]
+    name_lt?: string | null; // String
+    name_lte?: string | null; // String
+    name_not?: string | null; // String
+    name_not_contains?: string | null; // String
+    name_not_ends_with?: string | null; // String
+    name_not_in?: string[] | null; // [String!]
+    name_not_starts_with?: string | null; // String
+    name_starts_with?: string | null; // String
+    NOT?: NexusGenInputs['StatScalarWhereInput'][] | null; // [StatScalarWhereInput!]
+    OR?: NexusGenInputs['StatScalarWhereInput'][] | null; // [StatScalarWhereInput!]
+    url?: string | null; // String
+    url_contains?: string | null; // String
+    url_ends_with?: string | null; // String
+    url_gt?: string | null; // String
+    url_gte?: string | null; // String
+    url_in?: string[] | null; // [String!]
+    url_lt?: string | null; // String
+    url_lte?: string | null; // String
+    url_not?: string | null; // String
+    url_not_contains?: string | null; // String
+    url_not_ends_with?: string | null; // String
+    url_not_in?: string[] | null; // [String!]
+    url_not_starts_with?: string | null; // String
+    url_starts_with?: string | null; // String
+  }
+  StatUpdateManyDataInput: { // input type
+    base_stat?: number | null; // Int
+    effort?: number | null; // Int
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  StatUpdateManyInput: { // input type
+    create?: NexusGenInputs['StatCreateInput'][] | null; // [StatCreateInput!]
+    deleteMany?: NexusGenInputs['StatScalarWhereInput'][] | null; // [StatScalarWhereInput!]
+    updateMany?: NexusGenInputs['StatUpdateManyWithWhereNestedInput'][] | null; // [StatUpdateManyWithWhereNestedInput!]
+  }
+  StatUpdateManyMutationInput: { // input type
+    base_stat?: number | null; // Int
+    effort?: number | null; // Int
+    name?: string | null; // String
+    url?: string | null; // String
+  }
+  StatUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['StatUpdateManyDataInput']; // StatUpdateManyDataInput!
+    where: NexusGenInputs['StatScalarWhereInput']; // StatScalarWhereInput!
+  }
   StatWhereInput: { // input type
     AND?: NexusGenInputs['StatWhereInput'][] | null; // [StatWhereInput!]
     base_stat?: number | null; // Int
@@ -572,6 +1118,66 @@ export interface NexusGenInputs {
   }
   TypeCreateManyInput: { // input type
     create?: NexusGenInputs['TypeCreateInput'][] | null; // [TypeCreateInput!]
+  }
+  TypeScalarWhereInput: { // input type
+    AND?: NexusGenInputs['TypeScalarWhereInput'][] | null; // [TypeScalarWhereInput!]
+    name?: string | null; // String
+    name_contains?: string | null; // String
+    name_ends_with?: string | null; // String
+    name_gt?: string | null; // String
+    name_gte?: string | null; // String
+    name_in?: string[] | null; // [String!]
+    name_lt?: string | null; // String
+    name_lte?: string | null; // String
+    name_not?: string | null; // String
+    name_not_contains?: string | null; // String
+    name_not_ends_with?: string | null; // String
+    name_not_in?: string[] | null; // [String!]
+    name_not_starts_with?: string | null; // String
+    name_starts_with?: string | null; // String
+    NOT?: NexusGenInputs['TypeScalarWhereInput'][] | null; // [TypeScalarWhereInput!]
+    OR?: NexusGenInputs['TypeScalarWhereInput'][] | null; // [TypeScalarWhereInput!]
+    slot?: number | null; // Int
+    slot_gt?: number | null; // Int
+    slot_gte?: number | null; // Int
+    slot_in?: number[] | null; // [Int!]
+    slot_lt?: number | null; // Int
+    slot_lte?: number | null; // Int
+    slot_not?: number | null; // Int
+    slot_not_in?: number[] | null; // [Int!]
+    url?: string | null; // String
+    url_contains?: string | null; // String
+    url_ends_with?: string | null; // String
+    url_gt?: string | null; // String
+    url_gte?: string | null; // String
+    url_in?: string[] | null; // [String!]
+    url_lt?: string | null; // String
+    url_lte?: string | null; // String
+    url_not?: string | null; // String
+    url_not_contains?: string | null; // String
+    url_not_ends_with?: string | null; // String
+    url_not_in?: string[] | null; // [String!]
+    url_not_starts_with?: string | null; // String
+    url_starts_with?: string | null; // String
+  }
+  TypeUpdateManyDataInput: { // input type
+    name?: string | null; // String
+    slot?: number | null; // Int
+    url?: string | null; // String
+  }
+  TypeUpdateManyInput: { // input type
+    create?: NexusGenInputs['TypeCreateInput'][] | null; // [TypeCreateInput!]
+    deleteMany?: NexusGenInputs['TypeScalarWhereInput'][] | null; // [TypeScalarWhereInput!]
+    updateMany?: NexusGenInputs['TypeUpdateManyWithWhereNestedInput'][] | null; // [TypeUpdateManyWithWhereNestedInput!]
+  }
+  TypeUpdateManyMutationInput: { // input type
+    name?: string | null; // String
+    slot?: number | null; // Int
+    url?: string | null; // String
+  }
+  TypeUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['TypeUpdateManyDataInput']; // TypeUpdateManyDataInput!
+    where: NexusGenInputs['TypeScalarWhereInput']; // TypeScalarWhereInput!
   }
   TypeWhereInput: { // input type
     AND?: NexusGenInputs['TypeWhereInput'][] | null; // [TypeWhereInput!]
@@ -634,23 +1240,102 @@ export interface NexusGenRootTypes {
     name?: string | null; // String
     url?: string | null; // String
   }
+  AbilityConnection: { // root type
+    edges: NexusGenRootTypes['AbilityEdge'][]; // [AbilityEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  AbilityEdge: { // root type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Ability']; // Ability!
+  }
+  AggregateAbility: { // root type
+    count: number; // Int!
+  }
+  AggregateForm: { // root type
+    count: number; // Int!
+  }
+  AggregateGameIndex: { // root type
+    count: number; // Int!
+  }
+  AggregateItem: { // root type
+    count: number; // Int!
+  }
+  AggregateMove: { // root type
+    count: number; // Int!
+  }
+  AggregatePokemon: { // root type
+    count: number; // Int!
+  }
+  AggregateSpecies: { // root type
+    count: number; // Int!
+  }
+  AggregateSprite: { // root type
+    count: number; // Int!
+  }
+  AggregateStat: { // root type
+    count: number; // Int!
+  }
+  AggregateType: { // root type
+    count: number; // Int!
+  }
+  BatchPayload: { // root type
+    count: any; // Long!
+  }
   Form: { // root type
     name?: string | null; // String
     url?: string | null; // String
+  }
+  FormConnection: { // root type
+    edges: NexusGenRootTypes['FormEdge'][]; // [FormEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  FormEdge: { // root type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Form']; // Form!
   }
   GameIndex: { // root type
     name?: string | null; // String
     url?: string | null; // String
   }
+  GameIndexConnection: { // root type
+    edges: NexusGenRootTypes['GameIndexEdge'][]; // [GameIndexEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  GameIndexEdge: { // root type
+    cursor: string; // String!
+    node: NexusGenRootTypes['GameIndex']; // GameIndex!
+  }
   Item: { // root type
     name?: string | null; // String
     url?: string | null; // String
+  }
+  ItemConnection: { // root type
+    edges: NexusGenRootTypes['ItemEdge'][]; // [ItemEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  ItemEdge: { // root type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Item']; // Item!
   }
   Move: { // root type
     name?: string | null; // String
     url?: string | null; // String
   }
+  MoveConnection: { // root type
+    edges: NexusGenRootTypes['MoveEdge'][]; // [MoveEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  MoveEdge: { // root type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Move']; // Move!
+  }
   Mutation: {};
+  PageInfo: { // root type
+    endCursor?: string | null; // String
+    hasNextPage: boolean; // Boolean!
+    hasPreviousPage: boolean; // Boolean!
+    startCursor?: string | null; // String
+  }
   Pokemon: { // root type
     base_experience?: number | null; // Int
     height?: number | null; // Int
@@ -661,10 +1346,26 @@ export interface NexusGenRootTypes {
     order?: number | null; // Int
     weight?: number | null; // Int
   }
+  PokemonConnection: { // root type
+    edges: NexusGenRootTypes['PokemonEdge'][]; // [PokemonEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  PokemonEdge: { // root type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Pokemon']; // Pokemon!
+  }
   Query: {};
   Species: { // root type
     name?: string | null; // String
     url?: string | null; // String
+  }
+  SpeciesConnection: { // root type
+    edges: NexusGenRootTypes['SpeciesEdge'][]; // [SpeciesEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  SpeciesEdge: { // root type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Species']; // Species!
   }
   Sprite: { // root type
     back_default?: string | null; // String
@@ -676,53 +1377,126 @@ export interface NexusGenRootTypes {
     front_shiny?: string | null; // String
     front_shiny_female?: string | null; // String
   }
+  SpriteConnection: { // root type
+    edges: NexusGenRootTypes['SpriteEdge'][]; // [SpriteEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  SpriteEdge: { // root type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Sprite']; // Sprite!
+  }
   Stat: { // root type
     base_stat?: number | null; // Int
     effort?: number | null; // Int
     name?: string | null; // String
     url?: string | null; // String
   }
+  StatConnection: { // root type
+    edges: NexusGenRootTypes['StatEdge'][]; // [StatEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  StatEdge: { // root type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Stat']; // Stat!
+  }
   Type: { // root type
     name?: string | null; // String
     slot?: number | null; // Int
     url?: string | null; // String
+  }
+  TypeConnection: { // root type
+    edges: NexusGenRootTypes['TypeEdge'][]; // [TypeEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  TypeEdge: { // root type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Type']; // Type!
   }
   String: string;
   Int: number;
   Float: number;
   Boolean: boolean;
   ID: string;
+  Long: any;
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
   AbilityCreateInput: NexusGenInputs['AbilityCreateInput'];
   AbilityCreateManyInput: NexusGenInputs['AbilityCreateManyInput'];
+  AbilityScalarWhereInput: NexusGenInputs['AbilityScalarWhereInput'];
+  AbilityUpdateManyDataInput: NexusGenInputs['AbilityUpdateManyDataInput'];
+  AbilityUpdateManyInput: NexusGenInputs['AbilityUpdateManyInput'];
+  AbilityUpdateManyMutationInput: NexusGenInputs['AbilityUpdateManyMutationInput'];
+  AbilityUpdateManyWithWhereNestedInput: NexusGenInputs['AbilityUpdateManyWithWhereNestedInput'];
   AbilityWhereInput: NexusGenInputs['AbilityWhereInput'];
   FormCreateInput: NexusGenInputs['FormCreateInput'];
   FormCreateManyInput: NexusGenInputs['FormCreateManyInput'];
+  FormScalarWhereInput: NexusGenInputs['FormScalarWhereInput'];
+  FormUpdateManyDataInput: NexusGenInputs['FormUpdateManyDataInput'];
+  FormUpdateManyInput: NexusGenInputs['FormUpdateManyInput'];
+  FormUpdateManyMutationInput: NexusGenInputs['FormUpdateManyMutationInput'];
+  FormUpdateManyWithWhereNestedInput: NexusGenInputs['FormUpdateManyWithWhereNestedInput'];
   FormWhereInput: NexusGenInputs['FormWhereInput'];
   GameIndexCreateInput: NexusGenInputs['GameIndexCreateInput'];
   GameIndexCreateManyInput: NexusGenInputs['GameIndexCreateManyInput'];
+  GameIndexScalarWhereInput: NexusGenInputs['GameIndexScalarWhereInput'];
+  GameIndexUpdateManyDataInput: NexusGenInputs['GameIndexUpdateManyDataInput'];
+  GameIndexUpdateManyInput: NexusGenInputs['GameIndexUpdateManyInput'];
+  GameIndexUpdateManyMutationInput: NexusGenInputs['GameIndexUpdateManyMutationInput'];
+  GameIndexUpdateManyWithWhereNestedInput: NexusGenInputs['GameIndexUpdateManyWithWhereNestedInput'];
   GameIndexWhereInput: NexusGenInputs['GameIndexWhereInput'];
   ItemCreateInput: NexusGenInputs['ItemCreateInput'];
   ItemCreateManyInput: NexusGenInputs['ItemCreateManyInput'];
+  ItemScalarWhereInput: NexusGenInputs['ItemScalarWhereInput'];
+  ItemUpdateManyDataInput: NexusGenInputs['ItemUpdateManyDataInput'];
+  ItemUpdateManyInput: NexusGenInputs['ItemUpdateManyInput'];
+  ItemUpdateManyMutationInput: NexusGenInputs['ItemUpdateManyMutationInput'];
+  ItemUpdateManyWithWhereNestedInput: NexusGenInputs['ItemUpdateManyWithWhereNestedInput'];
   ItemWhereInput: NexusGenInputs['ItemWhereInput'];
   MoveCreateInput: NexusGenInputs['MoveCreateInput'];
   MoveCreateManyInput: NexusGenInputs['MoveCreateManyInput'];
+  MoveScalarWhereInput: NexusGenInputs['MoveScalarWhereInput'];
+  MoveUpdateManyDataInput: NexusGenInputs['MoveUpdateManyDataInput'];
+  MoveUpdateManyInput: NexusGenInputs['MoveUpdateManyInput'];
+  MoveUpdateManyMutationInput: NexusGenInputs['MoveUpdateManyMutationInput'];
+  MoveUpdateManyWithWhereNestedInput: NexusGenInputs['MoveUpdateManyWithWhereNestedInput'];
   MoveWhereInput: NexusGenInputs['MoveWhereInput'];
   PokemonCreateInput: NexusGenInputs['PokemonCreateInput'];
+  PokemonUpdateInput: NexusGenInputs['PokemonUpdateInput'];
+  PokemonUpdateManyMutationInput: NexusGenInputs['PokemonUpdateManyMutationInput'];
   PokemonWhereInput: NexusGenInputs['PokemonWhereInput'];
+  PokemonWhereUniqueInput: NexusGenInputs['PokemonWhereUniqueInput'];
   SpeciesCreateInput: NexusGenInputs['SpeciesCreateInput'];
   SpeciesCreateManyInput: NexusGenInputs['SpeciesCreateManyInput'];
+  SpeciesScalarWhereInput: NexusGenInputs['SpeciesScalarWhereInput'];
+  SpeciesUpdateManyDataInput: NexusGenInputs['SpeciesUpdateManyDataInput'];
+  SpeciesUpdateManyInput: NexusGenInputs['SpeciesUpdateManyInput'];
+  SpeciesUpdateManyMutationInput: NexusGenInputs['SpeciesUpdateManyMutationInput'];
+  SpeciesUpdateManyWithWhereNestedInput: NexusGenInputs['SpeciesUpdateManyWithWhereNestedInput'];
   SpeciesWhereInput: NexusGenInputs['SpeciesWhereInput'];
   SpriteCreateInput: NexusGenInputs['SpriteCreateInput'];
   SpriteCreateManyInput: NexusGenInputs['SpriteCreateManyInput'];
+  SpriteScalarWhereInput: NexusGenInputs['SpriteScalarWhereInput'];
+  SpriteUpdateManyDataInput: NexusGenInputs['SpriteUpdateManyDataInput'];
+  SpriteUpdateManyInput: NexusGenInputs['SpriteUpdateManyInput'];
+  SpriteUpdateManyMutationInput: NexusGenInputs['SpriteUpdateManyMutationInput'];
+  SpriteUpdateManyWithWhereNestedInput: NexusGenInputs['SpriteUpdateManyWithWhereNestedInput'];
   SpriteWhereInput: NexusGenInputs['SpriteWhereInput'];
   StatCreateInput: NexusGenInputs['StatCreateInput'];
   StatCreateManyInput: NexusGenInputs['StatCreateManyInput'];
+  StatScalarWhereInput: NexusGenInputs['StatScalarWhereInput'];
+  StatUpdateManyDataInput: NexusGenInputs['StatUpdateManyDataInput'];
+  StatUpdateManyInput: NexusGenInputs['StatUpdateManyInput'];
+  StatUpdateManyMutationInput: NexusGenInputs['StatUpdateManyMutationInput'];
+  StatUpdateManyWithWhereNestedInput: NexusGenInputs['StatUpdateManyWithWhereNestedInput'];
   StatWhereInput: NexusGenInputs['StatWhereInput'];
   TypeCreateInput: NexusGenInputs['TypeCreateInput'];
   TypeCreateManyInput: NexusGenInputs['TypeCreateManyInput'];
+  TypeScalarWhereInput: NexusGenInputs['TypeScalarWhereInput'];
+  TypeUpdateManyDataInput: NexusGenInputs['TypeUpdateManyDataInput'];
+  TypeUpdateManyInput: NexusGenInputs['TypeUpdateManyInput'];
+  TypeUpdateManyMutationInput: NexusGenInputs['TypeUpdateManyMutationInput'];
+  TypeUpdateManyWithWhereNestedInput: NexusGenInputs['TypeUpdateManyWithWhereNestedInput'];
   TypeWhereInput: NexusGenInputs['TypeWhereInput'];
   AbilityOrderByInput: NexusGenEnums['AbilityOrderByInput'];
   FormOrderByInput: NexusGenEnums['FormOrderByInput'];
@@ -741,25 +1515,140 @@ export interface NexusGenFieldTypes {
     name: string | null; // String
     url: string | null; // String
   }
+  AbilityConnection: { // field return type
+    aggregate: NexusGenRootTypes['AggregateAbility']; // AggregateAbility!
+    edges: NexusGenRootTypes['AbilityEdge'][]; // [AbilityEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  AbilityEdge: { // field return type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Ability']; // Ability!
+  }
+  AggregateAbility: { // field return type
+    count: number; // Int!
+  }
+  AggregateForm: { // field return type
+    count: number; // Int!
+  }
+  AggregateGameIndex: { // field return type
+    count: number; // Int!
+  }
+  AggregateItem: { // field return type
+    count: number; // Int!
+  }
+  AggregateMove: { // field return type
+    count: number; // Int!
+  }
+  AggregatePokemon: { // field return type
+    count: number; // Int!
+  }
+  AggregateSpecies: { // field return type
+    count: number; // Int!
+  }
+  AggregateSprite: { // field return type
+    count: number; // Int!
+  }
+  AggregateStat: { // field return type
+    count: number; // Int!
+  }
+  AggregateType: { // field return type
+    count: number; // Int!
+  }
+  BatchPayload: { // field return type
+    count: any; // Long!
+  }
   Form: { // field return type
     name: string | null; // String
     url: string | null; // String
+  }
+  FormConnection: { // field return type
+    aggregate: NexusGenRootTypes['AggregateForm']; // AggregateForm!
+    edges: NexusGenRootTypes['FormEdge'][]; // [FormEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  FormEdge: { // field return type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Form']; // Form!
   }
   GameIndex: { // field return type
     name: string | null; // String
     url: string | null; // String
   }
+  GameIndexConnection: { // field return type
+    aggregate: NexusGenRootTypes['AggregateGameIndex']; // AggregateGameIndex!
+    edges: NexusGenRootTypes['GameIndexEdge'][]; // [GameIndexEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  GameIndexEdge: { // field return type
+    cursor: string; // String!
+    node: NexusGenRootTypes['GameIndex']; // GameIndex!
+  }
   Item: { // field return type
     name: string | null; // String
     url: string | null; // String
+  }
+  ItemConnection: { // field return type
+    aggregate: NexusGenRootTypes['AggregateItem']; // AggregateItem!
+    edges: NexusGenRootTypes['ItemEdge'][]; // [ItemEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  ItemEdge: { // field return type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Item']; // Item!
   }
   Move: { // field return type
     name: string | null; // String
     url: string | null; // String
   }
+  MoveConnection: { // field return type
+    aggregate: NexusGenRootTypes['AggregateMove']; // AggregateMove!
+    edges: NexusGenRootTypes['MoveEdge'][]; // [MoveEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  MoveEdge: { // field return type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Move']; // Move!
+  }
   Mutation: { // field return type
+    createAbility: NexusGenRootTypes['Ability']; // Ability!
+    createForm: NexusGenRootTypes['Form']; // Form!
+    createGameIndex: NexusGenRootTypes['GameIndex']; // GameIndex!
+    createItem: NexusGenRootTypes['Item']; // Item!
+    createMove: NexusGenRootTypes['Move']; // Move!
     createPokemon: NexusGenRootTypes['Pokemon']; // Pokemon!
+    createSpecies: NexusGenRootTypes['Species']; // Species!
+    createSprite: NexusGenRootTypes['Sprite']; // Sprite!
     createStat: NexusGenRootTypes['Stat']; // Stat!
+    createType: NexusGenRootTypes['Type']; // Type!
+    deleteManyAbilities: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyForms: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyGameIndexes: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyItems: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyMoves: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyPokemons: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManySpecieses: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManySprites: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyStats: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyTypes: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deletePokemon: NexusGenRootTypes['Pokemon'] | null; // Pokemon
+    updateManyAbilities: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyForms: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyGameIndexes: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyItems: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyMoves: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyPokemons: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManySpecieses: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManySprites: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyStats: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyTypes: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updatePokemon: NexusGenRootTypes['Pokemon'] | null; // Pokemon
+    upsertPokemon: NexusGenRootTypes['Pokemon']; // Pokemon!
+  }
+  PageInfo: { // field return type
+    endCursor: string | null; // String
+    hasNextPage: boolean; // Boolean!
+    hasPreviousPage: boolean; // Boolean!
+    startCursor: string | null; // String
   }
   Pokemon: { // field return type
     abilities: NexusGenRootTypes['Ability'][] | null; // [Ability!]
@@ -780,13 +1669,50 @@ export interface NexusGenFieldTypes {
     types: NexusGenRootTypes['Type'][] | null; // [Type!]
     weight: number | null; // Int
   }
+  PokemonConnection: { // field return type
+    aggregate: NexusGenRootTypes['AggregatePokemon']; // AggregatePokemon!
+    edges: NexusGenRootTypes['PokemonEdge'][]; // [PokemonEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  PokemonEdge: { // field return type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Pokemon']; // Pokemon!
+  }
   Query: { // field return type
+    abilities: NexusGenRootTypes['Ability'][]; // [Ability!]!
+    abilitiesConnection: NexusGenRootTypes['AbilityConnection']; // AbilityConnection!
+    forms: NexusGenRootTypes['Form'][]; // [Form!]!
+    formsConnection: NexusGenRootTypes['FormConnection']; // FormConnection!
+    gameIndexes: NexusGenRootTypes['GameIndex'][]; // [GameIndex!]!
+    gameIndexesConnection: NexusGenRootTypes['GameIndexConnection']; // GameIndexConnection!
+    items: NexusGenRootTypes['Item'][]; // [Item!]!
+    itemsConnection: NexusGenRootTypes['ItemConnection']; // ItemConnection!
+    moves: NexusGenRootTypes['Move'][]; // [Move!]!
+    movesConnection: NexusGenRootTypes['MoveConnection']; // MoveConnection!
+    pokemon: NexusGenRootTypes['Pokemon'] | null; // Pokemon
     pokemons: NexusGenRootTypes['Pokemon'][]; // [Pokemon!]!
+    pokemonsConnection: NexusGenRootTypes['PokemonConnection']; // PokemonConnection!
+    specieses: NexusGenRootTypes['Species'][]; // [Species!]!
+    speciesesConnection: NexusGenRootTypes['SpeciesConnection']; // SpeciesConnection!
+    sprites: NexusGenRootTypes['Sprite'][]; // [Sprite!]!
+    spritesConnection: NexusGenRootTypes['SpriteConnection']; // SpriteConnection!
     stats: NexusGenRootTypes['Stat'][]; // [Stat!]!
+    statsConnection: NexusGenRootTypes['StatConnection']; // StatConnection!
+    types: NexusGenRootTypes['Type'][]; // [Type!]!
+    typesConnection: NexusGenRootTypes['TypeConnection']; // TypeConnection!
   }
   Species: { // field return type
     name: string | null; // String
     url: string | null; // String
+  }
+  SpeciesConnection: { // field return type
+    aggregate: NexusGenRootTypes['AggregateSpecies']; // AggregateSpecies!
+    edges: NexusGenRootTypes['SpeciesEdge'][]; // [SpeciesEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  SpeciesEdge: { // field return type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Species']; // Species!
   }
   Sprite: { // field return type
     back_default: string | null; // String
@@ -798,26 +1724,159 @@ export interface NexusGenFieldTypes {
     front_shiny: string | null; // String
     front_shiny_female: string | null; // String
   }
+  SpriteConnection: { // field return type
+    aggregate: NexusGenRootTypes['AggregateSprite']; // AggregateSprite!
+    edges: NexusGenRootTypes['SpriteEdge'][]; // [SpriteEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  SpriteEdge: { // field return type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Sprite']; // Sprite!
+  }
   Stat: { // field return type
     base_stat: number | null; // Int
     effort: number | null; // Int
     name: string | null; // String
     url: string | null; // String
   }
+  StatConnection: { // field return type
+    aggregate: NexusGenRootTypes['AggregateStat']; // AggregateStat!
+    edges: NexusGenRootTypes['StatEdge'][]; // [StatEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  StatEdge: { // field return type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Stat']; // Stat!
+  }
   Type: { // field return type
     name: string | null; // String
     slot: number | null; // Int
     url: string | null; // String
   }
+  TypeConnection: { // field return type
+    aggregate: NexusGenRootTypes['AggregateType']; // AggregateType!
+    edges: NexusGenRootTypes['TypeEdge'][]; // [TypeEdge!]!
+    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
+  }
+  TypeEdge: { // field return type
+    cursor: string; // String!
+    node: NexusGenRootTypes['Type']; // Type!
+  }
 }
 
 export interface NexusGenArgTypes {
   Mutation: {
+    createAbility: { // args
+      data: NexusGenInputs['AbilityCreateInput']; // AbilityCreateInput!
+    }
+    createForm: { // args
+      data: NexusGenInputs['FormCreateInput']; // FormCreateInput!
+    }
+    createGameIndex: { // args
+      data: NexusGenInputs['GameIndexCreateInput']; // GameIndexCreateInput!
+    }
+    createItem: { // args
+      data: NexusGenInputs['ItemCreateInput']; // ItemCreateInput!
+    }
+    createMove: { // args
+      data: NexusGenInputs['MoveCreateInput']; // MoveCreateInput!
+    }
     createPokemon: { // args
       data: NexusGenInputs['PokemonCreateInput']; // PokemonCreateInput!
     }
+    createSpecies: { // args
+      data: NexusGenInputs['SpeciesCreateInput']; // SpeciesCreateInput!
+    }
+    createSprite: { // args
+      data: NexusGenInputs['SpriteCreateInput']; // SpriteCreateInput!
+    }
     createStat: { // args
       data: NexusGenInputs['StatCreateInput']; // StatCreateInput!
+    }
+    createType: { // args
+      data: NexusGenInputs['TypeCreateInput']; // TypeCreateInput!
+    }
+    deleteManyAbilities: { // args
+      where?: NexusGenInputs['AbilityWhereInput'] | null; // AbilityWhereInput
+    }
+    deleteManyForms: { // args
+      where?: NexusGenInputs['FormWhereInput'] | null; // FormWhereInput
+    }
+    deleteManyGameIndexes: { // args
+      where?: NexusGenInputs['GameIndexWhereInput'] | null; // GameIndexWhereInput
+    }
+    deleteManyItems: { // args
+      where?: NexusGenInputs['ItemWhereInput'] | null; // ItemWhereInput
+    }
+    deleteManyMoves: { // args
+      where?: NexusGenInputs['MoveWhereInput'] | null; // MoveWhereInput
+    }
+    deleteManyPokemons: { // args
+      where?: NexusGenInputs['PokemonWhereInput'] | null; // PokemonWhereInput
+    }
+    deleteManySpecieses: { // args
+      where?: NexusGenInputs['SpeciesWhereInput'] | null; // SpeciesWhereInput
+    }
+    deleteManySprites: { // args
+      where?: NexusGenInputs['SpriteWhereInput'] | null; // SpriteWhereInput
+    }
+    deleteManyStats: { // args
+      where?: NexusGenInputs['StatWhereInput'] | null; // StatWhereInput
+    }
+    deleteManyTypes: { // args
+      where?: NexusGenInputs['TypeWhereInput'] | null; // TypeWhereInput
+    }
+    deletePokemon: { // args
+      where: NexusGenInputs['PokemonWhereUniqueInput']; // PokemonWhereUniqueInput!
+    }
+    updateManyAbilities: { // args
+      data: NexusGenInputs['AbilityUpdateManyMutationInput']; // AbilityUpdateManyMutationInput!
+      where?: NexusGenInputs['AbilityWhereInput'] | null; // AbilityWhereInput
+    }
+    updateManyForms: { // args
+      data: NexusGenInputs['FormUpdateManyMutationInput']; // FormUpdateManyMutationInput!
+      where?: NexusGenInputs['FormWhereInput'] | null; // FormWhereInput
+    }
+    updateManyGameIndexes: { // args
+      data: NexusGenInputs['GameIndexUpdateManyMutationInput']; // GameIndexUpdateManyMutationInput!
+      where?: NexusGenInputs['GameIndexWhereInput'] | null; // GameIndexWhereInput
+    }
+    updateManyItems: { // args
+      data: NexusGenInputs['ItemUpdateManyMutationInput']; // ItemUpdateManyMutationInput!
+      where?: NexusGenInputs['ItemWhereInput'] | null; // ItemWhereInput
+    }
+    updateManyMoves: { // args
+      data: NexusGenInputs['MoveUpdateManyMutationInput']; // MoveUpdateManyMutationInput!
+      where?: NexusGenInputs['MoveWhereInput'] | null; // MoveWhereInput
+    }
+    updateManyPokemons: { // args
+      data: NexusGenInputs['PokemonUpdateManyMutationInput']; // PokemonUpdateManyMutationInput!
+      where?: NexusGenInputs['PokemonWhereInput'] | null; // PokemonWhereInput
+    }
+    updateManySpecieses: { // args
+      data: NexusGenInputs['SpeciesUpdateManyMutationInput']; // SpeciesUpdateManyMutationInput!
+      where?: NexusGenInputs['SpeciesWhereInput'] | null; // SpeciesWhereInput
+    }
+    updateManySprites: { // args
+      data: NexusGenInputs['SpriteUpdateManyMutationInput']; // SpriteUpdateManyMutationInput!
+      where?: NexusGenInputs['SpriteWhereInput'] | null; // SpriteWhereInput
+    }
+    updateManyStats: { // args
+      data: NexusGenInputs['StatUpdateManyMutationInput']; // StatUpdateManyMutationInput!
+      where?: NexusGenInputs['StatWhereInput'] | null; // StatWhereInput
+    }
+    updateManyTypes: { // args
+      data: NexusGenInputs['TypeUpdateManyMutationInput']; // TypeUpdateManyMutationInput!
+      where?: NexusGenInputs['TypeWhereInput'] | null; // TypeWhereInput
+    }
+    updatePokemon: { // args
+      data: NexusGenInputs['PokemonUpdateInput']; // PokemonUpdateInput!
+      where: NexusGenInputs['PokemonWhereUniqueInput']; // PokemonWhereUniqueInput!
+    }
+    upsertPokemon: { // args
+      create: NexusGenInputs['PokemonCreateInput']; // PokemonCreateInput!
+      update: NexusGenInputs['PokemonUpdateInput']; // PokemonUpdateInput!
+      where: NexusGenInputs['PokemonWhereUniqueInput']; // PokemonWhereUniqueInput!
     }
   }
   Pokemon: {
@@ -904,6 +1963,99 @@ export interface NexusGenArgTypes {
     }
   }
   Query: {
+    abilities: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['AbilityOrderByInput'] | null; // AbilityOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['AbilityWhereInput'] | null; // AbilityWhereInput
+    }
+    abilitiesConnection: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['AbilityOrderByInput'] | null; // AbilityOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['AbilityWhereInput'] | null; // AbilityWhereInput
+    }
+    forms: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['FormOrderByInput'] | null; // FormOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['FormWhereInput'] | null; // FormWhereInput
+    }
+    formsConnection: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['FormOrderByInput'] | null; // FormOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['FormWhereInput'] | null; // FormWhereInput
+    }
+    gameIndexes: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['GameIndexOrderByInput'] | null; // GameIndexOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['GameIndexWhereInput'] | null; // GameIndexWhereInput
+    }
+    gameIndexesConnection: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['GameIndexOrderByInput'] | null; // GameIndexOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['GameIndexWhereInput'] | null; // GameIndexWhereInput
+    }
+    items: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['ItemOrderByInput'] | null; // ItemOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['ItemWhereInput'] | null; // ItemWhereInput
+    }
+    itemsConnection: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['ItemOrderByInput'] | null; // ItemOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['ItemWhereInput'] | null; // ItemWhereInput
+    }
+    moves: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['MoveOrderByInput'] | null; // MoveOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['MoveWhereInput'] | null; // MoveWhereInput
+    }
+    movesConnection: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['MoveOrderByInput'] | null; // MoveOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['MoveWhereInput'] | null; // MoveWhereInput
+    }
+    pokemon: { // args
+      where: NexusGenInputs['PokemonWhereUniqueInput']; // PokemonWhereUniqueInput!
+    }
     pokemons: { // args
       after?: string | null; // String
       before?: string | null; // String
@@ -912,6 +2064,51 @@ export interface NexusGenArgTypes {
       orderBy?: NexusGenEnums['PokemonOrderByInput'] | null; // PokemonOrderByInput
       skip?: number | null; // Int
       where?: NexusGenInputs['PokemonWhereInput'] | null; // PokemonWhereInput
+    }
+    pokemonsConnection: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['PokemonOrderByInput'] | null; // PokemonOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['PokemonWhereInput'] | null; // PokemonWhereInput
+    }
+    specieses: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['SpeciesOrderByInput'] | null; // SpeciesOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['SpeciesWhereInput'] | null; // SpeciesWhereInput
+    }
+    speciesesConnection: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['SpeciesOrderByInput'] | null; // SpeciesOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['SpeciesWhereInput'] | null; // SpeciesWhereInput
+    }
+    sprites: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['SpriteOrderByInput'] | null; // SpriteOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['SpriteWhereInput'] | null; // SpriteWhereInput
+    }
+    spritesConnection: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['SpriteOrderByInput'] | null; // SpriteOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['SpriteWhereInput'] | null; // SpriteWhereInput
     }
     stats: { // args
       after?: string | null; // String
@@ -922,6 +2119,33 @@ export interface NexusGenArgTypes {
       skip?: number | null; // Int
       where?: NexusGenInputs['StatWhereInput'] | null; // StatWhereInput
     }
+    statsConnection: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['StatOrderByInput'] | null; // StatOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['StatWhereInput'] | null; // StatWhereInput
+    }
+    types: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['TypeOrderByInput'] | null; // TypeOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['TypeWhereInput'] | null; // TypeWhereInput
+    }
+    typesConnection: { // args
+      after?: string | null; // String
+      before?: string | null; // String
+      first?: number | null; // Int
+      last?: number | null; // Int
+      orderBy?: NexusGenEnums['TypeOrderByInput'] | null; // TypeOrderByInput
+      skip?: number | null; // Int
+      where?: NexusGenInputs['TypeWhereInput'] | null; // TypeWhereInput
+    }
   }
 }
 
@@ -930,15 +2154,15 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Ability" | "Form" | "GameIndex" | "Item" | "Move" | "Mutation" | "Pokemon" | "Query" | "Species" | "Sprite" | "Stat" | "Type";
+export type NexusGenObjectNames = "Ability" | "AbilityConnection" | "AbilityEdge" | "AggregateAbility" | "AggregateForm" | "AggregateGameIndex" | "AggregateItem" | "AggregateMove" | "AggregatePokemon" | "AggregateSpecies" | "AggregateSprite" | "AggregateStat" | "AggregateType" | "BatchPayload" | "Form" | "FormConnection" | "FormEdge" | "GameIndex" | "GameIndexConnection" | "GameIndexEdge" | "Item" | "ItemConnection" | "ItemEdge" | "Move" | "MoveConnection" | "MoveEdge" | "Mutation" | "PageInfo" | "Pokemon" | "PokemonConnection" | "PokemonEdge" | "Query" | "Species" | "SpeciesConnection" | "SpeciesEdge" | "Sprite" | "SpriteConnection" | "SpriteEdge" | "Stat" | "StatConnection" | "StatEdge" | "Type" | "TypeConnection" | "TypeEdge";
 
-export type NexusGenInputNames = "AbilityCreateInput" | "AbilityCreateManyInput" | "AbilityWhereInput" | "FormCreateInput" | "FormCreateManyInput" | "FormWhereInput" | "GameIndexCreateInput" | "GameIndexCreateManyInput" | "GameIndexWhereInput" | "ItemCreateInput" | "ItemCreateManyInput" | "ItemWhereInput" | "MoveCreateInput" | "MoveCreateManyInput" | "MoveWhereInput" | "PokemonCreateInput" | "PokemonWhereInput" | "SpeciesCreateInput" | "SpeciesCreateManyInput" | "SpeciesWhereInput" | "SpriteCreateInput" | "SpriteCreateManyInput" | "SpriteWhereInput" | "StatCreateInput" | "StatCreateManyInput" | "StatWhereInput" | "TypeCreateInput" | "TypeCreateManyInput" | "TypeWhereInput";
+export type NexusGenInputNames = "AbilityCreateInput" | "AbilityCreateManyInput" | "AbilityScalarWhereInput" | "AbilityUpdateManyDataInput" | "AbilityUpdateManyInput" | "AbilityUpdateManyMutationInput" | "AbilityUpdateManyWithWhereNestedInput" | "AbilityWhereInput" | "FormCreateInput" | "FormCreateManyInput" | "FormScalarWhereInput" | "FormUpdateManyDataInput" | "FormUpdateManyInput" | "FormUpdateManyMutationInput" | "FormUpdateManyWithWhereNestedInput" | "FormWhereInput" | "GameIndexCreateInput" | "GameIndexCreateManyInput" | "GameIndexScalarWhereInput" | "GameIndexUpdateManyDataInput" | "GameIndexUpdateManyInput" | "GameIndexUpdateManyMutationInput" | "GameIndexUpdateManyWithWhereNestedInput" | "GameIndexWhereInput" | "ItemCreateInput" | "ItemCreateManyInput" | "ItemScalarWhereInput" | "ItemUpdateManyDataInput" | "ItemUpdateManyInput" | "ItemUpdateManyMutationInput" | "ItemUpdateManyWithWhereNestedInput" | "ItemWhereInput" | "MoveCreateInput" | "MoveCreateManyInput" | "MoveScalarWhereInput" | "MoveUpdateManyDataInput" | "MoveUpdateManyInput" | "MoveUpdateManyMutationInput" | "MoveUpdateManyWithWhereNestedInput" | "MoveWhereInput" | "PokemonCreateInput" | "PokemonUpdateInput" | "PokemonUpdateManyMutationInput" | "PokemonWhereInput" | "PokemonWhereUniqueInput" | "SpeciesCreateInput" | "SpeciesCreateManyInput" | "SpeciesScalarWhereInput" | "SpeciesUpdateManyDataInput" | "SpeciesUpdateManyInput" | "SpeciesUpdateManyMutationInput" | "SpeciesUpdateManyWithWhereNestedInput" | "SpeciesWhereInput" | "SpriteCreateInput" | "SpriteCreateManyInput" | "SpriteScalarWhereInput" | "SpriteUpdateManyDataInput" | "SpriteUpdateManyInput" | "SpriteUpdateManyMutationInput" | "SpriteUpdateManyWithWhereNestedInput" | "SpriteWhereInput" | "StatCreateInput" | "StatCreateManyInput" | "StatScalarWhereInput" | "StatUpdateManyDataInput" | "StatUpdateManyInput" | "StatUpdateManyMutationInput" | "StatUpdateManyWithWhereNestedInput" | "StatWhereInput" | "TypeCreateInput" | "TypeCreateManyInput" | "TypeScalarWhereInput" | "TypeUpdateManyDataInput" | "TypeUpdateManyInput" | "TypeUpdateManyMutationInput" | "TypeUpdateManyWithWhereNestedInput" | "TypeWhereInput";
 
 export type NexusGenEnumNames = "AbilityOrderByInput" | "FormOrderByInput" | "GameIndexOrderByInput" | "ItemOrderByInput" | "MoveOrderByInput" | "PokemonOrderByInput" | "SpeciesOrderByInput" | "SpriteOrderByInput" | "StatOrderByInput" | "TypeOrderByInput";
 
 export type NexusGenInterfaceNames = never;
 
-export type NexusGenScalarNames = "Boolean" | "Float" | "ID" | "Int" | "String";
+export type NexusGenScalarNames = "Boolean" | "Float" | "ID" | "Int" | "Long" | "String";
 
 export type NexusGenUnionNames = never;
 
